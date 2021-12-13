@@ -22,3 +22,11 @@ doc/api/
 *.js_
 *.js.deps
 *.js.map
+
+.flutter-plugins
+
+.flutter-plugins-dependencies
+
+citmatel_strawberry_hangman.iml
+
+lib/generated_plugin_registrant.dart
