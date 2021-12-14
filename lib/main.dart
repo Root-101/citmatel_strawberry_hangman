@@ -1,10 +1,9 @@
-import 'package:citmatel_strawberry_hangman/src/app/a_module/hangman_core_module.dart';
-import 'package:citmatel_strawberry_hangman/src/ui/TestUI.dart';
+import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 void main() {
-  HangManCoreModule.init();
+  HangManUIModule.init();
   runApp(MyApp());
 }
 
@@ -20,11 +19,15 @@ class MyApp extends StatelessWidget {
       ),
       //--------------------- </THEAMING> -----------------------------------
       //--------------------- <PAGINATION> -----------------------------------
-      initialRoute: TestUI.ROUTE_NAME,
+      initialRoute: HangManLevelsScreen.ROUTE_NAME,
       getPages: [
         GetPage(
-          name: TestUI.ROUTE_NAME,
-          page: () => TestUI(),
+          name: HangManLevelsScreen.ROUTE_NAME,
+          page: () =>
+              //entrada directo al nivel 1
+              SubLevelScreen(subLevelDomain: Level1.level1.sublevel[0]),
+          //entrada a el grid de seleccion de niveles
+          //HangManLevelsScreen(),
           transition: Transition.rightToLeft,
         ),
       ],

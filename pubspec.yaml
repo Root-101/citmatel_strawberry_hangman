@@ -6,7 +6,8 @@ publish_to: 'none'
 version: 0.0.1-SNAPSHOT.20211202
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.15.0 <3.0.0"
+  flutter: ">=2.8.0"
 
 dependencies:
   flutter:
@@ -15,6 +16,11 @@ dependencies:
   # Architecture & Management
   get: ^4.5.1
   clean_core: ^1.1.2-SNAPSHOT.20211206
+
+  # Visual & Animations
+  animations: ^2.0.2
+  page_view_indicators: ^2.0.0
+  flutter_svg: ^1.0.0
 
   cupertino_icons: ^1.0.2
 
