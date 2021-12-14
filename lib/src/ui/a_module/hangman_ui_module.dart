@@ -6,6 +6,6 @@ class HangManUIModule {
   static void init() {
     HangManCoreModule.init();
 
-    Get.put<LevelController>(LevelControllerImpl());
+    Get.put<HangManLevelController>(HangManLevelControllerImpl());
   }
 }

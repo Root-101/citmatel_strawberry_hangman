@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:page_view_indicators/page_view_indicators.dart';
 
-class HangManLevelsScreen extends GetView<LevelController> {//TODO: valorar ese nombre que no me convence
+class HangManLevelsScreen extends GetView<HangManLevelController> {//TODO: valorar ese nombre que no me convence
   static const ROUTE_NAME = "/hangman-levels-screen";
 
   HangManLevelsScreen({Key? key}) : super(key: key);
@@ -67,7 +67,7 @@ class HangManLevelsScreen extends GetView<LevelController> {//TODO: valorar ese 
     );
   }
 
-  _buildLevelGridView(LevelDomain level) {
+  _buildLevelGridView(HangManLevelDomain level) {
     return GridView(
       physics: BouncingScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -75,7 +75,7 @@ class HangManLevelsScreen extends GetView<LevelController> {//TODO: valorar ese 
       ),
       children: level.sublevel
           .map(
-            (subLevel) => SingleLevelTile(subLevelDomain: subLevel),
+            (subLevel) => HangManSingleLevelTile(subLevelDomain: subLevel),
           )
           .toList(),
     );

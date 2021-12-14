@@ -1,4 +1,4 @@
 library hangman_usecase_exporter;
 
 //exporta los usecase def
-export 'level_usecase.dart';
+export 'hangman_level_usecase.dart';

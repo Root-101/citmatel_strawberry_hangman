@@ -25,7 +25,8 @@ class MyApp extends StatelessWidget {
           name: HangManLevelsScreen.ROUTE_NAME,
           page: () =>
               //entrada directo al nivel 1
-              SubLevelScreen(subLevelDomain: Level1.level1.sublevel[0]),
+              HangManSubLevelScreen(
+                  subLevelDomain: HangManLevel1.level1.sublevel[0]),
           //entrada a el grid de seleccion de niveles
           //HangManLevelsScreen(),
           transition: Transition.rightToLeft,

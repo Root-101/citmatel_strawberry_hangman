@@ -1,8 +1,8 @@
 import 'package:citmatel_strawberry_hangman/src/app/hangman_app_exporter.dart';
 import 'package:get/get.dart';
 
-abstract class SubLevelController extends GetxController {
+abstract class HangManSubLevelController extends GetxController {
   static const String TAG = "sub-level-controller";
 
-  SubLevelDomain get subLevelDomain;
+  HangManSubLevelDomain get subLevelDomain;
 }

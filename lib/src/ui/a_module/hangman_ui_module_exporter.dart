@@ -1,4 +1,4 @@
-library ui_module_exporter;
+library hangman_ui_module_exporter;
 
 //export the controllers
 export 'hangman_ui_module.dart';

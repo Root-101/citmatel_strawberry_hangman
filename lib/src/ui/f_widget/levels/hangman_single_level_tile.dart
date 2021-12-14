@@ -2,10 +2,10 @@ import 'package:animations/animations.dart';
 import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
 import 'package:flutter/material.dart';
 
-class SingleLevelTile extends StatelessWidget {
-  final SubLevelDomain subLevelDomain;
+class HangManSingleLevelTile extends StatelessWidget {
+  final HangManSubLevelDomain subLevelDomain;
 
-  const SingleLevelTile({required this.subLevelDomain, Key? key})
+  const HangManSingleLevelTile({required this.subLevelDomain, Key? key})
       : super(key: key);
 
   @override
@@ -32,6 +32,6 @@ class SingleLevelTile extends StatelessWidget {
 
   //Screen grande para cuando se entra al subnivel, pantalla de cargando para el sub nivel
   _buildOpen() {
-    return SubLevelBackground(subLevelDomain: subLevelDomain);
+    return HangManSubLevelBackground(subLevelDomain: subLevelDomain);
   }
 }

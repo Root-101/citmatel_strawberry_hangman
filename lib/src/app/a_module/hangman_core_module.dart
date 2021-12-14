@@ -3,6 +3,6 @@ import 'package:get/get.dart';
 
 class HangManCoreModule {
   static void init() {
-    Get.put<LevelUseCase>(LevelUseCaseImpl(LevelsAll.levels));
+    Get.put<HangManLevelUseCase>(HangManLevelUseCaseImpl(HangManLevelsAll.levels));
   }
 }

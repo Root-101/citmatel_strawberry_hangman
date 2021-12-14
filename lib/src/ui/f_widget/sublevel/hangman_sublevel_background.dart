@@ -1,18 +1,18 @@
 import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
 import 'package:flutter/material.dart';
 
-class SubLevelBackground extends StatefulWidget {
+class HangManSubLevelBackground extends StatefulWidget {
   //TODO: cambiar el nombre ese xds
-  final SubLevelDomain subLevelDomain;
+  final HangManSubLevelDomain subLevelDomain;
 
-  const SubLevelBackground({required this.subLevelDomain, Key? key})
+  const HangManSubLevelBackground({required this.subLevelDomain, Key? key})
       : super(key: key);
 
   @override
-  _SubLevelBackgroundState createState() => _SubLevelBackgroundState();
+  _HangManSubLevelBackgroundState createState() => _HangManSubLevelBackgroundState();
 }
 
-class _SubLevelBackgroundState extends State<SubLevelBackground> {
+class _HangManSubLevelBackgroundState extends State<HangManSubLevelBackground> {
   late Widget _animatedWidget;
 
   @override
@@ -20,12 +20,12 @@ class _SubLevelBackgroundState extends State<SubLevelBackground> {
     super.initState();
     setState(
       () {
-        _animatedWidget = SubLevelLoading(
+        _animatedWidget = HangManSubLevelLoading(
           onEnd: () {
             //really start the level
             setState(() {
               _animatedWidget =
-                  SubLevelScreen(subLevelDomain: widget.subLevelDomain);
+                  HangManSubLevelScreen(subLevelDomain: widget.subLevelDomain);
             });
           },
         );

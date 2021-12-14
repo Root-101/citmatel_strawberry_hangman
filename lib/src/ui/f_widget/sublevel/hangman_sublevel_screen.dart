@@ -6,14 +6,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 // ignore: must_be_immutable
-class SubLevelScreen extends GetView<SubLevelController> {
+class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
   static const ROUTE_NAME = "/hangman-sublevel-screen";
 
-  SubLevelScreen({
-    required SubLevelDomain subLevelDomain,
+  HangManSubLevelScreen({
+    required HangManSubLevelDomain subLevelDomain,
   }) : super() {
-    Get.put<SubLevelController>(
-      SubLevelControllerImpl(
+    Get.put<HangManSubLevelController>(
+      HangManSubLevelControllerImpl(
         subLevelDomain: subLevelDomain,
       ),
     );
@@ -21,7 +21,7 @@ class SubLevelScreen extends GetView<SubLevelController> {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<SubLevelController>(
+    return GetBuilder<HangManSubLevelController>(
       builder: (_) {
         return SafeArea(
           child: Column(
