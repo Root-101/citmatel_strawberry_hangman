@@ -1,14 +1,13 @@
 import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
 
 // ignore: must_be_immutable
 class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
   static const ROUTE_NAME = "/hangman-sublevel-screen";
 
+  final int cantOfColumns = 6;
   HangManSubLevelScreen({
     required HangManSubLevelDomain subLevelDomain,
   }) : super() {
@@ -21,17 +20,66 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<HangManSubLevelController>(
-      builder: (_) {
-        return SafeArea(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text("Subnivel de HangMan"),
-            ],
+    return Scaffold(
+      body: GetBuilder<HangManSubLevelController>(
+        builder: (_) {
+          return SafeArea(
+            child: _animatedGridView(),
+          );
+        },
+      ),
+    );
+  }
+
+  _animatedGridView() {
+    return AnimationLimiter(
+      child: GridView.count(
+        childAspectRatio: 1.0,
+        padding: const EdgeInsets.all(8.0),
+        crossAxisCount: cantOfColumns,
+        children: List.generate(
+          12,
+          (int index) {
+            return AnimationConfiguration.staggeredGrid(
+              columnCount: cantOfColumns,
+              position: index,
+              duration: const Duration(milliseconds: 1375),
+              child: ScaleAnimation(
+                scale: 0.5,
+                child: FadeInAnimation(
+                  child: _emptyCard("A"),
+                ),
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+
+  _emptyCard(String text) {
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
+      decoration: const BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.all(Radius.circular(4.0)),
+        boxShadow: <BoxShadow>[
+          BoxShadow(
+            color: Colors.black12,
+            blurRadius: 6.0,
+            offset: Offset(0.0, 4.0),
           ),
-        );
-      },
+        ],
+      ),
+      child: Center(
+          child: Text(
+        text,
+        style: TextStyle(
+          fontSize: 20,
+          fontStyle: FontStyle.italic,
+          fontWeight: FontWeight.bold,
+        ),
+      )),
     );
   }
 }
