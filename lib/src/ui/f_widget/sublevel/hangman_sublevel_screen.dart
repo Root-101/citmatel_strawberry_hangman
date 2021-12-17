@@ -2,6 +2,7 @@ import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_fadein/flutter_fadein.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:photo_view/photo_view.dart';
 
@@ -9,7 +10,6 @@ import 'package:photo_view/photo_view.dart';
 class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
   static const ROUTE_NAME = "/hangman-sublevel-screen";
 
-  final int cantOfColumns = 6;
   HangManSubLevelScreen({
     required HangManSubLevelDomain subLevelDomain,
   }) : super() {
@@ -28,8 +28,12 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
           return SafeArea(
             child: Column(
               children: [
+                SizedBox(height: 20),
+                _buildListOfHearts(5),
                 _buildImageCard(),
-                _animatedGridView(),
+                _buildWord(5, "_"),
+                SizedBox(height: 40),
+                _buildKeyBoard(6, 12, "B")
               ],
             ),
           );
@@ -38,7 +42,35 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
     );
   }
 
-  _animatedGridView() {
+  _buildKeyBoard(int cantOfColumns, int amountOfLetters, String text) {
+    return _animatedGridView(
+      cantOfColumns,
+      amountOfLetters,
+      _emptyCard(text),
+    );
+  }
+
+  _buildWord(int amountOfLetters, String text) {
+    return _animatedGridView(
+      amountOfLetters,
+      amountOfLetters,
+      _emptyCard(text),
+    );
+  }
+
+  _buildListOfHearts(int cantOfHearts) {
+    return _animatedGridView(
+      cantOfHearts,
+      cantOfHearts,
+      Icon(
+        FontAwesomeIcons.solidHeart,
+        color: Colors.red.shade900,
+        size: 50,
+      ),
+    );
+  }
+
+  _animatedGridView(int cantOfColumns, int listOfItems, Widget child) {
     return AnimationLimiter(
       child: GridView.count(
         childAspectRatio: 1.0,
@@ -47,7 +79,7 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
         shrinkWrap: true, //With this GridView only occupies the space it needs
         physics: NeverScrollableScrollPhysics(), //No scroll needed
         children: List.generate(
-          12,
+          listOfItems,
           (int index) {
             return AnimationConfiguration.staggeredGrid(
               columnCount: cantOfColumns,
@@ -56,7 +88,7 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
               child: ScaleAnimation(
                 scale: 0.5,
                 child: FadeInAnimation(
-                  child: _emptyCard("A"),
+                  child: child,
                 ),
               ),
             );
@@ -97,7 +129,7 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
         vertical: 20.0,
         horizontal: 20.0,
       ),
-      height: 220.0,
+      height: 240.0,
       child: ClipRRect(
         // For the rounded corners
         borderRadius: BorderRadius.all(Radius.circular(15)),
@@ -109,16 +141,16 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
 //Fade the entrnace of the image
   _fadeImage() {
     return FadeIn(
-      child: _animateImage(),
+      child: _animateImage("assets/icons/brain_in_blue.jpg"),
       duration: Duration(milliseconds: 4000),
       curve: Curves.easeInOutCirc,
     );
   }
 
   //Addind gestures to the image
-  _animateImage() {
+  _animateImage(String imageUrl) {
     return PhotoView(
-      imageProvider: const AssetImage("assets/icons/brain_in_blue.jpg"),
+      imageProvider: AssetImage(imageUrl),
       maxScale: PhotoViewComputedScale.covered * 2.0,
       minScale: PhotoViewComputedScale.contained * 0.8,
       initialScale: PhotoViewComputedScale.covered,
