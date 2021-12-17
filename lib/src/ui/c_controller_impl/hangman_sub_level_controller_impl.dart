@@ -24,18 +24,10 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   int get lives => subLevelUseCase.subLevelDomain.lives;
 
   @override
-  int answerCantOfWords() {
-    return answerSpellOut().length;
-  }
+  int answerCantOfWords() => subLevelUseCase.answerCantOfWords();
 
   @override
-  List<String> answerSpellOut() {
-    List<String> answerList = [];
-    answer
-        .split("")
-        .forEach((element) => answerList.add(element.toUpperCase()));
-    return answerList;
-  }
+  List<String> answerSpellOut() => subLevelUseCase.answerSpellOut();
 
   @override
   int checkLetter(String text) {
