@@ -9,7 +9,12 @@ abstract class HangManSubLevelController extends GetxController {
   String get imageUrl;
   int get lives;
   String get answer;
+  List<String> get answerToBe;
 
   List<String> answerSpellOut();
   int answerCantOfWords();
+  int checkLetter(String text);
+  void isLetterCorrect(String text);
+  void breakHeart();
+  void fillAnswer(int index);
 }
