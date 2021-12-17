@@ -1,5 +1,6 @@
 import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_fadein/flutter_fadein.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
 import 'package:photo_view/photo_view.dart';
@@ -27,7 +28,7 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
           return SafeArea(
             child: Column(
               children: [
-                _buildImage(),
+                _buildImageCard(),
                 _animatedGridView(),
               ],
             ),
@@ -90,7 +91,7 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
     );
   }
 
-  _buildImage() {
+  _buildImageCard() {
     return Container(
       margin: const EdgeInsets.symmetric(
         vertical: 20.0,
@@ -100,15 +101,28 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
       child: ClipRRect(
         // For the rounded corners
         borderRadius: BorderRadius.all(Radius.circular(15)),
-        child: PhotoView(
-          //Addind gestures to the image
-          imageProvider: const AssetImage("assets/icons/brain_in_blue.jpg"),
-          maxScale: PhotoViewComputedScale.covered * 2.0,
-          minScale: PhotoViewComputedScale.contained * 0.8,
-          initialScale: PhotoViewComputedScale.covered,
-          backgroundDecoration: BoxDecoration(color: Colors.transparent),
-        ),
+        child: _fadeImage(),
       ),
+    );
+  }
+
+//Fade the entrnace of the image
+  _fadeImage() {
+    return FadeIn(
+      child: _animateImage(),
+      duration: Duration(milliseconds: 4000),
+      curve: Curves.easeInOutCirc,
+    );
+  }
+
+  //Addind gestures to the image
+  _animateImage() {
+    return PhotoView(
+      imageProvider: const AssetImage("assets/icons/brain_in_blue.jpg"),
+      maxScale: PhotoViewComputedScale.covered * 2.0,
+      minScale: PhotoViewComputedScale.contained * 0.8,
+      initialScale: PhotoViewComputedScale.covered,
+      backgroundDecoration: BoxDecoration(color: Colors.transparent),
     );
   }
 }
