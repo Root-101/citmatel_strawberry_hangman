@@ -29,11 +29,11 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
             child: Column(
               children: [
                 SizedBox(height: 20),
-                _buildListOfHearts(controller.lives),
-                _buildImageCard(controller.imageUrl),
-                _buildWord(controller.answerCantOfWords(), "_"),
+                _buildListOfHearts(),
+                _buildImageCard(),
+                _buildWord(),
                 SizedBox(height: 40),
-                _buildKeyBoard(6, 12, "B")
+                _buildKeyBoard(),
               ],
             ),
           );
@@ -42,35 +42,81 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
     );
   }
 
-  _buildKeyBoard(int cantOfColumns, int amountOfLetters, String text) {
+  _buildKeyBoard() {
+    List<String> listOfLetters = controller.answerSpellOut();
+    int countOfColumns = listOfLetters.length;
     return _animatedGridView(
-      cantOfColumns,
-      amountOfLetters,
-      _emptyCard(text),
-    );
-  }
-
-  _buildWord(int amountOfLetters, String text) {
-    return _animatedGridView(
-      amountOfLetters,
-      amountOfLetters,
-      _emptyCard(text),
-    );
-  }
-
-  _buildListOfHearts(int cantOfHearts) {
-    return _animatedGridView(
-      cantOfHearts,
-      cantOfHearts,
-      Icon(
-        FontAwesomeIcons.solidHeart,
-        color: Colors.red.shade900,
-        size: 50,
+      6,
+      List.generate(
+        countOfColumns,
+        (int index) {
+          return _buildAnimations(
+            index,
+            6,
+            InkWell(
+              child: _emptyCard(listOfLetters[index]),
+              onTap: () => controller.isLetterCorrect(listOfLetters[index]),
+            ),
+          );
+        },
       ),
     );
   }
 
-  _animatedGridView(int cantOfColumns, int listOfItems, Widget child) {
+  _buildWord() {
+    List<String> listOfLetters = controller.answerToBe;
+    int countOfColumns = listOfLetters.length;
+    return _animatedGridView(
+      countOfColumns,
+      List.generate(
+        countOfColumns,
+        (int index) {
+          return _buildAnimations(
+            index,
+            6,
+            _emptyCard(listOfLetters[index]),
+          );
+        },
+      ),
+    );
+  }
+
+  _buildListOfHearts() {
+    int countOfColumns = controller.lives;
+    return _animatedGridView(
+      countOfColumns,
+      List.generate(
+        countOfColumns,
+        (int index) {
+          return _buildAnimations(
+            index,
+            countOfColumns,
+            Icon(
+              FontAwesomeIcons.solidHeart,
+              color: Colors.red.shade900,
+              size: 50,
+            ),
+          );
+        },
+      ),
+    );
+  }
+
+  _buildAnimations(int index, int countOfColumns, Widget widget) {
+    return AnimationConfiguration.staggeredGrid(
+      columnCount: 6,
+      position: index,
+      duration: const Duration(milliseconds: 1375),
+      child: ScaleAnimation(
+        scale: 0.5,
+        child: FadeInAnimation(
+          child: widget,
+        ),
+      ),
+    );
+  }
+
+  _animatedGridView(int cantOfColumns, List<Widget> children) {
     return AnimationLimiter(
       child: GridView.count(
         childAspectRatio: 1.0,
@@ -78,22 +124,7 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
         crossAxisCount: cantOfColumns, // Amount of columns in the grid
         shrinkWrap: true, //With this GridView only occupies the space it needs
         physics: NeverScrollableScrollPhysics(), //No scroll needed
-        children: List.generate(
-          listOfItems,
-          (int index) {
-            return AnimationConfiguration.staggeredGrid(
-              columnCount: cantOfColumns,
-              position: index,
-              duration: const Duration(milliseconds: 1375),
-              child: ScaleAnimation(
-                scale: 0.5,
-                child: FadeInAnimation(
-                  child: child,
-                ),
-              ),
-            );
-          },
-        ),
+        children: children,
       ),
     );
   }
@@ -123,7 +154,7 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
     );
   }
 
-  _buildImageCard(String imageUrl) {
+  _buildImageCard() {
     return Container(
       margin: const EdgeInsets.symmetric(
         vertical: 20.0,
@@ -133,7 +164,7 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
       child: ClipRRect(
         // For the rounded corners
         borderRadius: BorderRadius.all(Radius.circular(15)),
-        child: _fadeImage(imageUrl),
+        child: _fadeImage(controller.imageUrl),
       ),
     );
   }
