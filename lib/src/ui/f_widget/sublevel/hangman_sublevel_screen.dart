@@ -2,6 +2,7 @@ import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
+import 'package:photo_view/photo_view.dart';
 
 // ignore: must_be_immutable
 class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
@@ -24,7 +25,11 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
       body: GetBuilder<HangManSubLevelController>(
         builder: (_) {
           return SafeArea(
-            child: _animatedGridView(),
+            child: Column(
+              children: [
+                _animatedGridView(),
+              ],
+            ),
           );
         },
       ),
@@ -36,7 +41,9 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
       child: GridView.count(
         childAspectRatio: 1.0,
         padding: const EdgeInsets.all(8.0),
-        crossAxisCount: cantOfColumns,
+        crossAxisCount: cantOfColumns, // Amount of columns in the grid
+        shrinkWrap: true, //With this GridView only occupies the space it needs
+        physics: NeverScrollableScrollPhysics(), //No scroll needed
         children: List.generate(
           12,
           (int index) {
@@ -76,10 +83,10 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
         text,
         style: TextStyle(
           fontSize: 20,
-          fontStyle: FontStyle.italic,
           fontWeight: FontWeight.bold,
         ),
       )),
     );
   }
+
 }
