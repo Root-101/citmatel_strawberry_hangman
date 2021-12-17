@@ -29,9 +29,9 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
             child: Column(
               children: [
                 SizedBox(height: 20),
-                _buildListOfHearts(5),
-                _buildImageCard(),
-                _buildWord(5, "_"),
+                _buildListOfHearts(controller.lives),
+                _buildImageCard(controller.imageUrl),
+                _buildWord(controller.answerCantOfWords(), "_"),
                 SizedBox(height: 40),
                 _buildKeyBoard(6, 12, "B")
               ],
@@ -123,7 +123,7 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
     );
   }
 
-  _buildImageCard() {
+  _buildImageCard(String imageUrl) {
     return Container(
       margin: const EdgeInsets.symmetric(
         vertical: 20.0,
@@ -133,15 +133,15 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
       child: ClipRRect(
         // For the rounded corners
         borderRadius: BorderRadius.all(Radius.circular(15)),
-        child: _fadeImage(),
+        child: _fadeImage(imageUrl),
       ),
     );
   }
 
 //Fade the entrnace of the image
-  _fadeImage() {
+  _fadeImage(String imageUrl) {
     return FadeIn(
-      child: _animateImage("assets/icons/brain_in_blue.jpg"),
+      child: _animateImage(imageUrl),
       duration: Duration(milliseconds: 4000),
       curve: Curves.easeInOutCirc,
     );
