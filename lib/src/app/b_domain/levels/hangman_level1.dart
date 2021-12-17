@@ -8,8 +8,8 @@ class HangManLevel1 {
     sublevel: [
       HangManSubLevelDomain(
         id: 1,
-        answer: "Hello world",
-        urlImage: "url",
+        answer: "Hello",
+        urlImage: "assets/icons/brain_in_blue.jpg",
       ),
       HangManSubLevelDomain(
         id: 2,
