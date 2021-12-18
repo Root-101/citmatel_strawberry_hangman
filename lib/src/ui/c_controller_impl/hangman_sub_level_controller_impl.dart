@@ -9,13 +9,8 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   }) : subLevelUseCase = HangManSubLevelUseCaseImpl(
           subLevelDomain: subLevelDomain,
         ) {
-    answerToBe = List.generate(answerSpellOut().length, (index) => "_");
+    answerToBe = List.generate(answerCantOfLetters(), (index) => "_");
   }
-
-  HangManSubLevelDomain get subLevelDomain => subLevelUseCase.subLevelDomain;
-
-  @override
-  String get answer => subLevelUseCase.subLevelDomain.answer;
 
   @override
   String get imageUrl => subLevelUseCase.subLevelDomain.urlImage;
@@ -24,36 +19,31 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   int get lives => subLevelUseCase.subLevelDomain.lives;
 
   @override
-  int answerCantOfWords() => subLevelUseCase.answerCantOfWords();
+  int answerCantOfLetters() => answerToBe.length;
 
   @override
-  List<String> answerSpellOut() => subLevelUseCase.answerSpellOut();
-
-  @override
-  int checkLetter(String text) {
-    if (answerSpellOut().contains(text)) {
-    }
-    return -1;
-  }
-
-  @override
-  void isLetterCorrect(String text) {
-    int index = checkLetter(text);
-    if (index == -1) {
-      breakHeart();
+  void checkLetter(String letter) {
+    List<int> possiblesIndex = subLevelUseCase.checkLetter(letter);
+    if (possiblesIndex.isEmpty) {
+      //no existe esa letra en la palabra
+      _breakHeart();
     } else {
-      fillAnswer(index);
+      _fillAnswer(possiblesIndex, letter);
     }
+    update();
   }
 
-  @override
-  void breakHeart() {
+  void _breakHeart() {
     // TODO: implement breakHeart
   }
 
-  @override
-  void fillAnswer(int index) {
-    answerToBe[index] = answerSpellOut().elementAt(index);
-    update();
+  void _fillAnswer(List<int> possiblesIndex, String letter) {
+    possiblesIndex.forEach((index) {
+      answerToBe[index] = letter;
+    });
   }
+
+  int keyboardColumns() => subLevelUseCase.keyboardColumns();
+
+  List<String> keyboard() => subLevelUseCase.keyboard();
 }

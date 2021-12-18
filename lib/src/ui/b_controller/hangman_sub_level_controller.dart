@@ -4,17 +4,22 @@ import 'package:get/get.dart';
 abstract class HangManSubLevelController extends GetxController {
   static const String TAG = "sub-level-controller";
 
-  HangManSubLevelDomain get subLevelDomain;
-
   String get imageUrl;
+
   int get lives;
-  String get answer;
+
   List<String> get answerToBe;
 
-  List<String> answerSpellOut();
-  int answerCantOfWords();
-  int checkLetter(String text);
-  void isLetterCorrect(String text);
-  void breakHeart();
-  void fillAnswer(int index);
+  //cantidad de letras de la respuesta, para saber las columnas del grid view
+  int answerCantOfLetters();
+
+  ///revisa si la letra existe en la respuesta, en ese caso la pone en
+  ///los posibles indices, sino rompe un corazón,
+  ///y en cualquier caso actualiza la visual
+  void checkLetter(String letter);
+
+
+  int keyboardColumns();
+
+  List<String> keyboard();
 }
