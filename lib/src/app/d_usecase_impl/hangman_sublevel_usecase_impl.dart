@@ -21,10 +21,10 @@ class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
       4 * DEFAULT_KEYBOARD_COLUMNS; //max = 24
 
   HangManSubLevelUseCaseImpl({required this.subLevelDomain}) {
+    keyboardColumns = _generateKeyboardColumns();
+    keyboard = _generateKeyboard();
     answerLettersSpellOut = subLevelDomain.answer.split("");
     answerLettersDifferent = _clearDuplicates(answerLettersSpellOut);
-    keyboard = _generateKeyboard();
-    keyboardColumns = _generateKeyboardColumns();
   }
 
   @override
@@ -53,6 +53,8 @@ class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
   }
 
   List<String> _generateKeyboard() {
+    return "HELOUIQWERTY".split("");
+
     //busco la cantidad de letras que va a tener, simpre multiplo de `keyboardColumns()`
     int cantLetters = _cantLettersKeyboard();
 
