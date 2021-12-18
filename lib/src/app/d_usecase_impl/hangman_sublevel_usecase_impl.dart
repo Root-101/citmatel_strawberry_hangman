@@ -22,6 +22,13 @@ class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
     answerLettersDifferent = _clearDuplicates(answerLettersSpellOut);
   }
 
+  int answerCantOfLetters() => subLevelDomain.answer.length;
+
+  @override
+  int lives() {
+    return subLevelDomain.lives;
+  }
+
   @override
   List<int> checkLetter(String letter) {
     return subLevelDomain.answer

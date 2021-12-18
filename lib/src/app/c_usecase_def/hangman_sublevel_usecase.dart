@@ -4,6 +4,8 @@ import 'package:clean_core/clean_core.dart';
 abstract class HangManSubLevelUseCase extends AbstractUseCase {
   HangManSubLevelDomain get subLevelDomain;
 
+  int answerCantOfLetters();
+
   //todas las posiciones donde esta la letra, si esta vacia es xq la letra no va
   List<int> checkLetter(String letter);
 
@@ -15,4 +17,7 @@ abstract class HangManSubLevelUseCase extends AbstractUseCase {
 
   //teclado
   List<String> keyboard();
+
+  //no se usa como getter por si hay que ponerle logica despues con comodines que aumenten las vidas
+  int lives();
 }

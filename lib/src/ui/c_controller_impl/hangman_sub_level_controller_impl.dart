@@ -3,12 +3,14 @@ import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
 class HangManSubLevelControllerImpl extends HangManSubLevelController {
   late final HangManSubLevelUseCase subLevelUseCase;
   late final List<String> answerToBe;
+  int remainingLives = 0;
 
   HangManSubLevelControllerImpl({
     required HangManSubLevelDomain subLevelDomain,
   }) : subLevelUseCase = HangManSubLevelUseCaseImpl(
           subLevelDomain: subLevelDomain,
         ) {
+    remainingLives = subLevelUseCase.lives();
     answerToBe = List.generate(answerCantOfLetters(), (index) => "_");
   }
 
@@ -19,7 +21,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   int get lives => subLevelUseCase.subLevelDomain.lives;
 
   @override
-  int answerCantOfLetters() => answerToBe.length;
+  int answerCantOfLetters() => subLevelUseCase.answerCantOfLetters();
 
   @override
   void checkLetter(String letter) {
@@ -34,8 +36,13 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   }
 
   void _breakHeart() {
-    // TODO: implement breakHeart
+    remainingLives--;
+    if (remainingLives <= 0) {
+      looseLevel();
+    }
   }
+
+  void looseLevel() {}
 
   void _fillAnswer(List<int> possiblesIndex, String letter) {
     possiblesIndex.forEach((index) {
