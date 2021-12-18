@@ -27,6 +27,7 @@ class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
     keyboardColumns = _generateKeyboardColumns();
   }
 
+  @override
   int get answerCantOfLetters => subLevelDomain.answer.length;
 
   @override

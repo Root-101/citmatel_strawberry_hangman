@@ -11,15 +11,14 @@ abstract class HangManSubLevelController extends GetxController {
   List<String> get answerToBe;
 
   //cantidad de letras de la respuesta, para saber las columnas del grid view
-  int answerCantOfLetters();
+  int get answerCantOfLetters();
 
   ///revisa si la letra existe en la respuesta, en ese caso la pone en
   ///los posibles indices, sino rompe un corazón,
   ///y en cualquier caso actualiza la visual
   void checkLetter(String letter);
 
+  int get keyboardColumns;
 
-  int keyboardColumns();
-
-  List<String> keyboard();
+  List<String> get keyboard;
 }

@@ -11,7 +11,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
           subLevelDomain: subLevelDomain,
         ) {
     remainingLives = subLevelUseCase.lives();
-    answerToBe = List.generate(answerCantOfLetters(), (index) => "_");
+    answerToBe = List.generate(answerCantOfLetters, (index) => "_");
   }
 
   @override
@@ -21,7 +21,13 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   int get lives => subLevelUseCase.subLevelDomain.lives;
 
   @override
-  int answerCantOfLetters() => subLevelUseCase.answerCantOfLetters();
+  int get answerCantOfLetters => subLevelUseCase.answerCantOfLetters;
+
+  @override
+  int get keyboardColumns => subLevelUseCase.keyboardColumns;
+
+  @override
+  List<String> get keyboard => subLevelUseCase.keyboard;
 
   @override
   void checkLetter(String letter) {
@@ -49,8 +55,4 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
       answerToBe[index] = letter;
     });
   }
-
-  int keyboardColumns() => subLevelUseCase.keyboardColumns();
-
-  List<String> keyboard() => subLevelUseCase.keyboard();
 }
