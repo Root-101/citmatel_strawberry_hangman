@@ -5,6 +5,9 @@ import 'package:citmatel_strawberry_hangman/src/app/hangman_app_exporter.dart';
 class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
   final HangManSubLevelDomain subLevelDomain;
 
+  ///letras de la respuesta
+  late final List<String> answerLettersSpellOut;
+
   ///diferentes letras de la respuesta
   late final List<String> answerLettersDifferent;
 
@@ -15,29 +18,29 @@ class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
       4 * DEFAULT_KEYBOARD_COLUMNS; //max = 24
 
   HangManSubLevelUseCaseImpl({required this.subLevelDomain}) {
-    answerLettersDifferent = _clearDuplicates(subLevelDomain.answer.split(""));
+    answerLettersSpellOut = subLevelDomain.answer.split("");
+    answerLettersDifferent = _clearDuplicates(answerLettersSpellOut);
   }
 
-  ///utilizado para la cantidad de columnas de la respuesta
   @override
-  int answerCantOfWords() {
-    return answerSpellOut().length;
+  List<int> checkLetter(String letter) {
+    return subLevelDomain.answer
+        .allMatches(letter)
+        .map((e) => e.start)
+        .toList();
   }
 
-  ///Respuesta deletreada
   @override
-  List<String> answerSpellOut() {
-    return subLevelDomain.answer.split("");
+  bool containLetter(String letter) {
+    return checkLetter(letter).isNotEmpty;
   }
 
-  int checkLetter(String text) {
-    return 0;
-  }
-
+  @override
   int keyboardColumns() {
     return DEFAULT_KEYBOARD_COLUMNS;
   }
 
+  @override
   List<String> keyboard() {
     //busco la cantidad de letras que va a tener, simpre multiplo de `keyboardColumns()`
     int cantLetters = _cantLettersKeyboard();
