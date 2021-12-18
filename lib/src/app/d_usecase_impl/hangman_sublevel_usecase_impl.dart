@@ -11,6 +11,9 @@ class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
   ///diferentes letras de la respuesta
   late final List<String> answerLettersDifferent;
 
+  late final List<String> keyboard;
+  late final int keyboardColumns;
+
   static const DEFAULT_KEYBOARD_COLUMNS = 6;
   static const MIN_CANT_LETTERS_KEYBOARD =
       2 * DEFAULT_KEYBOARD_COLUMNS; //min = 12
@@ -20,9 +23,11 @@ class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
   HangManSubLevelUseCaseImpl({required this.subLevelDomain}) {
     answerLettersSpellOut = subLevelDomain.answer.split("");
     answerLettersDifferent = _clearDuplicates(answerLettersSpellOut);
+    keyboard = _generateKeyboard();
+    keyboardColumns = _generateKeyboardColumns();
   }
 
-  int answerCantOfLetters() => subLevelDomain.answer.length;
+  int get answerCantOfLetters => subLevelDomain.answer.length;
 
   @override
   int lives() {
@@ -42,13 +47,11 @@ class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
     return checkLetter(letter).isNotEmpty;
   }
 
-  @override
-  int keyboardColumns() {
+  int _generateKeyboardColumns() {
     return DEFAULT_KEYBOARD_COLUMNS;
   }
 
-  @override
-  List<String> keyboard() {
+  List<String> _generateKeyboard() {
     //busco la cantidad de letras que va a tener, simpre multiplo de `keyboardColumns()`
     int cantLetters = _cantLettersKeyboard();
 
@@ -78,7 +81,7 @@ class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
 
     //lo limpio de nuevo para si por si acaso, no puede reducirse
     keyboard = _clearDuplicates(keyboard);
-    if (keyboard.length % keyboardColumns() != 0) {
+    if (keyboard.length % keyboardColumns != 0) {
       keyboard = List.generate(cantLetters, (index) => "Error");
     }
 
