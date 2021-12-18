@@ -45,13 +45,13 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
   _buildKeyBoard() {
     List<String> listOfLetters = controller.keyboard;
     return _animatedGridView(
-      6,
+      controller.keyboardColumns,
       List.generate(
-        controller.keyboardColumns,
+        listOfLetters.length,
         (int index) {
           return _buildAnimations(
             index,
-            6,
+            controller.keyboardColumns,
             InkWell(
               child: _emptyCard(listOfLetters[index]),
               onTap: () => controller.checkLetter(listOfLetters[index]),
