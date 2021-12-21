@@ -23,4 +23,6 @@ abstract class HangManSubLevelController extends GetxController {
   int get keyboardColumns;
 
   List<String> get keyboard;
+
+  bool isUsed(String letter);
 }
