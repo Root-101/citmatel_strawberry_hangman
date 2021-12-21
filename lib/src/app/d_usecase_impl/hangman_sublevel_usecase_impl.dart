@@ -3,6 +3,9 @@ import 'dart:math';
 import 'package:citmatel_strawberry_hangman/src/app/hangman_app_exporter.dart';
 
 class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
+  //para almacenar las letras que se han usado y poder desabilitarlas despues
+  final Set<String> usedLetters = {};
+
   final HangManSubLevelDomain subLevelDomain;
 
   ///letras de la respuesta
@@ -39,6 +42,7 @@ class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
 
   @override
   List<int> checkLetter(String letter) {
+    _setLetterAsUsed(letter); //marca la letra como usada
     return letter
         .toUpperCase()
         .allMatches(
@@ -46,6 +50,10 @@ class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
         )
         .map((e) => e.start)
         .toList();
+  }
+
+  bool isUsed(String letter) {
+    return usedLetters.contains(letter);
   }
 
   @override
@@ -98,5 +106,9 @@ class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
     } else {
       throw Exception("Muchas letras en la palabra");
     }
+  }
+
+  void _setLetterAsUsed(String letter) {
+    usedLetters.add(letter);
   }
 }
