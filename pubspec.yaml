@@ -3,16 +3,29 @@ description: Hangman module for CITMATEL's 'strawberry' project
 
 publish_to: 'none'
 
-version: 0.0.1-SNAPSHOT.20211202
+version: 0.1.0-SNAPSHOT.20211220
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.15.0 <3.0.0"
+  flutter: ">=2.8.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
+  # Architecture & Management
+  get: ^4.5.1
+  clean_core: ^1.1.2-SNAPSHOT.20211206
 
+  # Visual & Animations
+  animations: ^2.0.2
+  page_view_indicators: ^2.0.0
+  flutter_svg: ^1.0.0
+  flutter_staggered_animations: ^1.0.0
+  photo_view: ^0.13.0
+  flutter_fadein: ^2.0.0
+  font_awesome_flutter: ^9.2.0
+  flutter_spinkit: ^5.1.0
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
@@ -20,5 +33,7 @@ dev_dependencies:
     sdk: flutter
 
 flutter:
+  assets:
+    - assets/icons/    
 
   uses-material-design: true
