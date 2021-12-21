@@ -12,7 +12,10 @@ abstract class HangManSubLevelUseCase extends AbstractUseCase {
   List<String> get keyboard;
 
   //todas las posiciones donde esta la letra, si esta vacia es xq la letra no va
+  //ademas marca la letra como usada
   List<int> checkLetter(String letter);
+
+  bool isUsed(String letter);
 
   //true si contiene la letra en al menos una posicion, si el checkLetter.length > 0
   bool containLetter(String letter);
