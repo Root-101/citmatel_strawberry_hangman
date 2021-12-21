@@ -17,6 +17,8 @@ class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
   static const DEFAULT_KEYBOARD_COLUMNS = 6;
   static const MIN_CANT_LETTERS_KEYBOARD =
       2 * DEFAULT_KEYBOARD_COLUMNS; //min = 12
+  static const MID_CANT_LETTERS_KEYBOARD =
+      3 * DEFAULT_KEYBOARD_COLUMNS; //min = 18
   static const MAX_CANT_LETTERS_KEYBOARD =
       4 * DEFAULT_KEYBOARD_COLUMNS; //max = 24
 
@@ -82,13 +84,19 @@ class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
   }
 
   int _cantLettersKeyboard() {
-    int real = answerLettersDifferent.length + DEFAULT_KEYBOARD_COLUMNS;
-    if (real < MIN_CANT_LETTERS_KEYBOARD) {
+    // de [1  ...  6]     =>  12
+    // de [7  ... 12]    =>  18
+    // de [13 ... 23]    =>  24
+    // mas de 24       =>  ERROR
+    if (answerLettersDifferent.length <= DEFAULT_KEYBOARD_COLUMNS) {
       return MIN_CANT_LETTERS_KEYBOARD;
-    } else if (real > MAX_CANT_LETTERS_KEYBOARD) {
-      return MAX_CANT_LETTERS_KEYBOARD;
+    } else if (answerLettersDifferent.length <= MIN_CANT_LETTERS_KEYBOARD) {
+      return MID_CANT_LETTERS_KEYBOARD; //super error si se llega aqui
+    } else if (answerLettersDifferent.length > MID_CANT_LETTERS_KEYBOARD &&
+        answerLettersDifferent.length < MAX_CANT_LETTERS_KEYBOARD) {
+      return MAX_CANT_LETTERS_KEYBOARD; //middle
     } else {
-      return 18; //middle
+      throw Exception("Muchas letras en la palabra");
     }
   }
 }
