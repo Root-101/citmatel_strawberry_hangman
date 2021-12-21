@@ -1,6 +1,7 @@
 import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_fadein/flutter_fadein.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -91,10 +92,9 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
               index,
               countOfColumns,
               index < controller.remainingLives
-                  ? Icon(
-                      FontAwesomeIcons.solidHeart,
+                  ? SpinKitPumpingHeart(
                       color: Colors.red.shade900,
-                      size: 50,
+                      size: 55,
                     )
                   : Icon(
                       FontAwesomeIcons.heartBroken,
