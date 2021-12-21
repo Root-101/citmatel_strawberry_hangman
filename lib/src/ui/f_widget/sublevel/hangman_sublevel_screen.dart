@@ -109,15 +109,15 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
             return _buildAnimations(
               index,
               countOfColumns,
-              index < controller.remainingLives
-                  ? SpinKitPumpingHeart(
-                      color: Colors.red.shade900,
-                      size: 55,
-                    )
-                  : Icon(
+              index < controller.lives - controller.remainingLives
+                  ? Icon(
                       FontAwesomeIcons.heartBroken,
                       color: Colors.red.shade900,
                       size: 50,
+                    )
+                  : SpinKitPumpingHeart(
+                      color: Colors.red.shade900,
+                      size: 55,
                     ),
             );
           },
