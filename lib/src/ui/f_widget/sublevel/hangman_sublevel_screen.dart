@@ -83,22 +83,27 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
   _buildListOfHearts() {
     int countOfColumns = controller.lives;
     return _animatedGridView(
-      countOfColumns,
-      List.generate(
         countOfColumns,
-        (int index) {
-          return _buildAnimations(
-            index,
-            countOfColumns,
-            Icon(
-              FontAwesomeIcons.solidHeart,
-              color: Colors.red.shade900,
-              size: 50,
-            ),
-          );
-        },
-      ),
-    );
+        List.generate(
+          countOfColumns,
+          (int index) {
+            return _buildAnimations(
+              index,
+              countOfColumns,
+              index < controller.remainingLives
+                  ? Icon(
+                      FontAwesomeIcons.solidHeart,
+                      color: Colors.red.shade900,
+                      size: 50,
+                    )
+                  : Icon(
+                      FontAwesomeIcons.heartBroken,
+                      color: Colors.red.shade900,
+                      size: 50,
+                    ),
+            );
+          },
+        ));
   }
 
   _buildAnimations(int index, int countOfColumns, Widget widget) {
