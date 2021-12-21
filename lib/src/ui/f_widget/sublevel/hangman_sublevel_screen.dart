@@ -24,21 +24,30 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GetBuilder<HangManSubLevelController>(
-        builder: (_) {
-          return SafeArea(
-            child: Column(
-              children: [
-                SizedBox(height: 20),
-                _buildListOfHearts(),
-                _buildImageCard(),
-                _buildWord(),
-                SizedBox(height: 40),
-                _buildKeyBoard(),
-              ],
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            //SizedBox(height: 20),
+            GetBuilder<HangManSubLevelController>(
+              builder: (_) {
+                return _buildListOfHearts();
+              },
             ),
-          );
-        },
+            _buildImageCard(),//don't rebuild the image ever
+            GetBuilder<HangManSubLevelController>(
+              builder: (_) {
+                return _buildWord();
+              },
+            ),
+            //SizedBox(height: 40),
+            GetBuilder<HangManSubLevelController>(
+              builder: (_) {
+                return _buildKeyBoard();
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -125,9 +134,12 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
       child: GridView.count(
         childAspectRatio: 1.0,
         padding: const EdgeInsets.all(8.0),
-        crossAxisCount: cantOfColumns, // Amount of columns in the grid
-        shrinkWrap: true, //With this GridView only occupies the space it needs
-        physics: NeverScrollableScrollPhysics(), //No scroll needed
+        crossAxisCount: cantOfColumns,
+        // Amount of columns in the grid
+        shrinkWrap: true,
+        //With this GridView only occupies the space it needs
+        physics: NeverScrollableScrollPhysics(),
+        //No scroll needed
         children: children,
       ),
     );
