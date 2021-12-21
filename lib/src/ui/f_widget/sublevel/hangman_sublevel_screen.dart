@@ -208,7 +208,7 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
     return PhotoView(
       imageProvider: AssetImage(imageUrl),
       maxScale: PhotoViewComputedScale.covered * 2.0,
-      minScale: PhotoViewComputedScale.contained * 0.8,
+      minScale: PhotoViewComputedScale.covered,
       initialScale: PhotoViewComputedScale.covered,
       backgroundDecoration: BoxDecoration(color: Colors.transparent),
     );
