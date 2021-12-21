@@ -38,9 +38,10 @@ class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
   @override
   List<int> checkLetter(String letter) {
     return letter
+        .toUpperCase()
         .allMatches(
-          subLevelDomain.answer,
-        )
+      subLevelDomain.answer.toUpperCase(),
+    )
         .map((e) => e.start)
         .toList();
   }
