@@ -6,8 +6,7 @@ abstract class HangManSubLevelUseCase extends AbstractUseCase {
 
   int get answerCantOfLetters;
 
-  //cantidad de columnas del teclado, por ahora siempre multiplo de 6
-  int get keyboardColumns;
+  int get keyboardCantLetters;
 
   //teclado
   List<String> get keyboard;

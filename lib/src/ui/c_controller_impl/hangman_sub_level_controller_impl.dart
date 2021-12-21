@@ -5,6 +5,9 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   late final List<String> answerToBe;
   int remainingLives = 0;
 
+  ///cantidad de columnas del teclado
+  late final int keyboardColumns;
+
   HangManSubLevelControllerImpl({
     required HangManSubLevelDomain subLevelDomain,
   }) : subLevelUseCase = HangManSubLevelUseCaseImpl(
@@ -12,6 +15,8 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
         ) {
     remainingLives = subLevelUseCase.lives();
     answerToBe = List.generate(answerCantOfLetters, (index) => "_");
+
+    keyboardColumns = _generateKeyboardColumns();
   }
 
   @override
@@ -23,11 +28,19 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   @override
   int get answerCantOfLetters => subLevelUseCase.answerCantOfLetters;
 
-  @override
-  int get keyboardColumns => subLevelUseCase.keyboardColumns;
+  int _generateKeyboardColumns() {
+    return HangManSubLevelUseCaseImpl.DEFAULT_KEYBOARD_COLUMNS;
+  }
 
   @override
-  List<String> get keyboard => subLevelUseCase.keyboard;
+  List<String> get keyboard {
+    List<String> keyboard = subLevelUseCase.keyboard;
+    if (keyboard.length % keyboardColumns != 0) {
+      return List.generate(
+          subLevelUseCase.keyboardCantLetters, (index) => "Error");
+    }
+    return keyboard;
+  }
 
   @override
   void checkLetter(String letter) {
