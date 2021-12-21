@@ -8,6 +8,8 @@ abstract class HangManSubLevelController extends GetxController {
 
   int get lives;
 
+  int get remainingLives;
+
   List<String> get answerToBe;
 
   //cantidad de letras de la respuesta, para saber las columnas del grid view
