@@ -24,29 +24,38 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            //SizedBox(height: 20),
-            GetBuilder<HangManSubLevelController>(
-              builder: (_) {
-                return _buildListOfHearts();
-              },
-            ),
-            _buildImageCard(),//don't rebuild the image ever
-            GetBuilder<HangManSubLevelController>(
-              builder: (_) {
-                return _buildWord();
-              },
-            ),
-            //SizedBox(height: 40),
-            GetBuilder<HangManSubLevelController>(
-              builder: (_) {
-                return _buildKeyBoard();
-              },
-            ),
-          ],
+      body: Container(
+        decoration: BoxDecoration(
+          color: Colors.transparent,
+          image: DecorationImage(
+            image: AssetImage("assets/icons/hangman_wallpaper.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              //SizedBox(height: 20),
+              GetBuilder<HangManSubLevelController>(
+                builder: (_) {
+                  return _buildListOfHearts();
+                },
+              ),
+              _buildImageCard(), //don't rebuild the image ever
+              GetBuilder<HangManSubLevelController>(
+                builder: (_) {
+                  return _buildWord();
+                },
+              ),
+              //SizedBox(height: 40),
+              GetBuilder<HangManSubLevelController>(
+                builder: (_) {
+                  return _buildKeyBoard();
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
