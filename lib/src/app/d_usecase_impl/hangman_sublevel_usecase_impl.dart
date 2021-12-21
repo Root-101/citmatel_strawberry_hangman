@@ -11,8 +11,8 @@ class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
   ///diferentes letras de la respuesta
   late final List<String> answerLettersDifferent;
 
+  late final int keyboardCantLetters;
   late final List<String> keyboard;
-  late final int keyboardColumns;
 
   static const DEFAULT_KEYBOARD_COLUMNS = 6;
   static const MIN_CANT_LETTERS_KEYBOARD =
@@ -21,10 +21,10 @@ class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
       4 * DEFAULT_KEYBOARD_COLUMNS; //max = 24
 
   HangManSubLevelUseCaseImpl({required this.subLevelDomain}) {
-    keyboardColumns = _generateKeyboardColumns();
+    answerLettersSpellOut = subLevelDomain.answer.toUpperCase().split("");
+    answerLettersDifferent = answerLettersSpellOut.toSet().toList();
+    keyboardCantLetters = _cantLettersKeyboard();
     keyboard = _generateKeyboard();
-    answerLettersSpellOut = subLevelDomain.answer.split("");
-    answerLettersDifferent = _clearDuplicates(answerLettersSpellOut);
   }
 
   @override
@@ -40,8 +40,8 @@ class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
     return letter
         .toUpperCase()
         .allMatches(
-      subLevelDomain.answer.toUpperCase(),
-    )
+          subLevelDomain.answer.toUpperCase(),
+        )
         .map((e) => e.start)
         .toList();
   }
@@ -51,18 +51,10 @@ class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
     return checkLetter(letter).isNotEmpty;
   }
 
-  int _generateKeyboardColumns() {
-    return DEFAULT_KEYBOARD_COLUMNS;
-  }
-
   List<String> _generateKeyboard() {
-    return "HELOUIQWERTY".split("");
-
-    //busco la cantidad de letras que va a tener, simpre multiplo de `keyboardColumns()`
-    int cantLetters = _cantLettersKeyboard();
-
     //cojo todas las letras
-    List<String> allLetters = "abcdefghijklmnopqrstuvwxyz".split("");
+    List<String> allLetters =
+        "abcdefghijklmnñopqrstuvwxyz".toUpperCase().split("");
 
     //quito las que ya están en la respuesta
     allLetters
@@ -72,24 +64,19 @@ class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
     allLetters.shuffle();
 
     //cojo las que necesito para completar el teclado
-    int faltan = cantLetters - answerLettersDifferent.length;
+    int faltan = keyboardCantLetters - answerLettersDifferent.length;
 
     //creo finalmente la lista del teclado
     List<String> keyboard = [];
     //agrego las originales
     keyboard.addAll(answerLettersDifferent);
     //agrego las extras
-    keyboard.addAll(
-      List.generate(faltan, (index) => allLetters[index]),
-    );
+    keyboard.addAll(allLetters.sublist(0, faltan));
     //lo mexclo de nuevo
     keyboard.shuffle();
 
     //lo limpio de nuevo para si por si acaso, no puede reducirse
-    keyboard = _clearDuplicates(keyboard);
-    if (keyboard.length % keyboardColumns != 0) {
-      keyboard = List.generate(cantLetters, (index) => "Error");
-    }
+    keyboard = keyboard.toSet().toList();
 
     return keyboard;
   }
@@ -103,23 +90,5 @@ class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
     } else {
       return 18; //middle
     }
-  }
-
-  List<String> _clearDuplicates(List<String> list) {
-    Map<String, bool> duplicateMap = {};
-    List<String> cleanList = [];
-    list.forEach(
-      (element) {
-        //no duplicado
-        if (duplicateMap[element] == false) {
-          cleanList.add(element);
-          duplicateMap[element] = true;
-        } else {
-          //esta duplicado
-        }
-      },
-    );
-
-    return cleanList;
   }
 }
