@@ -24,12 +24,6 @@ doc/api/
 *.js.map
 
 .flutter-plugins
-
 .flutter-plugins-dependencies
 
-citmatel_strawberry_hangman.iml
-
 lib/generated_plugin_registrant.dart
-
-android/build.gradle
-android/gradle/wrapper/gradle-wrapper.properties
