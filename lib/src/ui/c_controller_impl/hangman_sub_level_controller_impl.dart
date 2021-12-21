@@ -68,4 +68,6 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
       answerToBe[index] = letter;
     });
   }
+
+  bool isUsed(String letter) => subLevelUseCase.isUsed(letter);
 }
