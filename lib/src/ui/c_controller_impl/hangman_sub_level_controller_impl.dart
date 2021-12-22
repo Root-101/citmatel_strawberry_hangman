@@ -70,4 +70,9 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   }
 
   bool isUsed(String letter) => subLevelUseCase.isUsed(letter);
+
+  @override
+  bool wordContainLetter(String letter) {
+    return subLevelUseCase.containLetter(letter);
+  }
 }

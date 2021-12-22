@@ -25,4 +25,6 @@ abstract class HangManSubLevelController extends GetxController {
   List<String> get keyboard;
 
   bool isUsed(String letter);
+
+   bool wordContainLetter(String letter);
 }

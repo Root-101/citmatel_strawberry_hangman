@@ -1,5 +1,7 @@
 import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animator/flutter_animator.dart'
+    hide FadeInAnimation, FadeIn;
 import 'package:flutter_fadein/flutter_fadein.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
@@ -68,14 +70,34 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
       List.generate(
         listOfLetters.length,
         (int index) {
-          return _buildAnimations(
-            index,
-            controller.keyboardColumns,
-            InkWell(
-              child: _emptyCard(listOfLetters[index]),
-              onTap: () => controller.checkLetter(listOfLetters[index]),
-            ),
-          );
+          return controller.isUsed(listOfLetters[index])
+              ? controller.wordContainLetter(listOfLetters[index])
+                  ? Bounce(
+                      child: _emptyCard(
+                        listOfLetters[index],
+                        Colors.grey.shade500,
+                        Colors.transparent,
+                      ),
+                    )
+                  : Shake(
+                      child: _emptyCard(
+                        listOfLetters[index],
+                        Colors.grey.shade500,
+                        Colors.transparent,
+                      ),
+                    )
+              : _buildAnimations(
+                  index,
+                  controller.keyboardColumns,
+                  InkWell(
+                    child: _emptyCard(
+                      listOfLetters[index],
+                      Colors.white,
+                      Colors.grey.shade700,
+                    ),
+                    onTap: () => controller.checkLetter(listOfLetters[index]),
+                  ),
+                );
         },
       ),
     );
@@ -89,11 +111,21 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
       List.generate(
         countOfColumns,
         (int index) {
-          return _buildAnimations(
-            index,
-            6,
-            _emptyCard(listOfLetters[index]),
-          );
+          return listOfLetters[index].contains("_")
+              ? _buildAnimations(
+                  index,
+                  6,
+                  _emptyCard(
+                    listOfLetters[index],
+                    Colors.white,
+                    Colors.grey,
+                  ))
+              : RubberBand(
+                  child: _emptyCard(
+                  listOfLetters[index],
+                  Colors.white,
+                  Colors.grey,
+                ));
         },
       ),
     );
@@ -106,20 +138,22 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
         List.generate(
           countOfColumns,
           (int index) {
-            return _buildAnimations(
-              index,
-              countOfColumns,
-              index < controller.lives - controller.remainingLives
-                  ? Icon(
+            return index < controller.lives - controller.remainingLives
+                ? Swing(
+                    child: Icon(
                       FontAwesomeIcons.heartBroken,
                       color: Colors.red.shade900,
                       size: 50,
-                    )
-                  : SpinKitPumpingHeart(
+                    ),
+                  )
+                : _buildAnimations(
+                    index,
+                    countOfColumns,
+                    SpinKitPumpingHeart(
                       color: Colors.red.shade900,
                       size: 55,
                     ),
-            );
+                  );
           },
         ));
   }
@@ -154,15 +188,15 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
     );
   }
 
-  _emptyCard(String text) {
+  _emptyCard(String text, Color decorationColor, Color shadowColor) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
-      decoration: const BoxDecoration(
-        color: Colors.white,
+      decoration: BoxDecoration(
+        color: decorationColor,
         borderRadius: BorderRadius.all(Radius.circular(4.0)),
         boxShadow: <BoxShadow>[
           BoxShadow(
-            color: Colors.black12,
+            color: shadowColor,
             blurRadius: 6.0,
             offset: Offset(0.0, 4.0),
           ),
