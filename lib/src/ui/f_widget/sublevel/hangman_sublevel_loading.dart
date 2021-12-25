@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_countdown_timer/index.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class HangManSubLevelLoading extends StatelessWidget {
@@ -17,22 +18,19 @@ class HangManSubLevelLoading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: _loading(),
-      builder: (context, AsyncSnapshot snapshot) {
-        // Show splash screen while waiting for app resources to load:
-        if (snapshot.connectionState == ConnectionState.waiting) {
+    return CountdownTimer(
+        controller: CountdownTimerController(
+          endTime: DateTime.now()
+              .add(
+                Duration(seconds: HangManSubLevelLoading.DURATION),
+              )
+              .millisecondsSinceEpoch,
+          onEnd: onEnd,
+        ),
+        endWidget: Container(),
+        widgetBuilder: (_, CurrentRemainingTime? time) {
           return _loadingWidget();
-        } else {
-          onEnd.call();
-          return Container(); //hay que devolver algo
-        }
-      },
-    );
-  }
-
-  _loading() async {
-    await Future.delayed(Duration(seconds: HangManSubLevelLoading.DURATION));
+        });
   }
 
   _loadingWidget() {
