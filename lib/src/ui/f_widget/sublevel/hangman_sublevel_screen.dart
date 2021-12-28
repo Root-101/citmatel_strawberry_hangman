@@ -64,14 +64,14 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
                   ? Bounce(
                       child: _emptyCard(
                         listOfLetters[index],
-                        Colors.grey.shade500,
+                        Colors.lightGreen.shade300,
                         Colors.transparent,
                       ),
                     )
                   : Shake(
                       child: _emptyCard(
                         listOfLetters[index],
-                        Colors.grey.shade500,
+                        Colors.redAccent.shade100,
                         Colors.transparent,
                       ),
                     )
