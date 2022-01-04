@@ -1,3 +1,4 @@
+import 'package:animations/animations.dart';
 import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animator/flutter_animator.dart'
@@ -203,6 +204,18 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
   }
 
   _buildImageCard() {
+    return OpenContainer(
+      transitionType: ContainerTransitionType.fade,
+      transitionDuration: Duration(seconds: 1),
+      openColor: Colors.transparent,
+      openBuilder: (context, _) => _buildBigImage(),
+      closedElevation: 20,
+      closedColor: Colors.transparent,
+      closedBuilder: (context, _) => _buildSmallImage(),
+    );
+  }
+
+  _buildSmallImage() {
     return Container(
       margin: const EdgeInsets.symmetric(
         vertical: 20.0,
@@ -214,6 +227,15 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
         borderRadius: BorderRadius.all(Radius.circular(15)),
         child: _fadeImage(controller.imageUrl),
       ),
+    );
+  }
+
+  _buildBigImage() {
+    return Container(
+      width: double.infinity,
+      height: double.maxFinite,
+      alignment: Alignment.center,
+      child: _animateImage(controller.imageUrl),
     );
   }
 
