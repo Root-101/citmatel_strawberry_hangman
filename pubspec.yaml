@@ -29,6 +29,8 @@ dependencies:
   flutter_animator: ^3.2.0
   cupertino_icons: ^1.0.2
   flutter_countdown_timer: ^4.1.0
+  assets_audio_player: ^3.0.3+9
+  vibration: ^1.7.4-nullsafety.0
 
 dev_dependencies:
   flutter_test:
@@ -37,5 +39,6 @@ dev_dependencies:
 flutter:
   assets:
     - assets/icons/    
+    - assets/audios/
 
   uses-material-design: true

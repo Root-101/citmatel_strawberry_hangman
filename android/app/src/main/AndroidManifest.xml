@@ -1,6 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.root101.citmatel_strawberry.hangman.citmatel_strawberry_hangman">
    <application
+   android:name="${applicationName}"
         android:label="citmatel_strawberry_hangman"
         android:icon="@mipmap/ic_launcher">
         <activity
