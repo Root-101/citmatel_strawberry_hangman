@@ -1,5 +1,6 @@
 import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
+import 'package:vibration/vibration.dart';
 
 class HangManSubLevelControllerImpl extends HangManSubLevelController {
   late final HangManSubLevelUseCase subLevelUseCase;
@@ -50,9 +51,11 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
     if (possiblesIndex.isEmpty) {
       //no existe esa letra en la palabra
       playAudio("assets/audios/keyboard_error.mp3");
+      vibrate(500);
       _breakHeart();
     } else {
       playAudio("assets/audios/keyboard_correct.wav");
+      vibrate(500);
       _fillAnswer(possiblesIndex, letter);
     }
     update();
@@ -88,5 +91,12 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
       volume: 100,
     );
     update();
+  }
+
+  @override
+  void vibrate(int duration) {
+    Vibration.vibrate(
+      duration: duration,
+    );
   }
 }
