@@ -30,19 +30,19 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          //SizedBox(height: 20),
           GetBuilder<HangManSubLevelController>(
             builder: (_) {
               return _buildListOfHearts();
             },
           ),
-          _buildImageCard(), //don't rebuild the image ever
+          // This one haven't the GetBuilder<HangManSubLevelController>
+          // because is no need to rebuild the image ever.
+          _buildImageCard(),
           GetBuilder<HangManSubLevelController>(
             builder: (_) {
               return _buildWord();
             },
           ),
-          //SizedBox(height: 40),
           GetBuilder<HangManSubLevelController>(
             builder: (_) {
               return _buildKeyBoard();
@@ -53,15 +53,22 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
     );
   }
 
+  // Build the keyBoard Widget and all of its animations.
   _buildKeyBoard() {
     List<String> listOfLetters = controller.keyboard;
     return _animatedGridView(
+      // GridView amount of columns = ListLetter/6.
       controller.keyboardColumns,
       List.generate(
+        // List amount of items = ListLetters.
         listOfLetters.length,
+        // Current item.
         (int index) {
+          // If the letter is already used ...
           return controller.isUsed(listOfLetters[index])
+              // If the letter is correct, it belongs to the answer ...
               ? controller.wordContainLetter(listOfLetters[index])
+                  // Make the Bounce effect when is true and paint the letter green.
                   ? Bounce(
                       child: _emptyCard(
                         listOfLetters[index],
@@ -69,6 +76,7 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
                         Colors.transparent,
                       ),
                     )
+                  // Make the Shake effect when is false and paint the letter red.
                   : Shake(
                       child: _emptyCard(
                         listOfLetters[index],
@@ -76,6 +84,7 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
                         Colors.transparent,
                       ),
                     )
+              // If the letter hasn't been used, paint it gray and call the method checkLetter() when is touched.
               : _buildAnimations(
                   index,
                   controller.keyboardColumns,
@@ -93,15 +102,20 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
     );
   }
 
+  // Build the word Answer Widget and all of its animations.
   _buildWord() {
     List<String> listOfLetters = controller.answerToBe;
     int countOfColumns = listOfLetters.length;
     return _animatedGridView(
+      // Amount of Columns = Letters.
       countOfColumns,
       List.generate(
+        // Amount of Items = Letters.
         countOfColumns,
         (int index) {
+          // If the current item of the list of letters is blank...
           return listOfLetters[index].contains("_")
+              // Make an empty letter card.
               ? _buildAnimations(
                   index,
                   6,
@@ -110,6 +124,7 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
                     Colors.white,
                     Colors.grey,
                   ))
+              //If it's fill show the RubberBand effect and put the correct letter.
               : RubberBand(
                   child: _emptyCard(
                   listOfLetters[index],
@@ -121,14 +136,20 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
     );
   }
 
+  // Build the List of Hearts Widget and all of its animations.
   _buildListOfHearts() {
     int countOfColumns = controller.lives;
     return _animatedGridView(
+        // Amount of Columns = Hearts.
         countOfColumns,
         List.generate(
+          // Amount of Items = Hearts.
           countOfColumns,
+          // Current item.
           (int index) {
+            // If the current item/heart is less that the losed lives ...
             return index < controller.lives - controller.remainingLives
+                // Broke a heart and make the Swing animation.
                 ? Swing(
                     child: Icon(
                       FontAwesomeIcons.heartBroken,
@@ -136,6 +157,7 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
                       size: 50,
                     ),
                   )
+                // If it's a remaining live make a pumping heart.
                 : _buildAnimations(
                     index,
                     countOfColumns,
@@ -148,9 +170,10 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
         ));
   }
 
+  // This method makes that the widget child enters to the screen with a Scale and Fade Animation.
   _buildAnimations(int index, int countOfColumns, Widget widget) {
     return AnimationConfiguration.staggeredGrid(
-      columnCount: 6,
+      columnCount: countOfColumns,
       position: index,
       duration: const Duration(milliseconds: 1375),
       child: ScaleAnimation(
@@ -162,22 +185,24 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
     );
   }
 
+// This method animates the GridView so the items simulate to be entering to the screen one by one.
   _animatedGridView(int cantOfColumns, List<Widget> children) {
     return AnimationLimiter(
       child: GridView.count(
         childAspectRatio: 1.0,
         padding: const EdgeInsets.all(8.0),
-        crossAxisCount: cantOfColumns,
         // Amount of columns in the grid
-        shrinkWrap: true,
+        crossAxisCount: cantOfColumns,
         //With this GridView only occupies the space it needs
-        physics: NeverScrollableScrollPhysics(),
+        shrinkWrap: true,
         //No scroll needed
+        physics: NeverScrollableScrollPhysics(),
         children: children,
       ),
     );
   }
 
+  // This method creates a decorated empty card, that is going to have a letter in the middle.
   _emptyCard(String text, Color decorationColor, Color shadowColor) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
