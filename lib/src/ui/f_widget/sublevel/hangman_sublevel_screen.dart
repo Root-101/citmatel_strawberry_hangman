@@ -203,18 +203,25 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
     );
   }
 
+  //This method is used to build the image widget.
+  //In this case using openContainer,
+  //when the image is touched a new screen with the large image is displayed.
   _buildImageCard() {
     return OpenContainer(
+      // The transition to display when you move from the closed widget to the open one.
       transitionType: ContainerTransitionType.fade,
       transitionDuration: Duration(seconds: 1),
       openColor: Colors.transparent,
+      // The content that will be displayed when the widget opens.
       openBuilder: (context, _) => _buildBigImage(),
       closedElevation: 20,
       closedColor: Colors.transparent,
+      // The content that will be displayed when the widget is closed.
       closedBuilder: (context, _) => _buildSmallImage(),
     );
   }
 
+  //This method builds the image when is small.
   _buildSmallImage() {
     return Container(
       margin: const EdgeInsets.symmetric(
@@ -225,21 +232,24 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
       child: ClipRRect(
         // For the rounded corners
         borderRadius: BorderRadius.all(Radius.circular(15)),
+        // Call the _fadeImage method for the fade effect.
         child: _fadeImage(controller.imageUrl),
       ),
     );
   }
 
+  //This method builds the image when it fills the entire screen.
   _buildBigImage() {
     return Container(
       width: double.infinity,
       height: double.maxFinite,
       alignment: Alignment.center,
+      // Call the _animateImage so the image can use diferents tipes of gestures.
       child: _animateImage(controller.imageUrl),
     );
   }
 
-//Fade the entrnace of the image
+  //Fade the entrance of the image.
   _fadeImage(String imageUrl) {
     return FadeIn(
       child: _animateImage(imageUrl),
@@ -248,13 +258,17 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
     );
   }
 
-  //Addind gestures to the image
+  //Addind gestures to the image.
   _animateImage(String imageUrl) {
     return PhotoView(
       imageProvider: AssetImage(imageUrl),
+      //So the image only can be increased to a fit size.
       maxScale: PhotoViewComputedScale.covered * 2.0,
+      // So the image only can be reduced to a fit size.
       minScale: PhotoViewComputedScale.covered,
+      // The initial scale takes all the available space.
       initialScale: PhotoViewComputedScale.covered,
+      // Color of the background space when the image is reduce
       backgroundDecoration: BoxDecoration(color: Colors.transparent),
     );
   }
