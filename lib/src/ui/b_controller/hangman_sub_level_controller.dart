@@ -28,6 +28,4 @@ abstract class HangManSubLevelController extends GetxController {
   bool wordContainLetter(String letter);
 
   void playAudio(String audioUrl);
-
-  void vibrate(int duration);
 }
