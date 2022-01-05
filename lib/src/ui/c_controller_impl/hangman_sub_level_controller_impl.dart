@@ -1,4 +1,3 @@
-import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
 import 'package:citmatel_strawberry_tools/tools_exporter.dart';
 
@@ -6,7 +5,6 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   late final HangManSubLevelUseCase subLevelUseCase;
   late final List<String> answerToBe;
   int remainingLives = 0;
-  final assetsAudioPlayer = AssetsAudioPlayer();
 
   ///cantidad de columnas del teclado
   late final int keyboardColumns;
@@ -50,11 +48,11 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
     List<int> possiblesIndex = subLevelUseCase.checkLetter(letter);
     if (possiblesIndex.isEmpty) {
       //no existe esa letra en la palabra
-      playAudio("assets/audios/keyboard_error.mp3");
+      StrawberryAudio.playAudioWrong();
       StrawberryVibration.vibrate();
       _breakHeart();
     } else {
-      playAudio("assets/audios/keyboard_correct.wav");
+      StrawberryAudio.playAudioCorrect();
       StrawberryVibration.vibrate();
       _fillAnswer(possiblesIndex, letter);
     }
@@ -81,15 +79,5 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   @override
   bool wordContainLetter(String letter) {
     return subLevelUseCase.containLetter(letter);
-  }
-
-  @override
-  void playAudio(String audioUrl) {
-    AssetsAudioPlayer.newPlayer().open(
-      Audio(audioUrl),
-      autoStart: true,
-      volume: 100,
-    );
-    update();
   }
 }
