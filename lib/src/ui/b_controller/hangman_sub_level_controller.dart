@@ -25,5 +25,5 @@ abstract class HangManSubLevelController extends GetxController {
 
   bool isUsed(String letter);
 
-  bool wordContainLetter(String letter);
+  bool answerContainLetter(String letter);
 }
