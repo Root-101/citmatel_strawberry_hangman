@@ -1,8 +1,8 @@
 import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
 import 'package:citmatel_strawberry_hangman/src/ui/f_widget/sublevel/hangman_sublevel_lose.dart';
 import 'package:citmatel_strawberry_hangman/src/ui/f_widget/sublevel/hangman_sublevel_win.dart';
-import 'package:get/get.dart';
 import 'package:citmatel_strawberry_tools/tools_exporter.dart';
+import 'package:get/get.dart';
 
 class HangManSubLevelControllerImpl extends HangManSubLevelController {
   late final HangManSubLevelUseCase subLevelUseCase;
@@ -65,16 +65,16 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   void _breakHeart() {
     remainingLives--;
     if (remainingLives <= 0) {
-      looseLevel();
+      _looseLevel();
     }
   }
 
-  void looseLevel() {
-    Get.toNamed(HangManSubLevelLose.ROUTE_NAME);
+  void _looseLevel() {
+    Get.offNamed(HangManSubLevelLose.ROUTE_NAME);
   }
 
-  void winLevel() {
-    Get.toNamed(HangManSubLevelWin.ROUTE_NAME);
+  void _winLevel() {
+    Get.offNamed(HangManSubLevelWin.ROUTE_NAME);
   }
 
   void _fillAnswer(List<int> possiblesIndex, String letter) {
@@ -83,6 +83,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
     });
   }
 
+  @override
   bool isUsed(String letter) => subLevelUseCase.isUsed(letter);
 
   @override
