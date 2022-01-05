@@ -71,7 +71,7 @@ class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
 
   ///true si contiene la letra en al menos una posicion, si el checkLetter.length > 0
   @override
-  bool containLetter(String letter) {
+  bool answerContainLetter(String letter) {
     return checkLetter(letter).isNotEmpty;
   }
 

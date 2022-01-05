@@ -67,7 +67,7 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
           // If the letter is already used ...
           return controller.isUsed(listOfLetters[index])
               // If the letter is correct, it belongs to the answer ...
-              ? controller.wordContainLetter(listOfLetters[index])
+              ? controller.answerContainLetter(listOfLetters[index])
                   // Make the Bounce effect when is true and paint the letter green.
                   ? Bounce(
                       child: _emptyCard(

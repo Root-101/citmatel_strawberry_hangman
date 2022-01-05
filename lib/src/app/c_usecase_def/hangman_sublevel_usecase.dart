@@ -23,7 +23,7 @@ abstract class HangManSubLevelUseCase extends AbstractUseCase {
   bool isUsed(String letter);
 
   ///true si contiene la letra en al menos una posicion, si el checkLetter.length > 0
-  bool containLetter(String letter);
+  bool answerContainLetter(String letter);
 
   ///cantidad de vidas maximas del nivel
   ///no se usa como getter por si hay que ponerle logica despues con comodines que aumenten las vidas
