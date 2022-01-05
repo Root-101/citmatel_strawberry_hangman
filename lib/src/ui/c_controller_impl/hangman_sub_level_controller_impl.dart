@@ -1,5 +1,8 @@
 import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
+import 'package:citmatel_strawberry_hangman/src/ui/f_widget/sublevel/hangman_sublevel_lose.dart';
+import 'package:citmatel_strawberry_hangman/src/ui/f_widget/sublevel/hangman_sublevel_win.dart';
+import 'package:get/get.dart';
 import 'package:vibration/vibration.dart';
 
 class HangManSubLevelControllerImpl extends HangManSubLevelController {
@@ -68,7 +71,13 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
     }
   }
 
-  void looseLevel() {}
+  void looseLevel() {
+    Get.toNamed(HangManSubLevelLose.ROUTE_NAME);
+  }
+
+  void winLevel() {
+    Get.toNamed(HangManSubLevelWin.ROUTE_NAME);
+  }
 
   void _fillAnswer(List<int> possiblesIndex, String letter) {
     possiblesIndex.forEach((index) {
