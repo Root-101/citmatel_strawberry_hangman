@@ -39,7 +39,7 @@ class _HangManSubLevelBackgroundState extends State<HangManSubLevelBackground> {
       decoration: BoxDecoration(
         color: Colors.transparent, //pa si por si acaso
         image: DecorationImage(
-          image: AssetImage("assets/icons/hangman_wallpaper.jpg"),
+          image: AssetImage(HangManAssets.WALLPAPER),
           fit: BoxFit.cover,
         ),
       ),
