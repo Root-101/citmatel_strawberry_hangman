@@ -1,6 +1,4 @@
 import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
-import 'package:citmatel_strawberry_hangman/src/ui/f_widget/sublevel/hangman_sublevel_lose.dart';
-import 'package:citmatel_strawberry_hangman/src/ui/f_widget/sublevel/hangman_sublevel_win.dart';
 import 'package:citmatel_strawberry_tools/tools_exporter.dart';
 import 'package:get/get.dart';
 
@@ -70,11 +68,11 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   }
 
   void _looseLevel() {
-    Get.offNamed(HangManSubLevelLose.ROUTE_NAME);
+    Get.offNamed(StrawberryLevelLose.ROUTE_NAME);
   }
 
   void _winLevel() {
-    Get.offNamed(HangManSubLevelWin.ROUTE_NAME);
+    Get.offNamed(StrawberryLevelWin.ROUTE_NAME);
   }
 
   void _fillAnswer(List<int> possiblesIndex, String letter) {
