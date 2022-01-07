@@ -29,8 +29,6 @@ dependencies:
   flutter_animator: ^3.2.0
   cupertino_icons: ^1.0.2
   flutter_countdown_timer: ^4.1.0
-  animated_background: ^2.0.0
-  animated_text_kit: ^4.2.1
 
   #Tools
   citmatel_strawberry_tools:
@@ -41,9 +39,7 @@ dev_dependencies:
     sdk: flutter
 
 flutter:
-  assets:
-    - packages/citmatel_strawberry_hangman/assets/icons/baby_boy.png
-    - packages/citmatel_strawberry_hangman/assets/icons/baby_girl.png
+  assets:   
     - packages/citmatel_strawberry_hangman/assets/icons/brain_in_blue.jpg
     - packages/citmatel_strawberry_hangman/assets/icons/hangman_wallpaper.jpg
 
