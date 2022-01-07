@@ -1,5 +1,6 @@
 import 'package:animated_background/animated_background.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
 import 'package:flutter/material.dart';
 
 class HangManSubLevelLose extends StatefulWidget {
@@ -20,7 +21,7 @@ class _HangManSubLevelWinState extends State<HangManSubLevelLose>
         behaviour: RandomParticleBehaviour(
           options: ParticleOptions(
             baseColor: Colors.blueAccent,
-            image: Image.asset("assets/icons/baby_girl.png"),
+            image: Image.asset(HangManAssets.ICON_BABY_BOY),
           ),
         ),
         vsync: this,
@@ -28,7 +29,7 @@ class _HangManSubLevelWinState extends State<HangManSubLevelLose>
           behaviour: RandomParticleBehaviour(
             options: ParticleOptions(
               baseColor: Colors.red,
-              image: Image.asset("assets/icons/baby_boy.png"),
+              image: Image.asset(HangManAssets.ICON_BABY_GIRL),
             ),
           ),
           vsync: this,
@@ -37,10 +38,9 @@ class _HangManSubLevelWinState extends State<HangManSubLevelLose>
             child: SizedBox(
               child: DefaultTextStyle(
                 style: const TextStyle(
-                  fontSize: 30.0,
-                  fontFamily: 'Agne',
-                  color: Colors.blueAccent
-                ),
+                    fontSize: 30.0,
+                    fontFamily: 'Agne',
+                    color: Colors.blueAccent),
                 child: AnimatedTextKit(
                   animatedTexts: [
                     TypewriterAnimatedText('Has perdido.'),

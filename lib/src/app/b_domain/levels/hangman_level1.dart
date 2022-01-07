@@ -1,4 +1,4 @@
-import 'package:citmatel_strawberry_hangman/src/app/hangman_app_exporter.dart';
+import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
 
 class HangManLevel1 {
   static final HangManLevelDomain level1 = HangManLevelDomain(
@@ -9,7 +9,7 @@ class HangManLevel1 {
       HangManSubLevelDomain(
         id: 1,
         answer: "Hello",
-        urlImage: "assets/icons/brain_in_blue.jpg",
+        urlImage: HangManAssets.LEVEL_1_EXAMPLE,
       ),
       HangManSubLevelDomain(
         id: 2,
