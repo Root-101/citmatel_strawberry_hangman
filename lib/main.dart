@@ -1,6 +1,5 @@
 import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
-import 'package:citmatel_strawberry_hangman/src/ui/f_widget/sublevel/hangman_sublevel_lose.dart';
-import 'package:citmatel_strawberry_hangman/src/ui/f_widget/sublevel/hangman_sublevel_win.dart';
+import 'package:citmatel_strawberry_tools/tools_exporter.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -34,13 +33,13 @@ class MyApp extends StatelessWidget {
           transition: Transition.rightToLeft,
         ),
         GetPage(
-          name: HangManSubLevelWin.ROUTE_NAME,
-          page: () => HangManSubLevelWin(),
+          name: StrawberryLevelWin.ROUTE_NAME,
+          page: () => StrawberryLevelWin(),
           transition: Transition.circularReveal,
         ),
         GetPage(
-          name: HangManSubLevelLose.ROUTE_NAME,
-          page: () => HangManSubLevelLose(),
+          name: StrawberryLevelLose.ROUTE_NAME,
+          page: () => StrawberryLevelLose(),
           transition: Transition.leftToRightWithFade,
         ),
       ],
