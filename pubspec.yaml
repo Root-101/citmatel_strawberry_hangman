@@ -42,6 +42,9 @@ dev_dependencies:
 
 flutter:
   assets:
-    - assets/icons/   
+    - packages/citmatel_strawberry_hangman/assets/icons/baby_boy.png
+    - packages/citmatel_strawberry_hangman/assets/icons/baby_girl.png
+    - packages/citmatel_strawberry_hangman/assets/icons/brain_in_blue.jpg
+    - packages/citmatel_strawberry_hangman/assets/icons/hangman_wallpaper.jpg
 
   uses-material-design: true
