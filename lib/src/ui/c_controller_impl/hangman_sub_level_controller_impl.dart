@@ -1,6 +1,5 @@
 import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
 import 'package:citmatel_strawberry_tools/tools_exporter.dart';
-import 'package:get/get.dart';
 
 class HangManSubLevelControllerImpl extends HangManSubLevelController {
   late final HangManSubLevelUseCase subLevelUseCase;
@@ -63,16 +62,8 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   void _breakHeart() {
     remainingLives--;
     if (remainingLives <= 0) {
-      _looseLevel();
+      StrawberryFunction.looseLevel();
     }
-  }
-
-  void _looseLevel() {
-    Get.offNamed(StrawberryLevelLose.ROUTE_NAME);
-  }
-
-  void _winLevel() {
-    Get.offNamed(StrawberryLevelWin.ROUTE_NAME);
   }
 
   void _fillAnswer(List<int> possiblesIndex, String letter) {
