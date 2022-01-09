@@ -11,7 +11,7 @@ import 'package:get/get.dart';
 import 'package:photo_view/photo_view.dart';
 
 // ignore: must_be_immutable
-class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
+class HangManSubLevelScreen extends StatefulWidget {
   static const ROUTE_NAME = "/hangman-sublevel-screen";
 
   HangManSubLevelScreen({
@@ -22,6 +22,26 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
         subLevelDomain: subLevelDomain,
       ),
     );
+  }
+
+  @override
+  State<HangManSubLevelScreen> createState() => _HangManSubLevelScreenState();
+}
+
+class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
+  late final HangManSubLevelController _controller;
+
+  @override
+  void initState() {
+    _controller = Get.find();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    Get.delete<HangManSubLevelController>();
+    super.dispose();
   }
 
   @override
@@ -55,19 +75,19 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
 
   // Build the keyBoard Widget and all of its animations.
   _buildKeyBoard() {
-    List<String> listOfLetters = controller.keyboard;
+    List<String> listOfLetters = _controller.keyboard;
     return _animatedGridView(
       // GridView amount of columns = ListLetter/6.
-      controller.keyboardColumns,
+      _controller.keyboardColumns,
       List.generate(
         // List amount of items = ListLetters.
         listOfLetters.length,
         // Current item.
         (int index) {
           // If the letter is already used ...
-          return controller.isUsed(listOfLetters[index])
+          return _controller.isUsed(listOfLetters[index])
               // If the letter is correct, it belongs to the answer ...
-              ? controller.answerContainLetter(listOfLetters[index])
+              ? _controller.answerContainLetter(listOfLetters[index])
                   // Make the Bounce effect when is true and paint the letter green.
                   ? Bounce(
                       child: _emptyCard(
@@ -87,14 +107,14 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
               // If the letter hasn't been used, paint it gray and call the method checkLetter() when is touched.
               : _buildAnimations(
                   index,
-                  controller.keyboardColumns,
+                  _controller.keyboardColumns,
                   InkWell(
                     child: _emptyCard(
                       listOfLetters[index],
                       Colors.white,
                       Colors.grey.shade700,
                     ),
-                    onTap: () => controller.checkLetter(listOfLetters[index]),
+                    onTap: () => _controller.checkLetter(listOfLetters[index]),
                   ),
                 );
         },
@@ -104,7 +124,7 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
 
   // Build the word Answer Widget and all of its animations.
   _buildWord() {
-    List<String> listOfLetters = controller.answerToBe;
+    List<String> listOfLetters = _controller.answerToBe;
     int countOfColumns = listOfLetters.length;
     return _animatedGridView(
       // Amount of Columns = Letters.
@@ -138,7 +158,7 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
 
   // Build the List of Hearts Widget and all of its animations.
   _buildListOfHearts() {
-    int countOfColumns = controller.lives;
+    int countOfColumns = _controller.lives;
     return _animatedGridView(
         // Amount of Columns = Hearts.
         countOfColumns,
@@ -148,7 +168,7 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
           // Current item.
           (int index) {
             // If the current item/heart is less that the losed lives ...
-            return index < controller.lives - controller.remainingLives
+            return index < _controller.lives - _controller.remainingLives
                 // Broke a heart and make the Swing animation.
                 ? Swing(
                     child: Icon(
@@ -229,8 +249,6 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
   }
 
   //This method is used to build the image widget.
-  //In this case using openContainer,
-  //when the image is touched a new screen with the large image is displayed.
   _buildImageCard() {
     return OpenContainer(
       // The transition to display when you move from the closed widget to the open one.
@@ -258,7 +276,7 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
         // For the rounded corners
         borderRadius: BorderRadius.all(Radius.circular(15)),
         // Call the _fadeImage method for the fade effect.
-        child: _fadeImage(controller.imageUrl),
+        child: _fadeImage(_controller.imageUrl),
       ),
     );
   }
@@ -270,7 +288,7 @@ class HangManSubLevelScreen extends GetView<HangManSubLevelController> {
       height: double.maxFinite,
       alignment: Alignment.center,
       // Call the _animateImage so the image can use diferents tipes of gestures.
-      child: _animateImage(controller.imageUrl),
+      child: _animateImage(_controller.imageUrl),
     );
   }
 
