@@ -32,6 +32,6 @@ class HangManSingleLevelTile extends StatelessWidget {
 
   //Screen grande para cuando se entra al subnivel, pantalla de cargando para el sub nivel
   _buildOpen() {
-    return HangManSubLevelBackground(subLevelDomain: subLevelDomain);
+    return HangManSubLevelLoading(subLevelDomain: subLevelDomain);
   }
 }
