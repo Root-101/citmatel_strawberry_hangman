@@ -2,6 +2,7 @@ import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
 import 'package:citmatel_strawberry_tools/tools_exporter.dart';
 
 class HangManSubLevelControllerImpl extends HangManSubLevelController {
+  static const _emptyCharacter = "_";
   late final HangManSubLevelUseCase subLevelUseCase;
   late final List<String> answerToBe;
   int remainingLives = 0;
@@ -15,7 +16,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
           subLevelDomain: subLevelDomain,
         ) {
     remainingLives = subLevelUseCase.lives();
-    answerToBe = List.generate(answerCantOfLetters, (index) => "_");
+    answerToBe = List.generate(answerCantOfLetters, (index) => _emptyCharacter);
 
     keyboardColumns = _generateKeyboardColumns();
   }
@@ -55,14 +56,32 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
       StrawberryAudio.playAudioCorrect();
       StrawberryVibration.vibrate();
       _fillAnswer(possiblesIndex, letter);
+
+      _doWinLevel();
     }
     update();
   }
 
   void _breakHeart() {
     remainingLives--;
+    _doLooseLevel();
+  }
+
+  ///separado en metodos el _doLooseLevel y el _doWinLevel para estandarizar su uso
+  ///si se pierde el nivel va para la pantalla de looser, sino no hace nada
+  ///se pierde el nivel cuando las vidas llegan a 0
+  void _doLooseLevel() {
     if (remainingLives <= 0) {
       StrawberryFunction.looseLevel();
+    }
+  }
+
+  ///si se gano el nivel ve para otra pantalla de winner, sino no hace nada
+  ///Se gana cuando en la palabra no queda ningun caracter vacio
+  ///TODO: modificar cuando se agregue soporte para varias palabras, no puede quedar caracter vacio en ninguna palabra
+  void _doWinLevel() {
+    if (!answerToBe.contains(_emptyCharacter)) {
+      StrawberryFunction.winLevel();
     }
   }
 
