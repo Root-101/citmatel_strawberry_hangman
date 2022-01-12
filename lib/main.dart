@@ -32,16 +32,6 @@ class MyApp extends StatelessWidget {
               HangManLevelsScreen(),
           transition: Transition.rightToLeft,
         ),
-        GetPage(
-          name: StrawberryLevelWin.ROUTE_NAME,
-          page: () => StrawberryLevelWin(),
-          transition: Transition.circularReveal,
-        ),
-        GetPage(
-          name: StrawberryLevelLose.ROUTE_NAME,
-          page: () => StrawberryLevelLose(),
-          transition: Transition.leftToRightWithFade,
-        ),
       ],
       /*unknownRoute: GetPage(
           name: UnknownRouteScreen.ROUTE_NAME,
