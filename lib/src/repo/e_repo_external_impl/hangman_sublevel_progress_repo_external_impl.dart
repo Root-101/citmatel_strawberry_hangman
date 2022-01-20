@@ -1,6 +1,5 @@
-import 'package:citmatel_strawberry_hangman/src/repo/hangman_repo_exporter.dart';
+import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
 import 'package:clean_repo_objectbox/clean_objectbox_exporter.dart';
-import 'package:objectbox/objectbox.dart';
 
 class HangManSubLevelProgressRepoExternalImpl
     extends DefaultObjectBoxCRUDRepositoryExternal<
