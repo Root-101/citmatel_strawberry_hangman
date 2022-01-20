@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:page_view_indicators/page_view_indicators.dart';
 
 class HangManLevelsScreen extends GetView<HangManLevelController> {
-  //TODO: valorar ese nombre que no me convence
   static const ROUTE_NAME = "/hangman-levels-screen";
 
   HangManLevelsScreen({Key? key}) : super(key: key);
@@ -69,6 +68,7 @@ class HangManLevelsScreen extends GetView<HangManLevelController> {
   }
 
   _buildLevelGridView(HangManLevelDomain level) {
+    //con un GetBuilder para que actualize el progreso cuando se gane un nivel
     return GridView(
       physics: BouncingScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -76,7 +76,18 @@ class HangManLevelsScreen extends GetView<HangManLevelController> {
       ),
       children: level.sublevel
           .map(
-            (subLevel) => HangManSingleLevelTile(subLevelDomain: subLevel),
+            (subLevel) => GetBuilder<HangManLevelController>(
+              builder: (_) {
+                return HangManSingleLevelTile(
+                  subLevelDomain: subLevel,
+                  subLevelProgressDomain:
+                      Get.find<HangManSubLevelProgressUseCase>().findByAll(
+                    level,
+                    subLevel,
+                  ),
+                );
+              },
+            ),
           )
           .toList(),
     );

@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:citmatel_strawberry_hangman/src/app/hangman_app_exporter.dart';
+import 'package:get/get.dart';
 
 class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
   ///para almacenar las letras que se han usado y poder desabilitarlas despues
@@ -8,6 +9,9 @@ class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
 
   ///domain almacenado para acceder a la info
   final HangManSubLevelDomain subLevelDomain;
+
+  ///domain con la info del progreso
+  final HangManSubLevelProgressDomain subLevelProgressDomain;
 
   ///letras de la respuesta
   late final List<String> answerLettersSpellOut;
@@ -30,7 +34,10 @@ class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
   static const MAX_CANT_LETTERS_KEYBOARD =
       4 * DEFAULT_KEYBOARD_COLUMNS; //max = 24
 
-  HangManSubLevelUseCaseImpl({required this.subLevelDomain}) {
+  HangManSubLevelUseCaseImpl({
+    required this.subLevelDomain,
+    required this.subLevelProgressDomain,
+  }) {
     answerLettersSpellOut = subLevelDomain.answer.toUpperCase().split("");
     answerLettersDifferent = answerLettersSpellOut.toSet().toList();
     keyboardCantLetters = _cantLettersKeyboard();
@@ -128,5 +135,21 @@ class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
   ///marca la letra como usada
   void _setLetterAsUsed(String letter) {
     _usedLetters.add(letter);
+  }
+
+  void saveProgress(int stars) {
+    //me quedo siempre con la mejor cantidad de estrellas
+    subLevelProgressDomain.stars = max(subLevelProgressDomain.stars, stars);
+
+    //aumento la cantidad de veces que se jugo el nivel
+    subLevelProgressDomain.contPlayedTimes =
+        subLevelProgressDomain.contPlayedTimes + 1;
+
+    //salvo el progreso
+    _executeProgressUpdate();
+  }
+
+  void _executeProgressUpdate() {
+    Get.find<HangManSubLevelProgressUseCase>().edit(subLevelProgressDomain);
   }
 }

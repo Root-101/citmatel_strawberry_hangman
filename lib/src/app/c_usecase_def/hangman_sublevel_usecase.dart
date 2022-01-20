@@ -28,4 +28,6 @@ abstract class HangManSubLevelUseCase extends AbstractUseCase {
   ///cantidad de vidas maximas del nivel
   ///no se usa como getter por si hay que ponerle logica despues con comodines que aumenten las vidas
   int lives();
+
+  void saveProgress(int stars);
 }
