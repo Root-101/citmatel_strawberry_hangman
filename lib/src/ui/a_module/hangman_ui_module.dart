@@ -3,9 +3,12 @@ import 'package:citmatel_strawberry_hangman/src/ui/hangman_ui_exporter.dart';
 import 'package:get/get.dart';
 
 class HangManUIModule {
-  static void init() {
-    HangManCoreModule.init();
+  static Future init() async {
+    await HangManCoreModule.init().then((value) {
+      Get.put<HangManLevelController>(
+          HangManLevelControllerImpl()); //no depende de nadie
 
-    Get.put<HangManLevelController>(HangManLevelControllerImpl());
+      return value;
+    });
   }
 }
