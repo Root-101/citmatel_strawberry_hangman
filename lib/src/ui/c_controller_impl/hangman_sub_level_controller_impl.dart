@@ -82,6 +82,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
           'El que persevera triunfa.',
         ]),
       );
+      _doSaveProgress(0);
     }
   }
 
@@ -91,6 +92,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   void _doWinLevel() {
     if (!answerToBe.contains(_emptyCharacter)) {
       StrawberryFunction.winLevel();
+      _doSaveProgress(generateProgress());
     }
   }
 
