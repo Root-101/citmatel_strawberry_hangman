@@ -1,5 +1,6 @@
 import 'package:animations/animations.dart';
 import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
+import 'package:citmatel_strawberry_tools/tools_exporter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animator/flutter_animator.dart'
     hide FadeInAnimation, FadeIn;
@@ -9,14 +10,17 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:photo_view/photo_view.dart';
+import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
 // ignore: must_be_immutable
 class HangManSubLevelScreen extends StatefulWidget {
   static const ROUTE_NAME = "/hangman-sublevel-screen";
+  final bool showTutorial;
 
   HangManSubLevelScreen({
     required HangManSubLevelDomain subLevelDomain,
     required HangManSubLevelProgressDomain subLevelProgressDomain,
+    required this.showTutorial,
   }) : super() {
     Get.put<HangManSubLevelController>(
       HangManSubLevelControllerImpl(
@@ -33,9 +37,33 @@ class HangManSubLevelScreen extends StatefulWidget {
 class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
   late final HangManSubLevelController _controller;
 
+  List<TargetFocus> targets = [];
+
+  // Steps in the tutorial.
+  GlobalKey _key1 = GlobalKey();
+  GlobalKey _key2 = GlobalKey();
+  GlobalKey _key3 = GlobalKey();
+  GlobalKey _key4 = GlobalKey();
+  GlobalKey _key5 = GlobalKey();
+  GlobalKey _key6 = GlobalKey();
+  GlobalKey _key7 = GlobalKey();
+
   @override
   void initState() {
     _controller = Get.find();
+
+    if (widget.showTutorial) {
+      //Start showcase view after current widget frames are drawn.
+      WidgetsBinding.instance!.addPostFrameCallback((duration) async {
+        // Is necessary to wait a few seconds because the widgets haven't been created.
+        await Future.delayed(Duration(milliseconds: 500));
+        // Initialice the steps of the tutorial.
+        initTargets();
+        // Start the tutorial.
+        StrawberryTutorial.showTutorial(context: context, targets: targets);
+      });
+    }
+
     super.initState();
   }
 
@@ -79,6 +107,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
   _buildKeyBoard() {
     List<String> listOfLetters = _controller.keyboard;
     return _animatedGridView(
+      _key4,
       // GridView amount of columns = ListLetter/6.
       _controller.keyboardColumns,
       List.generate(
@@ -111,12 +140,14 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
                   index,
                   _controller.keyboardColumns,
                   InkWell(
+                    key: listOfLetters[index] == 'H' ? _key5 : Key(""),
                     child: _emptyCard(
                       listOfLetters[index],
                       Colors.white,
                       Colors.grey.shade700,
                     ),
-                    onTap: () => _controller.checkLetter(listOfLetters[index]),
+                    onTap: () => _controller.checkLetter(
+                        listOfLetters[index], context, _key6, _key7),
                   ),
                 );
         },
@@ -129,6 +160,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
     List<String> listOfLetters = _controller.answerToBe;
     int countOfColumns = listOfLetters.length;
     return _animatedGridView(
+      _key2,
       // Amount of Columns = Letters.
       countOfColumns,
       List.generate(
@@ -148,11 +180,12 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
                   ))
               //If it's fill show the RubberBand effect and put the correct letter.
               : RubberBand(
+                  key: index == 0 ? _key6 : Key(""),
                   child: _emptyCard(
-                  listOfLetters[index],
-                  Colors.white,
-                  Colors.grey,
-                ));
+                    listOfLetters[index],
+                    Colors.white,
+                    Colors.grey,
+                  ));
         },
       ),
     );
@@ -162,34 +195,37 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
   _buildListOfHearts() {
     int countOfColumns = _controller.lives;
     return _animatedGridView(
-        // Amount of Columns = Hearts.
+      _key1,
+      // Amount of Columns = Hearts.
+      countOfColumns,
+      List.generate(
+        // Amount of Items = Hearts.
         countOfColumns,
-        List.generate(
-          // Amount of Items = Hearts.
-          countOfColumns,
-          // Current item.
-          (int index) {
-            // If the current item/heart is less that the losed lives ...
-            return index < _controller.lives - _controller.remainingLives
-                // Broke a heart and make the Swing animation.
-                ? Swing(
-                    child: Icon(
-                      FontAwesomeIcons.heartBroken,
-                      color: Colors.red.shade900,
-                      size: 50,
-                    ),
-                  )
-                // If it's a remaining live make a pumping heart.
-                : _buildAnimations(
-                    index,
-                    countOfColumns,
-                    SpinKitPumpingHeart(
-                      color: Colors.red.shade900,
-                      size: 55,
-                    ),
-                  );
-          },
-        ));
+        // Current item.
+        (int index) {
+          // If the current item/heart is less that the losed lives ...
+          return index < _controller.lives - _controller.remainingLives
+              // Broke a heart and make the Swing animation.
+              ? Swing(
+                  key: index == 0 ? _key7 : null,
+                  child: Icon(
+                    FontAwesomeIcons.heartBroken,
+                    color: Colors.red.shade900,
+                    size: 50,
+                  ),
+                )
+              // If it's a remaining live make a pumping heart.
+              : _buildAnimations(
+                  index,
+                  countOfColumns,
+                  SpinKitPumpingHeart(
+                    color: Colors.red.shade900,
+                    size: 55,
+                  ),
+                );
+        },
+      ),
+    );
   }
 
   // This method makes that the widget child enters to the screen with a Scale and Fade Animation.
@@ -208,8 +244,9 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
   }
 
 // This method animates the GridView so the items simulate to be entering to the screen one by one.
-  _animatedGridView(int cantOfColumns, List<Widget> children) {
+  _animatedGridView(Key key, int cantOfColumns, List<Widget> children) {
     return AnimationLimiter(
+      key: key,
       child: GridView.count(
         childAspectRatio: 1.0,
         padding: const EdgeInsets.all(8.0),
@@ -253,6 +290,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
   //This method is used to build the image widget.
   _buildImageCard() {
     return OpenContainer(
+      key: _key3,
       // The transition to display when you move from the closed widget to the open one.
       transitionType: ContainerTransitionType.fade,
       transitionDuration: Duration(seconds: 1),
@@ -315,6 +353,69 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
       initialScale: PhotoViewComputedScale.covered,
       // Color of the background space when the image is reduce
       backgroundDecoration: BoxDecoration(color: Colors.transparent),
+    );
+  }
+
+  // Targets for the tutorial.
+  void initTargets() {
+    targets.add(
+      StrawberryTutorial.addTarget(
+        identify: "Target Hearts",
+        keyTarget: _key1,
+        shadowColor: Colors.pink,
+        title: 'Cantidad de vidas.',
+        description:
+            'Las vidas son la cantidad de intentos que tienes para equivocarte.\n Si las pierdes todas deberás empezar el nivel de nuevo.',
+      ),
+    );
+
+    targets.add(
+      StrawberryTutorial.addTarget(
+        identify: "Target Word",
+        keyTarget: _key2,
+        shadowColor: Colors.red,
+        contentAlign: ContentAlign.top,
+        title: 'Palabra a completar.',
+        description:
+            'Debes completar correctamente la palabra para poder ganar.',
+      ),
+    );
+
+    targets.add(
+      StrawberryTutorial.addTarget(
+        identify: "Target Image",
+        keyTarget: _key3,
+        shadowColor: Colors.deepOrange,
+        title: 'Imagen de ayuda.',
+        shape: ShapeLightFocus.Circle,
+        description:
+            'Esta imagen tiene relación con la palabra a completar, por lo que te puede servir de ayuda para ganar el nivel.',
+      ),
+    );
+
+    targets.add(
+      StrawberryTutorial.addTarget(
+        identify: "Target Keyboard",
+        keyTarget: _key4,
+        shadowColor: Colors.amber,
+        contentAlign: ContentAlign.top,
+        title: 'Teclado.',
+        description:
+            'Todas las letras necesarias para completar la palabra se encuentran en este teclado.',
+      ),
+    );
+    targets.add(
+      StrawberryTutorial.addTarget(
+        identify: "Target Drop",
+        keyTarget: _key5,
+        shadowColor: Colors.purple,
+        contentAlign: ContentAlign.top,
+        title: 'Letra.',
+        description:
+            'Debes pulsar cada una de las letras correctas para completar la palabra.'
+            '\n Por ejemplo toca la letra H para completar exitosamente la primera letra de la palabra.',
+        shape: ShapeLightFocus.Circle,
+      ),
     );
   }
 }

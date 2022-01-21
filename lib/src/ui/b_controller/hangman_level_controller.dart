@@ -7,4 +7,6 @@ abstract class HangManLevelController extends GetxController {
   HangManLevelDomain findBy(int keyId);
 
   int count();
+
+  bool showTutorial(int levelId, int subLevelid);
 }

@@ -1,12 +1,16 @@
 import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
 import 'package:citmatel_strawberry_tools/tools_exporter.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
 class HangManSubLevelControllerImpl extends HangManSubLevelController {
   static const _emptyCharacter = "_";
   late final HangManSubLevelUseCase subLevelUseCase;
   late final List<String> answerToBe;
   int remainingLives = 0;
+  bool isFirstTime = true;
 
   ///cantidad de columnas del teclado
   late final int keyboardColumns;
@@ -48,14 +52,34 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   }
 
   @override
-  void checkLetter(String letter) {
+  void checkLetter(
+      String letter, BuildContext context, GlobalKey key6, GlobalKey key7) {
     List<int> possiblesIndex = subLevelUseCase.checkLetter(letter);
     if (possiblesIndex.isEmpty) {
       //no existe esa letra en la palabra
       StrawberryAudio.playAudioWrong();
       StrawberryVibration.vibrate();
-      _breakHeart();
+      _breakHeart(context, key7);
     } else {
+      if (isFirstTime) {
+        isFirstTime = false;
+        // Continue the tutorial.
+        StrawberryTutorial.showTutorial(
+          context: context,
+          targets: [
+            StrawberryTutorial.addTarget(
+              identify: "Target Answer Right",
+              keyTarget: key6,
+              shadowColor: Colors.green,
+              title: 'Respuesta correcta.',
+              description:
+                  'Felicidades lo has conseguido. Continúa así para ganar el nivel.',
+              shape: ShapeLightFocus.Circle,
+            ),
+          ],
+        );
+      }
+
       StrawberryAudio.playAudioCorrect();
       StrawberryVibration.vibrate();
       _fillAnswer(possiblesIndex, letter);
@@ -65,8 +89,26 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
     update();
   }
 
-  void _breakHeart() {
+  void _breakHeart(BuildContext context, GlobalKey key7) {
     remainingLives--;
+    if (lives - remainingLives == 1) {
+      // Continue the tutorial.
+      StrawberryTutorial.showTutorial(
+        context: context,
+        targets: [
+          StrawberryTutorial.addTarget(
+            identify: "Target Answer Wrong",
+            keyTarget: key7,
+            shadowColor: Colors.red,
+            title: 'Respuesta incorrecta.',
+            description: 'Cuando se responde incorrectamente pierdes una vida.'
+                '\n Cuando te quedes sin vidas se te dará la posibilidad de intentarlo de nuevo.'
+                '\n Solo si completas la palabra correctamente podrás pasar de nivel.',
+            shape: ShapeLightFocus.Circle,
+          ),
+        ],
+      );
+    }
     _doLooseLevel();
   }
 
