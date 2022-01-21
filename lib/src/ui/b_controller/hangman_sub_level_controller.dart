@@ -3,6 +3,9 @@ import 'package:get/get.dart';
 abstract class HangManSubLevelController extends GetxController {
   static const String TAG = "sub-level-controller";
 
+  //la cantidad de estrellas va a estar entre [0,3] inclusive
+  static const int MAX_STARS = 3;
+
   String get imageUrl;
 
   int get lives;
@@ -26,4 +29,6 @@ abstract class HangManSubLevelController extends GetxController {
   bool isUsed(String letter);
 
   bool answerContainLetter(String letter);
+
+  int generateProgress();
 }

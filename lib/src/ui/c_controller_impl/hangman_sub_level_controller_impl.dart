@@ -1,5 +1,6 @@
 import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
 import 'package:citmatel_strawberry_tools/tools_exporter.dart';
+import 'package:get/get.dart';
 
 class HangManSubLevelControllerImpl extends HangManSubLevelController {
   static const _emptyCharacter = "_";
@@ -12,8 +13,10 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
 
   HangManSubLevelControllerImpl({
     required HangManSubLevelDomain subLevelDomain,
+    required HangManSubLevelProgressDomain subLevelProgressDomain,
   }) : subLevelUseCase = HangManSubLevelUseCaseImpl(
           subLevelDomain: subLevelDomain,
+          subLevelProgressDomain: subLevelProgressDomain,
         ) {
     remainingLives = subLevelUseCase.lives();
     answerToBe = List.generate(answerCantOfLetters, (index) => _emptyCharacter);
@@ -79,6 +82,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
           'El que persevera triunfa.',
         ]),
       );
+      _doSaveProgress(0);
     }
   }
 
@@ -88,6 +92,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   void _doWinLevel() {
     if (!answerToBe.contains(_emptyCharacter)) {
       StrawberryFunction.winLevel();
+      _doSaveProgress(generateProgress());
     }
   }
 
@@ -103,5 +108,27 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   @override
   bool answerContainLetter(String letter) {
     return subLevelUseCase.answerContainLetter(letter);
+  }
+
+  int generateProgress() {
+    //TODO corregir a mejor logica
+    double progress = (remainingLives / lives) * 100;
+    if (progress >= 80) {
+      return HangManSubLevelController.MAX_STARS;
+    } else if (progress >= 60) {
+      return 2;
+    } else if (progress >= 20) {
+      return 1;
+    } else {
+      return 0;
+    }
+  }
+
+  void _doSaveProgress(int stars) {
+    //salva el progreso
+    subLevelUseCase.saveProgress(stars);
+
+    //actualiza manual la lista del level para que al volver atras ya este actualizado
+    Get.find<HangManLevelController>().update();
   }
 }

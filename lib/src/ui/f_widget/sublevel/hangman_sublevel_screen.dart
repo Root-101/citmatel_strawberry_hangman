@@ -16,10 +16,12 @@ class HangManSubLevelScreen extends StatefulWidget {
 
   HangManSubLevelScreen({
     required HangManSubLevelDomain subLevelDomain,
+    required HangManSubLevelProgressDomain subLevelProgressDomain,
   }) : super() {
     Get.put<HangManSubLevelController>(
       HangManSubLevelControllerImpl(
         subLevelDomain: subLevelDomain,
+        subLevelProgressDomain: subLevelProgressDomain,
       ),
     );
   }
