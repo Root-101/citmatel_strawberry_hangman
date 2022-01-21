@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 void main() {
-  HangManUIModule.init();
-  runApp(MyApp());
+  runApp(SplashScreen());
 }
 
 class MyApp extends StatelessWidget {
@@ -25,10 +24,10 @@ class MyApp extends StatelessWidget {
           name: HangManLevelsScreen.ROUTE_NAME,
           page: () =>
               //entrada directo al nivel 1
-              HangManSubLevelScreen(
-                  subLevelDomain: HangManLevel1.level1.sublevel[0]),
-          //entrada a el grid de seleccion de niveles
-          //HangManLevelsScreen(),
+              /*DnDSubLevelScreen(
+                  subLevelDomain: DnDLevel1.level1.sublevel[0]),*/
+              //entrada a el grid de seleccion de niveles
+              HangManLevelsScreen(),
           transition: Transition.rightToLeft,
         ),
       ],
@@ -37,5 +36,33 @@ class MyApp extends StatelessWidget {
           page: () => UnknownRouteScreen()),*/
       //--------------------- </PAGINATION> -----------------------------------
     );
+  }
+}
+
+class SplashScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder(
+      future: Init.instance.initialize(),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return Center(
+            child: CircularProgressIndicator(),
+          );
+        } else {
+          return MyApp();
+        }
+      },
+    );
+  }
+}
+
+class Init {
+  Init._();
+
+  static final instance = Init._();
+
+  Future initialize() async {
+    await HangManUIModule.init();
   }
 }

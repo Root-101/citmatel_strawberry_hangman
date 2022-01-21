@@ -4,9 +4,13 @@ import 'package:flutter/material.dart';
 
 class HangManSingleLevelTile extends StatelessWidget {
   final HangManSubLevelDomain subLevelDomain;
+  final HangManSubLevelProgressDomain subLevelProgressDomain;
 
-  const HangManSingleLevelTile({required this.subLevelDomain, Key? key})
-      : super(key: key);
+  const HangManSingleLevelTile({
+    required this.subLevelDomain,
+    required this.subLevelProgressDomain,
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,14 +28,23 @@ class HangManSingleLevelTile extends StatelessWidget {
   //Tile chiquito que se muestra en la lista con todos los subniveles
   _buildClosed() {
     return Container(
-      child: Center(
-        child: Text('level ${subLevelDomain.id}'),
+      child: Column(
+        children: [
+          Text('level id ${subLevelProgressDomain.hangmanLevelDomainId}'),
+          Text(
+              'sub level id ${subLevelProgressDomain.hangmanSubLevelDomainId}'),
+          Text('start ${subLevelProgressDomain.stars}'),
+          Text('played times ${subLevelProgressDomain.contPlayedTimes}'),
+        ],
       ),
     );
   }
 
   //Screen grande para cuando se entra al subnivel, pantalla de cargando para el sub nivel
   _buildOpen() {
-    return HangManSubLevelBackground(subLevelDomain: subLevelDomain);
+    return HangManSubLevelLoading(
+      subLevelDomain: subLevelDomain,
+      subLevelProgressDomain: subLevelProgressDomain,
+    );
   }
 }

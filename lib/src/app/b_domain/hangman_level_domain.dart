@@ -1,8 +1,7 @@
 import 'package:citmatel_strawberry_hangman/src/app/hangman_app_exporter.dart';
 import 'package:clean_core/clean_core.dart';
 
-
-class HangManLevelDomain extends BasicDomainObject {
+class HangManLevelDomain extends BasicDomainObject<HangManLevelDomain> {
   int id;
   final String theme;
   final String urlThemePicture;
@@ -14,4 +13,14 @@ class HangManLevelDomain extends BasicDomainObject {
     required this.urlThemePicture,
     required this.sublevel,
   });
+
+  @override
+  HangManLevelDomain clone() {
+    return HangManLevelDomain(
+      id: this.id,
+      theme: this.theme,
+      urlThemePicture: this.urlThemePicture,
+      sublevel: this.sublevel.map((e) => e.clone()).toList(),
+    );
+  }
 }

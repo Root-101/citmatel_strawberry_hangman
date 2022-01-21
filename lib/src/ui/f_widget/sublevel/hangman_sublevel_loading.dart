@@ -1,19 +1,38 @@
+import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
+import 'package:citmatel_strawberry_tools/tools_exporter.dart';
 import 'package:flutter/material.dart';
 
 class HangManSubLevelLoading extends StatelessWidget {
-  static const int DURATION = 3; //loading timeout
+  final HangManSubLevelDomain subLevelDomain;
+  final HangManSubLevelProgressDomain subLevelProgressDomain;
 
-  final VoidCallback onEnd;
-
-  HangManSubLevelLoading({Key? key, required this.onEnd}) : super(key: key);
+  HangManSubLevelLoading({
+    required this.subLevelDomain,
+    required this.subLevelProgressDomain,
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    return PlainSubLevelLoading(
+      backgroundURL: HangManAssets.WALLPAPER,
+      loading: _loadingWidget(),
+      subLevel: HangManSubLevelScreen(
+        subLevelDomain: subLevelDomain,
+        subLevelProgressDomain: subLevelProgressDomain,
+      ),
+    );
+  }
+
+  _loadingWidget() {
     return Container(
+      padding: EdgeInsets.all(30.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Text("Comenzando el nivel en..."),
+          Text("Cargando nivel"),
+          StrawberryLoadingSpinkit.randomLoadingSpinkit(),
+          //a random loading every time
         ],
       ),
     );
