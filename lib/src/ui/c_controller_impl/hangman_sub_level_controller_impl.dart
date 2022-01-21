@@ -1,6 +1,5 @@
 import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
 import 'package:citmatel_strawberry_tools/tools_exporter.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
@@ -118,6 +117,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   void _doLooseLevel() {
     if (remainingLives <= 0) {
       StrawberryFunction.looseLevel(
+        rightButtonFunction: () => Get.back(closeOverlays: true),
         childFirstText: StrawberryAnimatedTextKit.rotateAnimatedText(texts: [
           'Te has quedado sin vidas.',
           'Inténtalo de nuevo.',
@@ -133,7 +133,9 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   ///TODO: modificar cuando se agregue soporte para varias palabras, no puede quedar caracter vacio en ninguna palabra
   void _doWinLevel() {
     if (!answerToBe.contains(_emptyCharacter)) {
-      StrawberryFunction.winLevel();
+      StrawberryFunction.winLevel(
+        rightButtonFunction: () => Get.back(closeOverlays: true),
+      );
       _doSaveProgress(generateProgress());
     }
   }
