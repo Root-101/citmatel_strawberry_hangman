@@ -25,9 +25,6 @@ class HangManSubLevelProgressUseCaseImpl
 
   @override
   HangManSubLevelProgressDomain findByAllId(int levelId, int subLevelId) {
-    print(
-        "buscando el sublevel con levelId: '$levelId' y subLevelId: '$subLevelId'");
-
     HangManSubLevelProgressDomain? domain =
         _repo.findByAllId(levelId, subLevelId);
     // si es null devuelvo uno vacio para mostrarlo sin progreso en el main menu
