@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 abstract class HangManSubLevelController extends GetxController {
@@ -20,7 +21,8 @@ abstract class HangManSubLevelController extends GetxController {
   ///revisa si la letra existe en la respuesta, en ese caso la pone en
   ///los posibles indices, sino rompe un corazón,
   ///y en cualquier caso actualiza la visual
-  void checkLetter(String letter);
+  void checkLetter(
+      String letter, BuildContext context, GlobalKey key6, GlobalKey key7);
 
   int get keyboardColumns;
 
