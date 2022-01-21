@@ -3,19 +3,17 @@ import 'package:get/get.dart';
 
 class HangManCoreModule {
   static Future init() async {
-    await HangManRepoModule.init().then((value) {
-      //sin dependencia
-      Get.put<HangManLevelUseCase>(
-          HangManLevelUseCaseImpl(HangManLevelsAll.levels));
+    await HangManRepoModule.init();
 
-      //el de progreso con la BD
-      Get.put<HangManSubLevelProgressUseCase>(
-        HangManSubLevelProgressUseCaseImpl(
-            HangManRepoModule.subLevelProgressRepo),
-      );
+    //sin dependencia
+    Get.put<HangManLevelUseCase>(
+        HangManLevelUseCaseImpl(HangManLevelsAll.levels));
 
-      return value;
-    });
+    //el de progreso con la BD
+    Get.put<HangManSubLevelProgressUseCase>(
+      HangManSubLevelProgressUseCaseImpl(
+          HangManRepoModule.subLevelProgressRepo),
+    );
   }
 
   static void dispose() {

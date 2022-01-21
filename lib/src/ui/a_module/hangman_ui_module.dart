@@ -4,11 +4,9 @@ import 'package:get/get.dart';
 
 class HangManUIModule {
   static Future init() async {
-    await HangManCoreModule.init().then((value) {
-      Get.put<HangManLevelController>(
-          HangManLevelControllerImpl()); //no depende de nadie
+    await HangManCoreModule.init();
 
-      return value;
-    });
+    Get.put<HangManLevelController>(
+        HangManLevelControllerImpl()); //no depende de nadie
   }
 }
