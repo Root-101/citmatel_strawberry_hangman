@@ -5,10 +5,12 @@ import 'package:flutter/material.dart';
 class HangManSingleLevelTile extends StatelessWidget {
   final HangManSubLevelDomain subLevelDomain;
   final HangManSubLevelProgressDomain subLevelProgressDomain;
+  final bool showTutorial;
 
   const HangManSingleLevelTile({
     required this.subLevelDomain,
     required this.subLevelProgressDomain,
+    required this.showTutorial,
     Key? key,
   }) : super(key: key);
 
@@ -45,6 +47,7 @@ class HangManSingleLevelTile extends StatelessWidget {
     return HangManSubLevelLoading(
       subLevelDomain: subLevelDomain,
       subLevelProgressDomain: subLevelProgressDomain,
+      showTutorial: showTutorial,
     );
   }
 }
