@@ -68,7 +68,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
         StrawberryTutorial.showTutorial(
           context: context,
           targets: [
-            StrawberryTutorial.addTarget(
+            StrawberryTutorial.addMultipleTarget(
               identify: "Target Answer Right",
               keyTarget: key6,
               shadowColor: Colors.green,
@@ -76,7 +76,8 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
               description:
                   'Felicidades lo has conseguido. Continúa así para ganar el nivel.',
               shape: ShapeLightFocus.Circle,
-              contentAlign: ContentAlign.top,
+              contentImageAlign: ContentAlign.top,
+              contentTextAlign: ContentAlign.right,
             ),
           ],
         );
