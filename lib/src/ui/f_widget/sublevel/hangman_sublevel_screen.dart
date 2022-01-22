@@ -373,11 +373,12 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
     );
 
     targets.add(
-      StrawberryTutorial.addTarget(
+      StrawberryTutorial.addMultipleTarget(
         identify: "Target Word",
         keyTarget: _key2,
         shadowColor: Colors.red,
-        contentAlign: ContentAlign.top,
+        contentTextAlign: ContentAlign.bottom,
+        contentImageAlign: ContentAlign.top,
         title: 'Palabra a completar.',
         description:
             'Debes completar correctamente la palabra para poder ganar.',
