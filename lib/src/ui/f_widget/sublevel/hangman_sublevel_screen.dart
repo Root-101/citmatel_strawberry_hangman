@@ -26,6 +26,7 @@ class HangManSubLevelScreen extends StatefulWidget {
       HangManSubLevelControllerImpl(
         subLevelDomain: subLevelDomain,
         subLevelProgressDomain: subLevelProgressDomain,
+        showTutorial: showTutorial,
       ),
     );
   }
@@ -366,6 +367,8 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
         title: 'Cantidad de vidas.',
         description:
             'Las vidas son la cantidad de intentos que tienes para equivocarte.\n Si las pierdes todas deberás empezar el nivel de nuevo.',
+        showImageOnTop: false,
+        imagePadding: 50,
       ),
     );
 
@@ -390,6 +393,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
         shape: ShapeLightFocus.Circle,
         description:
             'Esta imagen tiene relación con la palabra a completar, por lo que te puede servir de ayuda para ganar el nivel.',
+        showImage: false,
       ),
     );
 
@@ -402,6 +406,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
         title: 'Teclado.',
         description:
             'Todas las letras necesarias para completar la palabra se encuentran en este teclado.',
+        imagePadding: 50,
       ),
     );
     targets.add(
@@ -415,6 +420,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
             'Debes pulsar cada una de las letras correctas para completar la palabra.'
             '\n Por ejemplo toca la letra H para completar exitosamente la primera letra de la palabra.',
         shape: ShapeLightFocus.Circle,
+        imagePadding: 50,
       ),
     );
   }

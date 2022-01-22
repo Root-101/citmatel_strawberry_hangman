@@ -1,6 +1,5 @@
 import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
 import 'package:citmatel_strawberry_tools/tools_exporter.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
@@ -11,6 +10,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   late final List<String> answerToBe;
   int remainingLives = 0;
   bool isFirstTime = true;
+  final bool showTutorial;
 
   ///cantidad de columnas del teclado
   late final int keyboardColumns;
@@ -18,6 +18,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   HangManSubLevelControllerImpl({
     required HangManSubLevelDomain subLevelDomain,
     required HangManSubLevelProgressDomain subLevelProgressDomain,
+    required this.showTutorial,
   }) : subLevelUseCase = HangManSubLevelUseCaseImpl(
           subLevelDomain: subLevelDomain,
           subLevelProgressDomain: subLevelProgressDomain,
@@ -61,7 +62,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
       StrawberryVibration.vibrate();
       _breakHeart(context, key7);
     } else {
-      if (isFirstTime) {
+      if (isFirstTime && showTutorial) {
         isFirstTime = false;
         // Continue the tutorial.
         StrawberryTutorial.showTutorial(
@@ -75,6 +76,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
               description:
                   'Felicidades lo has conseguido. Continúa así para ganar el nivel.',
               shape: ShapeLightFocus.Circle,
+              contentAlign: ContentAlign.top,
             ),
           ],
         );
@@ -91,7 +93,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
 
   void _breakHeart(BuildContext context, GlobalKey key7) {
     remainingLives--;
-    if (lives - remainingLives == 1) {
+    if (lives - remainingLives == 1 && showTutorial) {
       // Continue the tutorial.
       StrawberryTutorial.showTutorial(
         context: context,
@@ -105,6 +107,8 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
                 '\n Cuando te quedes sin vidas se te dará la posibilidad de intentarlo de nuevo.'
                 '\n Solo si completas la palabra correctamente podrás pasar de nivel.',
             shape: ShapeLightFocus.Circle,
+            showImageOnTop: false,
+            imagePadding: 50,
           ),
         ],
       );
