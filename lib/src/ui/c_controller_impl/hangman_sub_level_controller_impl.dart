@@ -1,17 +1,24 @@
 import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
 import 'package:citmatel_strawberry_tools/tools_exporter.dart';
+import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
 class HangManSubLevelControllerImpl extends HangManSubLevelController {
+  // An empty character to fill the word when isn't completed yet.
   static const _emptyCharacter = "_";
+  // The UseCase.
   late final HangManSubLevelUseCase subLevelUseCase;
+  // The word that is going to by fill by the choices of the user. Initially is fill with empty characters.
   late final List<String> answerToBe;
+  // The remaining lives after the user lose it. Is initialized with the amount of lives if gets to zero the user lose.
   int remainingLives = 0;
+  // It is true as long as the tutorial on the correct letter has not been shown for the first time. Then is false.
   bool isFirstTime = true;
-
-  ///cantidad de columnas del teclado
+  // The controller for the confetti animation.
+  late final ConfettiController confettiController;
+  // The amount of columns in the keyboard widget.
   late final int keyboardColumns;
 
   HangManSubLevelControllerImpl({
@@ -25,6 +32,10 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
     answerToBe = List.generate(answerCantOfLetters, (index) => _emptyCharacter);
 
     keyboardColumns = _generateKeyboardColumns();
+
+    confettiController = ConfettiController(
+      duration: const Duration(milliseconds: 50),
+    );
   }
 
   @override
@@ -40,6 +51,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
     return HangManSubLevelUseCaseImpl.DEFAULT_KEYBOARD_COLUMNS;
   }
 
+  // Show the tutorial if is the first sublevel of the first level.
   bool get showTutorial => subLevelUseCase.showTutorial();
 
   @override
@@ -85,6 +97,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
 
       StrawberryAudio.playAudioCorrect();
       StrawberryVibration.vibrate();
+      _makeConfetti();
       _fillAnswer(possiblesIndex, letter);
 
       _doWinLevel();
@@ -180,5 +193,10 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
 
     //actualiza manual la lista del level para que al volver atras ya este actualizado
     Get.find<HangManLevelController>().update();
+  }
+
+  // Make the confetti animation.
+  void _makeConfetti() {
+    confettiController.play();
   }
 }

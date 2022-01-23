@@ -1,3 +1,4 @@
+import 'package:confetti/confetti.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
@@ -7,12 +8,18 @@ abstract class HangManSubLevelController extends GetxController {
   //la cantidad de estrellas va a estar entre [0,3] inclusive
   static const int MAX_STARS = 3;
 
+  // The url of the image.
   String get imageUrl;
 
+  // The amount of lives.
   int get lives;
 
+  // The remaining lives after the user lose it.
+  // Is initialized with the amount of lives if gets to zero the user lose.
   int get remainingLives;
 
+  // The word that is going to by fill by the choices of the user.
+  // Initially is fill with empty characters.
   List<String> get answerToBe;
 
   //cantidad de letras de la respuesta, para saber las columnas del grid view
@@ -23,11 +30,11 @@ abstract class HangManSubLevelController extends GetxController {
   ///y en cualquier caso actualiza la visual
   void checkLetter(
       String letter, BuildContext context, GlobalKey key6, GlobalKey key7);
-
+  // The amount of columns in the keyboard widget.
   int get keyboardColumns;
 
   List<String> get keyboard;
-
+  // Show the tutorial if is the first sublevel of the first level.
   bool get showTutorial;
 
   bool isUsed(String letter);
@@ -35,4 +42,6 @@ abstract class HangManSubLevelController extends GetxController {
   bool answerContainLetter(String letter);
 
   int generateProgress();
+  // The controller for the confetti animation.
+  ConfettiController get confettiController;
 }
