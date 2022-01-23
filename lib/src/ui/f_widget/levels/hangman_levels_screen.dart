@@ -79,10 +79,6 @@ class HangManLevelsScreen extends GetView<HangManLevelController> {
             (subLevel) => GetBuilder<HangManLevelController>(
               builder: (_) {
                 return HangManSingleLevelTile(
-                  showTutorial: controller.showTutorial(
-                    level.id,
-                    subLevel.id,
-                  ),
                   subLevelDomain: subLevel,
                   subLevelProgressDomain:
                       Get.find<HangManSubLevelProgressUseCase>().findByAll(
