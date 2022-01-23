@@ -335,7 +335,24 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
       height: double.maxFinite,
       alignment: Alignment.center,
       // Call the _animateImage so the image can use diferents tipes of gestures.
-      child: _animateImage(_controller.imageUrl),
+      child: SafeArea(
+        child: Stack(
+          children: [
+            _animateImage(_controller.imageUrl),
+            Positioned(
+              child: StrawberryWidgets.circularButtonWithIcon(
+                onPressed: () => Get.back(closeOverlays: true),
+                backgroundColor: Colors.transparent,
+                child: StrawberryWidgets.pulseIconAnimation(
+                  icon: Icons.arrow_back,
+                ),
+              ),
+              top: 10,
+              left: 10,
+            ),
+          ],
+        ),
+      ),
     );
   }
 
