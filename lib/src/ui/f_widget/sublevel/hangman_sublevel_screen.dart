@@ -75,26 +75,35 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: Stack(
         children: [
-          GetBuilder<HangManSubLevelController>(
-            builder: (_) {
-              return _buildListOfHearts();
-            },
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              GetBuilder<HangManSubLevelController>(
+                builder: (_) {
+                  return _buildListOfHearts();
+                },
+              ),
+              // This one haven't the GetBuilder<HangManSubLevelController>
+              // because is no need to rebuild the image ever.
+              _buildImageCard(),
+              GetBuilder<HangManSubLevelController>(
+                builder: (_) {
+                  return _buildWord();
+                },
+              ),
+              GetBuilder<HangManSubLevelController>(
+                builder: (_) {
+                  return _buildKeyBoard();
+                },
+              ),
+            ],
           ),
-          // This one haven't the GetBuilder<HangManSubLevelController>
-          // because is no need to rebuild the image ever.
-          _buildImageCard(),
-          GetBuilder<HangManSubLevelController>(
-            builder: (_) {
-              return _buildWord();
-            },
-          ),
-          GetBuilder<HangManSubLevelController>(
-            builder: (_) {
-              return _buildKeyBoard();
-            },
+          Align(
+            alignment: Alignment.topCenter,
+            child: StrawberryWidgets.confettiWidget(
+                confettiController: _controller.confettiController),
           ),
         ],
       ),
