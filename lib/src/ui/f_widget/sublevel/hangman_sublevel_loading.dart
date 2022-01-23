@@ -5,12 +5,10 @@ import 'package:flutter/material.dart';
 class HangManSubLevelLoading extends StatelessWidget {
   final HangManSubLevelDomain subLevelDomain;
   final HangManSubLevelProgressDomain subLevelProgressDomain;
-  final bool showTutorial;
 
   HangManSubLevelLoading({
     required this.subLevelDomain,
     required this.subLevelProgressDomain,
-    required this.showTutorial,
     Key? key,
   }) : super(key: key);
 
@@ -22,7 +20,6 @@ class HangManSubLevelLoading extends StatelessWidget {
       subLevel: HangManSubLevelScreen(
         subLevelDomain: subLevelDomain,
         subLevelProgressDomain: subLevelProgressDomain,
-        showTutorial: showTutorial,
       ),
     );
   }
