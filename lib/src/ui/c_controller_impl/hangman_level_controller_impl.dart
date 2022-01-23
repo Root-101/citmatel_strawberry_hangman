@@ -19,13 +19,4 @@ class HangManLevelControllerImpl extends HangManLevelController {
   int count() {
     return levelUseCase.count();
   }
-
-  @override
-  bool showTutorial(int levelId, int subLevelid) {
-    if (levelId == findAll()[0].id &&
-        subLevelid == findAll()[0].sublevel[0].id) {
-      return true;
-    }
-    return false;
-  }
 }
