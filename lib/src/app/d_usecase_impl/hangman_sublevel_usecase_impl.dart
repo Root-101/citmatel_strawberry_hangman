@@ -152,4 +152,12 @@ class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
   void _executeProgressUpdate() {
     Get.find<HangManSubLevelProgressUseCase>().edit(subLevelProgressDomain);
   }
+
+  @override
+  bool showTutorial() {
+    return subLevelProgressDomain.hangmanLevelDomainId ==
+            Get.find<HangManLevelUseCase>().findAll()[0].id &&
+        subLevelProgressDomain.hangmanSubLevelDomainId ==
+            Get.find<HangManLevelUseCase>().findAll()[0].sublevel[0].id;
+  }
 }

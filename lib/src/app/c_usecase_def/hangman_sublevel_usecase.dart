@@ -30,4 +30,6 @@ abstract class HangManSubLevelUseCase extends AbstractUseCase {
   int lives();
 
   void saveProgress(int stars);
+
+  bool showTutorial();
 }
