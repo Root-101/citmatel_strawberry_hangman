@@ -10,7 +10,6 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   late final List<String> answerToBe;
   int remainingLives = 0;
   bool isFirstTime = true;
-  final bool showTutorial;
 
   ///cantidad de columnas del teclado
   late final int keyboardColumns;
@@ -18,7 +17,6 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   HangManSubLevelControllerImpl({
     required HangManSubLevelDomain subLevelDomain,
     required HangManSubLevelProgressDomain subLevelProgressDomain,
-    required this.showTutorial,
   }) : subLevelUseCase = HangManSubLevelUseCaseImpl(
           subLevelDomain: subLevelDomain,
           subLevelProgressDomain: subLevelProgressDomain,
@@ -41,6 +39,8 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   int _generateKeyboardColumns() {
     return HangManSubLevelUseCaseImpl.DEFAULT_KEYBOARD_COLUMNS;
   }
+
+  bool get showTutorial => subLevelUseCase.showTutorial();
 
   @override
   List<String> get keyboard {
