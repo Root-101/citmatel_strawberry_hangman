@@ -9,7 +9,7 @@ class HangManLevel1 {
   static final HangManLevelDomain level1 = HangManLevelDomain(
     id: 1,
     theme: "Tutorial",
-    urlThemePicture: "",
+    urlThemePicture: HangManAssets.WALLPAPER,
     sublevel: [
       sublevel.clone()..id = 1,
       sublevel.clone()..id = 2,
