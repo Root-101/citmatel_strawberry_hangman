@@ -15,18 +15,15 @@ import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 // ignore: must_be_immutable
 class HangManSubLevelScreen extends StatefulWidget {
   static const ROUTE_NAME = "/hangman-sublevel-screen";
-  final bool showTutorial;
 
   HangManSubLevelScreen({
     required HangManSubLevelDomain subLevelDomain,
     required HangManSubLevelProgressDomain subLevelProgressDomain,
-    required this.showTutorial,
   }) : super() {
     Get.put<HangManSubLevelController>(
       HangManSubLevelControllerImpl(
         subLevelDomain: subLevelDomain,
         subLevelProgressDomain: subLevelProgressDomain,
-        showTutorial: showTutorial,
       ),
     );
   }
@@ -53,7 +50,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
   void initState() {
     _controller = Get.find();
 
-    if (widget.showTutorial) {
+    if (_controller.showTutorial) {
       //Start showcase view after current widget frames are drawn.
       WidgetsBinding.instance!.addPostFrameCallback((duration) async {
         // Is necessary to wait a few seconds because the widgets haven't been created.
@@ -376,7 +373,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
       StrawberryTutorial.addMultipleTarget(
         identify: "Target Word",
         keyTarget: _key2,
-        shadowColor: Colors.red,
+        shadowColor: Colors.deepPurple,
         contentTextAlign: ContentAlign.bottom,
         contentImageAlign: ContentAlign.top,
         title: 'Palabra a completar.',
@@ -402,7 +399,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
       StrawberryTutorial.addTarget(
         identify: "Target Keyboard",
         keyTarget: _key4,
-        shadowColor: Colors.amber,
+        shadowColor: Colors.red,
         contentAlign: ContentAlign.top,
         title: 'Teclado.',
         description:
