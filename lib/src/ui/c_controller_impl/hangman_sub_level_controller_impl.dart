@@ -8,16 +8,22 @@ import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 class HangManSubLevelControllerImpl extends HangManSubLevelController {
   // An empty character to fill the word when isn't completed yet.
   static const _emptyCharacter = "_";
+
   // The UseCase.
   late final HangManSubLevelUseCase subLevelUseCase;
+
   // The word that is going to by fill by the choices of the user. Initially is fill with empty characters.
   late final List<String> answerToBe;
+
   // The remaining lives after the user lose it. Is initialized with the amount of lives if gets to zero the user lose.
   int remainingLives = 0;
+
   // It is true as long as the tutorial on the correct letter has not been shown for the first time. Then is false.
   bool isFirstTime = true;
+
   // The controller for the confetti animation.
   late final ConfettiController confettiController;
+
   // The amount of columns in the keyboard widget.
   late final int keyboardColumns;
 
@@ -67,6 +73,10 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   @override
   void checkLetter(
       String letter, BuildContext context, GlobalKey key6, GlobalKey key7) {
+    if (!answerToBe.contains(_emptyCharacter)) {
+      return;
+    }
+
     List<int> possiblesIndex = subLevelUseCase.checkLetter(letter);
     if (possiblesIndex.isEmpty) {
       //no existe esa letra en la palabra
