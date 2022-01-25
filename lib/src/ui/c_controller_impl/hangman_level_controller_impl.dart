@@ -19,4 +19,19 @@ class HangManLevelControllerImpl extends HangManLevelController {
   int count() {
     return levelUseCase.count();
   }
+
+  @override
+  int maxStars(HangManLevelDomain levelDomain) {
+    return levelDomain.sublevel.length * HangManSubLevelController.MAX_STARS;
+  }
+
+  @override
+  int winedStars(HangManLevelDomain levelDomain) {
+    return Get.find<HangManSubLevelProgressUseCase>()
+        .findByLevelId(levelDomain.id)
+        .fold(
+          0,
+          (previousValue, element) => previousValue + element.stars,
+        );
+  }
 }
