@@ -13,11 +13,16 @@ class HangManLevelsScreen extends GetView<HangManLevelController> {
     return CommonsLevelsScreen<HangManLevelDomain>(
       levelsFindAll: controller.findAll(),
       buildSingleLevel: (levelDomain) {
-        return CommonsSingleLevel<HangManSubLevelDomain>(
-          urlThemePicture: levelDomain.urlThemePicture,
-          subLevelsAll: (levelDomain).sublevel,
-          singleLevelBuilder: (subLevelDomain) {
-            return GetBuilder<HangManLevelController>(builder: (context) {
+        return GetBuilder<HangManLevelController>(builder: (context) {
+          return CommonsSingleLevel<HangManSubLevelDomain>(
+            moduleName: "HangMan",
+            themeTitle: levelDomain.theme,
+            maxStars: Get.find<HangManLevelController>().maxStars(levelDomain),
+            winedStars:
+                Get.find<HangManLevelController>().winedStars(levelDomain),
+            urlThemePicture: levelDomain.urlThemePicture,
+            subLevelsAll: (levelDomain).sublevel,
+            singleLevelBuilder: (subLevelDomain) {
               HangManSubLevelProgressDomain progressDomain =
                   Get.find<HangManSubLevelProgressUseCase>().findByAll(
                 levelDomain,
@@ -31,9 +36,9 @@ class HangManLevelsScreen extends GetView<HangManLevelController> {
                   subLevelProgressDomain: progressDomain,
                 ),
               );
-            });
-          },
-        );
+            },
+          );
+        });
       },
     );
   }

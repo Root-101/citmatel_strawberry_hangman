@@ -7,4 +7,10 @@ abstract class HangManLevelController extends GetxController {
   HangManLevelDomain findBy(int keyId);
 
   int count();
+
+  //devuelve la cantidad de estrellas maximo del nivel
+  int maxStars(HangManLevelDomain levelDomain);
+
+  //devuelve la cantidad de estrellas ganadas del nivel
+  int winedStars(HangManLevelDomain levelDomain);
 }
