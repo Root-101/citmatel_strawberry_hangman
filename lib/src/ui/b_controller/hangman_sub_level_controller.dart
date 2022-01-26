@@ -44,4 +44,7 @@ abstract class HangManSubLevelController extends GetxController {
   int generateProgress();
   // The controller for the confetti animation.
   ConfettiController get confettiController;
+
+  // Method that returns the first letter of the answer.
+  String get firstAnswerLetter;
 }

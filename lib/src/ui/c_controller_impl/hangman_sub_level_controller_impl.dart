@@ -209,4 +209,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   void _makeConfetti() {
     confettiController.play();
   }
+
+  @override
+  String get firstAnswerLetter => subLevelUseCase.firstAnswerLetter;
 }
