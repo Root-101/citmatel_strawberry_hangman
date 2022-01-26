@@ -160,4 +160,7 @@ class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
         subLevelProgressDomain.hangmanSubLevelDomainId ==
             Get.find<HangManLevelUseCase>().findAll()[0].sublevel[0].id;
   }
+
+  @override
+  String get firstAnswerLetter => subLevelDomain.answer[0];
 }

@@ -12,6 +12,9 @@ abstract class HangManSubLevelUseCase extends AbstractUseCase {
   ///cantidad de letras del teclado
   int get keyboardCantLetters;
 
+  // Method that returns the first letter of the answer.
+  String get firstAnswerLetter;
+
   ///teclado como tal que se muestra, se debe asegurar que no tenga letras repetidas y siempre contenga las letras de la respuesta
   List<String> get keyboard;
 

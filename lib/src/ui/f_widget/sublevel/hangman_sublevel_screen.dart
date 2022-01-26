@@ -147,7 +147,9 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
                   index,
                   _controller.keyboardColumns,
                   InkWell(
-                    key: listOfLetters[index] == 'H' ? _key5 : Key(""),
+                    key: listOfLetters[index] == _controller.firstAnswerLetter
+                        ? _key5
+                        : null,
                     child: _emptyCard(
                       listOfLetters[index],
                       Colors.white,
@@ -187,7 +189,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
                   ))
               //If it's fill show the RubberBand effect and put the correct letter.
               : RubberBand(
-                  key: index == 0 ? _key6 : Key(""),
+                  key: index == _controller.firstCorrectLetter ? _key6 : null,
                   child: _emptyCard(
                     listOfLetters[index],
                     Colors.white,
@@ -442,7 +444,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
         title: 'Letra.',
         description:
             'Debes pulsar cada una de las letras correctas para completar la palabra.'
-            '\n Por ejemplo toca la letra H para completar exitosamente la primera letra de la palabra.',
+            '\n Por ejemplo toca la letra ${_controller.firstAnswerLetter} para completar exitosamente la primera letra de la palabra.',
         shape: ShapeLightFocus.Circle,
         imagePadding: 50,
       ),
