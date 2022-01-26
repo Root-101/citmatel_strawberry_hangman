@@ -27,6 +27,8 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   // The amount of columns in the keyboard widget.
   late final int keyboardColumns;
 
+  late int firstCorrectLetter;
+
   HangManSubLevelControllerImpl({
     required HangManSubLevelDomain subLevelDomain,
     required HangManSubLevelProgressDomain subLevelProgressDomain,
@@ -84,25 +86,28 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
       StrawberryVibration.vibrate();
       _breakHeart(context, key7);
     } else {
-      if (isFirstTime && showTutorial) {
-        isFirstTime = false;
-        // Continue the tutorial.
-        StrawberryTutorial.showTutorial(
-          context: context,
-          targets: [
-            StrawberryTutorial.addMultipleTarget(
-              identify: "Target Answer Right",
-              keyTarget: key6,
-              shadowColor: Colors.green,
-              title: 'Respuesta correcta.',
-              description:
-                  'Felicidades lo has conseguido. Continúa así para ganar el nivel.',
-              shape: ShapeLightFocus.Circle,
-              contentImageAlign: ContentAlign.top,
-              contentTextAlign: ContentAlign.right,
-            ),
-          ],
-        );
+      if (isFirstTime) {
+        firstCorrectLetter = possiblesIndex[0];
+        if (showTutorial) {
+          isFirstTime = false;
+          // Continue the tutorial.
+          StrawberryTutorial.showTutorial(
+            context: context,
+            targets: [
+              StrawberryTutorial.addMultipleTarget(
+                identify: "Target Answer Right",
+                keyTarget: key6,
+                shadowColor: Colors.green,
+                title: 'Respuesta correcta.',
+                description:
+                    'Felicidades lo has conseguido. Continúa así para ganar el nivel.',
+                shape: ShapeLightFocus.Circle,
+                contentImageAlign: ContentAlign.top,
+                contentTextAlign: ContentAlign.bottom,
+              ),
+            ],
+          );
+        }
       }
 
       StrawberryAudio.playAudioCorrect();

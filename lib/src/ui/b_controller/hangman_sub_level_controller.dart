@@ -47,4 +47,6 @@ abstract class HangManSubLevelController extends GetxController {
 
   // Method that returns the first letter of the answer.
   String get firstAnswerLetter;
+
+  int get firstCorrectLetter;
 }
