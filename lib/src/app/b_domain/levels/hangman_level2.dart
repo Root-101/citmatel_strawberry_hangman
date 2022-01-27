@@ -13,45 +13,47 @@ class HangManLevel2 {
       colorLight: Color(0xffe1a41b).withOpacity(0.5),
     ),
     sublevel: [
+      // HangManSubLevelDomain(
+      //   id: 1,
+      //   answer: "conferencia",
+      //   urlImage: HangManAssets.CONFERENCIA,
+      // ),
       HangManSubLevelDomain(
         id: 1,
-        answer: "conferencia",
-        urlImage: HangManAssets.CONFERENCIA,
+        answer: "examen",
+        urlImage: HangManAssets.EXAMEN,
       ),
+
+      // HangManSubLevelDomain(
+      //   id: 3,
+      //   answer: "graduacion",
+      //   urlImage: HangManAssets.GRADUACION,
+      // ),
+
+      // HangManSubLevelDomain(
+      //   id: 6,
+      //   answer: "laboratorio",
+      //   urlImage: HangManAssets.LABORATORIO,
+      // ),
       HangManSubLevelDomain(
         id: 2,
+        answer: "libros",
+        urlImage: HangManAssets.LIBRO,
+      ),
+      HangManSubLevelDomain(
+        id: 3,
         answer: "escuela",
         urlImage: HangManAssets.ESCUELA,
       ),
       HangManSubLevelDomain(
-        id: 3,
-        answer: "graduacion",
-        urlImage: HangManAssets.GRADUACION,
-      ),
-      HangManSubLevelDomain(
         id: 4,
-        answer: "examen",
-        urlImage: HangManAssets.EXAMEN,
+        answer: "notas",
+        urlImage: HangManAssets.NOTAS,
       ),
       HangManSubLevelDomain(
         id: 5,
         answer: "escribir",
         urlImage: HangManAssets.ESCRIBIR,
-      ),
-      HangManSubLevelDomain(
-        id: 6,
-        answer: "laboratorio",
-        urlImage: HangManAssets.LABORATORIO,
-      ),
-      HangManSubLevelDomain(
-        id: 7,
-        answer: "libros",
-        urlImage: HangManAssets.LIBRO,
-      ),
-      HangManSubLevelDomain(
-        id: 8,
-        answer: "notas",
-        urlImage: HangManAssets.NOTAS,
       ),
     ],
   );
