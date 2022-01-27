@@ -53,5 +53,15 @@ flutter:
   assets:
     - packages/citmatel_strawberry_hangman/assets/icons/brain_in_blue.jpg
     - packages/citmatel_strawberry_hangman/assets/icons/hangman_wallpaper.jpg
+    - packages/citmatel_strawberry_hangman/assets/level1/tutorial.jpg
+    - packages/citmatel_strawberry_hangman/assets/level2/conferencia.png
+    - packages/citmatel_strawberry_hangman/assets/level2/escuela.png
+    - packages/citmatel_strawberry_hangman/assets/level2/graduacion.png
+    - packages/citmatel_strawberry_hangman/assets/level2/escribir.jpg
+    - packages/citmatel_strawberry_hangman/assets/level2/examen.jpg
+    - packages/citmatel_strawberry_hangman/assets/level2/laboratorio.jpg
+    - packages/citmatel_strawberry_hangman/assets/level2/libros.jpg
+    - packages/citmatel_strawberry_hangman/assets/level2/notas.jpg
+    
 
   uses-material-design: true
