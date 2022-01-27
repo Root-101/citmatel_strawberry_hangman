@@ -10,35 +10,47 @@ class HangManLevelsScreen extends GetView<HangManLevelController> {
 
   @override
   Widget build(BuildContext context) {
-    return CommonsLevelsScreen<HangManLevelDomain>(
-      levelsFindAll: controller.findAll(),
-      buildSingleLevel: (levelDomain) {
-        return GetBuilder<HangManLevelController>(builder: (context) {
-          return CommonsSingleLevel<HangManSubLevelDomain>(
-            moduleName: "HangMan",
-            themeTitle: levelDomain.theme,
-            maxStars: Get.find<HangManLevelController>().maxStars(levelDomain),
-            winedStars:
-                Get.find<HangManLevelController>().winedStars(levelDomain),
-            urlThemePicture: levelDomain.urlThemePicture,
-            subLevelsAll: (levelDomain).sublevel,
-            singleLevelBuilder: (subLevelDomain) {
-              HangManSubLevelProgressDomain progressDomain =
-                  Get.find<HangManSubLevelProgressUseCase>().findByAll(
-                levelDomain,
-                subLevelDomain,
-              );
-              return CommonsSingleSubLevelTile(
-                stars: progressDomain.stars,
-                contPlayedTimes: progressDomain.contPlayedTimes,
-                openWidget: HangManSubLevelLoading(
-                  subLevelDomain: subLevelDomain,
-                  subLevelProgressDomain: progressDomain,
-                ),
-              );
-            },
-          );
-        });
+    return GetBuilder<HangManLevelController>(
+      builder: (context) {
+        return CommonsLevelsThemeScreen<HangManLevelDomain>(
+          levelsFindAll: controller.findAll(),
+          urlSliverBackground: HangManAssets.WALLPAPER,
+          singleThemeTileBuilder: (levelDomain) {
+            return CommonsLevelsThemeSingleTile<HangManLevelDomain>(
+              singleLevelDomain: levelDomain,
+              colorPrimary: levelDomain.themeBackgroundImage.colorStrong,
+              buildThemeName: (levelDomain) => levelDomain.theme,
+              buildThemeUrlImage: (levelDomain) =>
+                  levelDomain.themeBackgroundImage.urlImage,
+              openWidget: CommonsSingleLevel<HangManSubLevelDomain>(
+                themeTitle: levelDomain.theme,
+                urlThemePicture: levelDomain.themeBackgroundImage.urlImage,
+                colorPrimary: levelDomain.themeBackgroundImage.colorStrong,
+                colorSecondary: levelDomain.themeBackgroundImage.colorLight,
+                maxStars: 0,
+                winedStars: 0,
+                subLevelsAll: levelDomain.sublevel,
+                singleSubLevelTileBuilder: (subLevelDomain) {
+                  HangManSubLevelProgressDomain progressDomain =
+                      Get.find<HangManSubLevelProgressUseCase>().findByAll(
+                    levelDomain,
+                    subLevelDomain,
+                  );
+                  return CommonsSingleSubLevelTile(
+                    //el primario de aqui es el secundario del otro lado
+                    colorPrimary: levelDomain.themeBackgroundImage.colorLight,
+                    stars: progressDomain.stars,
+                    contPlayedTimes: progressDomain.contPlayedTimes,
+                    openWidget: HangManSubLevelLoading(
+                      subLevelDomain: subLevelDomain,
+                      subLevelProgressDomain: progressDomain,
+                    ),
+                  );
+                },
+              ),
+            );
+          },
+        );
       },
     );
   }
