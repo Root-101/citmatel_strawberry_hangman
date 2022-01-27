@@ -86,28 +86,28 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
       StrawberryVibration.vibrate();
       _breakHeart(context, key7);
     } else {
-      if (isFirstTime) {
+      if (isFirstTime && showTutorial) {
         firstCorrectLetter = possiblesIndex[0];
-        if (showTutorial) {
-          isFirstTime = false;
-          // Continue the tutorial.
-          StrawberryTutorial.showTutorial(
-            context: context,
-            targets: [
-              StrawberryTutorial.addMultipleTarget(
-                identify: "Target Answer Right",
-                keyTarget: key6,
-                shadowColor: Colors.green,
-                title: 'Respuesta correcta.',
-                description:
-                    'Felicidades lo has conseguido. Continúa así para ganar el nivel.',
-                shape: ShapeLightFocus.Circle,
-                contentImageAlign: ContentAlign.top,
-                contentTextAlign: ContentAlign.bottom,
-              ),
-            ],
-          );
-        }
+        isFirstTime = false;
+        // Continue the tutorial.
+        StrawberryTutorial.showTutorial(
+          context: context,
+          targets: [
+            StrawberryTutorial.addMultipleTarget(
+              identify: "Target Answer Right",
+              keyTarget: key6,
+              shadowColor: Colors.green,
+              title: 'Respuesta correcta.',
+              description:
+                  'Felicidades lo has conseguido. Continúa así para ganar el nivel.',
+              shape: ShapeLightFocus.Circle,
+              contentImageAlign: ContentAlign.top,
+              contentTextAlign: ContentAlign.bottom,
+            ),
+          ],
+        );
+      } else {
+        firstCorrectLetter = 10000;
       }
 
       StrawberryAudio.playAudioCorrect();
