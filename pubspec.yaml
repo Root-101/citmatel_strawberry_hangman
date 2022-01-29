@@ -16,6 +16,7 @@ dependencies:
   # Architecture & Management
   get: ^4.5.1
   clean_core: ^1.2.1-SNAPSHOT.20220116
+  tuple: ^2.0.0
 
   # Visual & Animations
   animations: ^2.0.2
