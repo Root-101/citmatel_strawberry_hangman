@@ -13,6 +13,24 @@ class HangManLevelsScreen extends GetView<HangManLevelController> {
     return GetBuilder<HangManLevelController>(
       builder: (context) {
         return CommonsLevelsThemeScreen<HangManLevelDomain>(
+          tutorialTile: CommonsLevelsThemeSingleTile<HangManLevelDomain>(
+            //levelDomain para generar las cosas de aqui
+            singleLevelDomain: HangManLevelTutorial.tutorial,
+            //color primario, principalmente para animaciones
+            colorPrimary:
+                HangManLevelTutorial.tutorial.themeBackgroundImage.colorStrong,
+            //tema del tile, generado a partir del `levelDomain`
+            buildThemeName: (levelDomain) => levelDomain.theme,
+            //foto del tema del tile, generado a partir del `levelDomain`
+            buildThemeUrlImage: (levelDomain) =>
+                levelDomain.themeBackgroundImage.urlImage,
+            //nivel abierto, entrar directo al juego
+            openWidget: HangManSubLevelLoading(
+              subLevelDomain: HangManLevelTutorial.tutorialSubLevel,
+              subLevelProgressDomain:
+                  HangManLevelTutorial.tutorialSubLevelProgress(),
+            ),
+          ),
           //widget que se genera cada vez que se selecciona el aleatorio
           onRandomTap: controller.randomSubLevel,
           //lista de los niveles
