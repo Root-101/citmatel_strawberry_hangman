@@ -8,6 +8,7 @@ class HangManCoreModule {
     //sin dependencia
     Get.put<HangManLevelUseCase>(
         HangManLevelUseCaseImpl(HangManLevelsAll.levels));
+    Get.put<HangManRandomUseCase>(HangManRandomUseCaseImpl());
 
     //el de progreso con la BD
     Get.put<HangManSubLevelProgressUseCase>(
