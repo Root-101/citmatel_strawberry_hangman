@@ -75,8 +75,8 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   @override
   void checkLetter(
       String letter, BuildContext context, GlobalKey key6, GlobalKey key7) {
-    if (!answerToBe.contains(_emptyCharacter)) {
-      return;
+    if (!answerToBe.contains(_emptyCharacter) || remainingLives <= 0) {
+      return; //tambien se puede destruir el controller con el super.dispose()
     }
 
     List<int> possiblesIndex = subLevelUseCase.checkLetter(letter);
