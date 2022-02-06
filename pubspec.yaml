@@ -54,15 +54,25 @@ flutter:
   assets:
     - packages/citmatel_strawberry_hangman/assets/icons/brain_in_blue.jpg
     - packages/citmatel_strawberry_hangman/assets/icons/hangman_wallpaper.jpg
-    - packages/citmatel_strawberry_hangman/assets/level1/tutorial.jpg
-    - packages/citmatel_strawberry_hangman/assets/level2/conferencia.png
-    - packages/citmatel_strawberry_hangman/assets/level2/escuela.png
-    - packages/citmatel_strawberry_hangman/assets/level2/graduacion.png
-    - packages/citmatel_strawberry_hangman/assets/level2/escribir.jpg
-    - packages/citmatel_strawberry_hangman/assets/level2/examen.jpg
-    - packages/citmatel_strawberry_hangman/assets/level2/laboratorio.jpg
-    - packages/citmatel_strawberry_hangman/assets/level2/libros.jpg
-    - packages/citmatel_strawberry_hangman/assets/level2/notas.jpg
-    
+
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/palma.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/vacuna.jpg
+
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/cheque.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/dinero.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/diploma.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/escribir.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/escuela.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/examen.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/libros.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/notas.jpg
+
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/anubis.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/faraón.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/fénix.jpg
+
+    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/cohete.jpg
+
+    - packages/citmatel_strawberry_hangman/assets/niveles/tutorial/tutorial.jpg
 
   uses-material-design: true
