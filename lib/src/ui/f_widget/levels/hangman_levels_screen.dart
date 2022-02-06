@@ -17,6 +17,10 @@ class HangManLevelsScreen extends GetView<HangManLevelController> {
 
         return CommonsLevelsThemeScreen<HangManLevelDomain>(
           tutorialTile: CommonsLevelsThemeSingleTile<HangManLevelDomain>(
+            winedStars: HangManLevelTutorial.tutorialSubLevelProgress().stars,
+            maxStars: HangManSubLevelController.MAX_STARS,
+            wonedLevel: _.wonedLevel(HangManLevelTutorial.tutorial),
+
             //levelDomain para generar las cosas de aqui
             singleLevelDomain: HangManLevelTutorial.tutorial,
             //color primario, principalmente para animaciones
@@ -50,6 +54,13 @@ class HangManLevelsScreen extends GetView<HangManLevelController> {
               int maxStars = _.maxStars(levelDomain);
 
               return CommonsLevelsThemeSingleTile<HangManLevelDomain>(
+                //estrellas chiquitas de cada tile
+                maxStars: maxStars,
+                winedStars: winedStars,
+
+                //marca el nivel como ganado o no
+                wonedLevel: _.wonedLevel(levelDomain),
+
                 //levelDomain para generar las cosas de aqui
                 singleLevelDomain: levelDomain,
                 //color primario, principalmente para animaciones
