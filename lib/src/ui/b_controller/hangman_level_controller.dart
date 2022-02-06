@@ -15,6 +15,12 @@ abstract class HangManLevelController extends GetxController {
   //devuelve la cantidad de estrellas ganadas del nivel
   int winedStars(HangManLevelDomain levelDomain);
 
+  //devuelve la cantidad de estrellas maximo de todos los niveles
+  int maxStarsAll();
+
+  //devuelve la cantidad de estrellas ganadas de todos los nivel
+  int winedStarsAll();
+
   Widget randomSubLevel();
 
   Widget randomSubLevelOf(HangManLevelDomain level);
