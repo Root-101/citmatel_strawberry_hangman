@@ -59,6 +59,22 @@ class HangManLevelControllerImpl extends HangManLevelController {
     );
   }
 
+  //compruebo todos los progresos de todos los subniveles, y saco los que no tienen progreso
+  //el nivel se gano solo si la cantidad de subniveles sin progreso es 0, o sea, que todos tienen algo de progreso
+  @override
+  bool wonedLevel(HangManLevelDomain levelDomain) {
+    int cantEmpty = 0;
+    levelDomain.sublevel.forEach((subLevel) {
+      if (Get.find<HangManSubLevelProgressUseCase>()
+              .findByAllId(levelDomain.id, subLevel.id)
+              .stars ==
+          0) {
+        cantEmpty++;
+      }
+    });
+    return cantEmpty == 0;
+  }
+
   @override
   Widget randomSubLevel() {
     Tuple2<HangManSubLevelDomain, HangManSubLevelProgressDomain> tuple =
