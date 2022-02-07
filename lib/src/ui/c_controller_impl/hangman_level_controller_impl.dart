@@ -95,4 +95,8 @@ class HangManLevelControllerImpl extends HangManLevelController {
       subLevelProgressDomain: tuple.item2,
     );
   }
+
+  @override
+  String themeOfGivenLevel(HangManSubLevelProgressDomain progressDomain) =>
+      levelUseCase.themeOfGivenLevel(progressDomain);
 }

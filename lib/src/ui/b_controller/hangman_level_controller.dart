@@ -27,4 +27,6 @@ abstract class HangManLevelController extends GetxController {
   Widget randomSubLevel();
 
   Widget randomSubLevelOf(HangManLevelDomain level);
+
+  String themeOfGivenLevel(HangManSubLevelProgressDomain progressDomain);
 }
