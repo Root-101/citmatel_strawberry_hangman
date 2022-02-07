@@ -1,6 +1,6 @@
 library hangman_exporter;
 
-export 'assets/hangman_assets.dart';
+export 'assets/hangman_assets_exporter.dart';
 export 'objectbox.g.dart';
 //export all the hangman module
 export 'src/app/hangman_app_exporter.dart';
