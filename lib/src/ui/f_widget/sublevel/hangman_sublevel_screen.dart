@@ -58,7 +58,13 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
         // Initialice the steps of the tutorial.
         initTargets();
         // Start the tutorial.
-        StrawberryTutorial.showTutorial(context: context, targets: targets);
+        StrawberryTutorial.showTutorial(
+          context: context,
+          targets: targets,
+          onSkip: () {
+            _controller.stopTutorial();
+          },
+        );
       });
     }
 
