@@ -37,6 +37,8 @@ abstract class HangManSubLevelController extends GetxController {
   // Show the tutorial if is the first sublevel of the first level.
   bool get showTutorial;
 
+  void stopTutorial();
+
   bool isUsed(String letter);
 
   bool answerContainLetter(String letter);
