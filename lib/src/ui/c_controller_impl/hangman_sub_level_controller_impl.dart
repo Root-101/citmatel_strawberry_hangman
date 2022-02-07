@@ -29,6 +29,8 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
 
   late int firstCorrectLetter;
 
+  late bool _showTutorial;
+
   HangManSubLevelControllerImpl({
     required HangManSubLevelDomain subLevelDomain,
     required HangManSubLevelProgressDomain subLevelProgressDomain,
@@ -44,6 +46,8 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
     confettiController = ConfettiController(
       duration: const Duration(milliseconds: 50),
     );
+
+    _showTutorial = subLevelUseCase.showTutorial();
   }
 
   @override
@@ -60,7 +64,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   }
 
   // Show the tutorial if is the first sublevel of the first level.
-  bool get showTutorial => subLevelUseCase.showTutorial();
+  bool get showTutorial => _showTutorial;
 
   @override
   List<String> get keyboard {
@@ -105,6 +109,9 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
               contentTextAlign: ContentAlign.bottom,
             ),
           ],
+          onSkip: () {
+            stopTutorial();
+          },
         );
       } else {
         firstCorrectLetter = 10000;
@@ -140,6 +147,9 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
             imagePadding: 50,
           ),
         ],
+        onSkip: () {
+          stopTutorial();
+        },
       );
     }
     _doLooseLevel();
@@ -217,4 +227,9 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
 
   @override
   String get firstAnswerLetter => subLevelUseCase.firstAnswerLetter;
+
+  @override
+  void stopTutorial() {
+    _showTutorial = false;
+  }
 }
