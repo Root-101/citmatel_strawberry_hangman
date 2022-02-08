@@ -4,7 +4,7 @@ import 'package:citmatel_strawberry_tools/tools_exporter.dart';
 class HangManLevelCienciasNaturales {
   static final HangManLevelDomain levelCienciasNaturales = HangManLevelDomain(
     id: 2,
-    theme: "Ciencias Naturales",
+    theme: "Ciencias",
     themeBackgroundImage: ToolsThemesAssets.THEME_CIENCIAS_BACKGROUND,
     sublevel: [
       HangManSubLevelDomain(
