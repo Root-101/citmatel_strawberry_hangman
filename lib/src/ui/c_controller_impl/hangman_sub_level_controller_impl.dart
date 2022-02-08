@@ -32,6 +32,8 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
 
   late bool _showTutorial;
 
+  late TutorialCoachMark tutorialCoach;
+
   HangManSubLevelControllerImpl({
     required HangManSubLevelDomain subLevelDomain,
     required HangManSubLevelProgressDomain subLevelProgressDomain,
@@ -95,7 +97,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
         firstCorrectLetter = possiblesIndex[0];
         isFirstTime = false;
         // Continue the tutorial.
-        StrawberryTutorial.showTutorial(
+        tutorialCoach = StrawberryTutorial.showTutorial(
           context: context,
           targets: [
             StrawberryTutorial.addMultipleTarget(
@@ -132,7 +134,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
     remainingLives--;
     if (lives - remainingLives == 1 && showTutorial) {
       // Continue the tutorial.
-      StrawberryTutorial.showTutorial(
+      tutorialCoach = StrawberryTutorial.showTutorial(
         context: context,
         targets: [
           StrawberryTutorial.addTarget(

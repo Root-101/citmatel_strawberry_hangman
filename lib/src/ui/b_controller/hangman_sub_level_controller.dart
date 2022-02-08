@@ -1,6 +1,7 @@
 import 'package:confetti/confetti.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
 abstract class HangManSubLevelController extends GetxController {
   static const String TAG = "sub-level-controller";
@@ -69,4 +70,6 @@ abstract class HangManSubLevelController extends GetxController {
 
   //devuelve el numero del subnivel en los niveles, basicamene el id del subnivel
   int subLevelNumber();
+
+  TutorialCoachMark get tutorialCoach;
 }

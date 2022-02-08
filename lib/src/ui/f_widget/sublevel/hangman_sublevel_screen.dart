@@ -34,7 +34,7 @@ class HangManSubLevelScreen extends StatefulWidget {
 
 class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
   late final HangManSubLevelController _controller;
-
+  late TutorialCoachMark tutorialCoachMark;
   List<TargetFocus> targets = [];
 
   // Steps in the tutorial.
@@ -58,7 +58,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
         // Initialice the steps of the tutorial.
         initTargets();
         // Start the tutorial.
-        StrawberryTutorial.showTutorial(
+        tutorialCoachMark = StrawberryTutorial.showTutorial(
           context: context,
           targets: targets,
           onSkip: () {
@@ -73,6 +73,8 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
 
   @override
   void dispose() {
+    tutorialCoachMark.finish();
+    _controller.tutorialCoach.finish();
     _controller.dispose();
     Get.delete<HangManSubLevelController>();
     super.dispose();
