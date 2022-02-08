@@ -16,7 +16,10 @@ class HangManSubLevelLoading extends GetView<HangManLevelController> {
   @override
   Widget build(BuildContext context) {
     return PlainSubLevelLoading(
-      backgroundURL: HangManAssets.WALLPAPER,
+      firstColor:
+          controller.themeLooksOfGivenLevel(subLevelProgressDomain).colorStrong,
+      secondColor:
+          controller.themeLooksOfGivenLevel(subLevelProgressDomain).colorLight,
       firstText: [
         "Tema: ${controller.themeOfGivenLevel(subLevelProgressDomain)}"
       ],
