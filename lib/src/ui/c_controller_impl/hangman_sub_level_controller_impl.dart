@@ -250,4 +250,8 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   void stopTutorial() {
     _showTutorial = false;
   }
+
+  String subLevelTheme() => subLevelUseCase.subLevelTheme();
+
+  int subLevelNumber() => subLevelUseCase.subLevelNumber();
 }

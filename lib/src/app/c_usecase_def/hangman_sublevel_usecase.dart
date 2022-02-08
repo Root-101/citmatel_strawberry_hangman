@@ -38,4 +38,10 @@ abstract class HangManSubLevelUseCase extends AbstractUseCase {
   void saveProgress(int stars);
 
   bool showTutorial();
+
+   //devuelve el tema del nivel al que pertenece este subnivel
+  String subLevelTheme();
+
+  //devuelve el numero del subnivel en los niveles, basicamene el id del subnivel
+  int subLevelNumber();
 }
