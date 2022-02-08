@@ -2,6 +2,7 @@ import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
 import 'package:citmatel_strawberry_tools/tools_exporter.dart';
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animator/flutter_animator.dart';
 import 'package:get/get.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
@@ -161,6 +162,12 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   void _doLooseLevel() {
     if (remainingLives <= 0) {
       StrawberryFunction.looseLevel(
+        leftButtonFunction: () => Get.off(
+          HangManSubLevelLoading(
+            subLevelDomain: subLevelUseCase.subLevelDomain,
+            subLevelProgressDomain: subLevelUseCase.subLevelProgressDomain,
+          ),
+        ),
         rightButtonFunction: () => Get.back(closeOverlays: true),
         childFirstText: StrawberryAnimatedTextKit.rotateAnimatedText(texts: [
           'Te has quedado sin vidas.',
@@ -178,6 +185,17 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   void _doWinLevel() {
     if (!answerToBe.contains(_emptyCharacter)) {
       StrawberryFunction.winLevel(
+        leftButtonFunction: () {
+          Pair<HangManSubLevelDomain, HangManSubLevelProgressDomain> nextLevel =
+              Get.find<HangManLevelController>()
+                  .nextLevel(subLevelUseCase.subLevelProgressDomain);
+          Get.off(
+            HangManSubLevelLoading(
+              subLevelDomain: nextLevel.a,
+              subLevelProgressDomain: nextLevel.b,
+            ),
+          );
+        },
         rightButtonFunction: () => Get.back(closeOverlays: true),
       );
       _doSaveProgress(generateProgress());
