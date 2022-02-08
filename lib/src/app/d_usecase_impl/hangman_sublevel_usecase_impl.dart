@@ -163,4 +163,14 @@ class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
 
   @override
   String get firstAnswerLetter => subLevelDomain.answer[0];
+
+  String subLevelTheme() {
+    return Get.find<HangManLevelUseCase>()
+        .findAll()[subLevelProgressDomain.hangmanLevelDomainId]
+        .theme;
+  }
+
+  int subLevelNumber() {
+    return subLevelDomain.id;
+  }
 }
