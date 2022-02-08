@@ -1,5 +1,6 @@
 import 'package:citmatel_strawberry_hangman/src/app/hangman_app_exporter.dart';
 import 'package:citmatel_strawberry_hangman/src/ui/hangman_ui_exporter.dart';
+import 'package:citmatel_strawberry_tools/assets/images/themes/tools_themes_background_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tuple/tuple.dart';
@@ -99,4 +100,9 @@ class HangManLevelControllerImpl extends HangManLevelController {
   @override
   String themeOfGivenLevel(HangManSubLevelProgressDomain progressDomain) =>
       levelUseCase.themeOfGivenLevel(progressDomain);
+
+  @override
+  ToolsThemesBackgroundImage themeLooksOfGivenLevel(
+          HangManSubLevelProgressDomain progressDomain) =>
+      levelUseCase.themeLooksOfGivenLevel(progressDomain);
 }
