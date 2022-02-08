@@ -5,6 +5,9 @@ abstract class HangManSubLevelUseCase extends AbstractUseCase {
   ///domain almacenado para acceder a la info
   HangManSubLevelDomain get subLevelDomain;
 
+  ///domain con la info del progreso
+  HangManSubLevelProgressDomain get subLevelProgressDomain;
+
   ///cantidad de letras de la respuesta, para saber las columnas de la visual
   ///en teoría debería cambiar para una lista para soportar respuestas de varias palabras
   int get answerCantOfLetters;
