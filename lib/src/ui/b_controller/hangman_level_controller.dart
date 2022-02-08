@@ -1,5 +1,6 @@
 import 'package:citmatel_strawberry_hangman/src/app/hangman_app_exporter.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animator/flutter_animator.dart';
 import 'package:get/get.dart';
 
 abstract class HangManLevelController extends GetxController {
@@ -29,4 +30,7 @@ abstract class HangManLevelController extends GetxController {
   Widget randomSubLevelOf(HangManLevelDomain level);
 
   String themeOfGivenLevel(HangManSubLevelProgressDomain progressDomain);
+
+  Pair<HangManSubLevelDomain, HangManSubLevelProgressDomain> nextLevel(
+      HangManSubLevelProgressDomain currentProgress);
 }
