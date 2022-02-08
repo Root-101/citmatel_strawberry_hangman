@@ -83,46 +83,35 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return CommonsSubLevelBuilder.buildScaffold(
-      tema: _controller.subLevelTheme(),
-      nivel: _controller.subLevelNumber(),
-      stars: _controller.generateProgress(),
-      maxStar: HangManSubLevelController.MAX_STARS,
-      body: SafeArea(
-        child: Stack(
-          children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                GetBuilder<HangManSubLevelController>(
-                  builder: (_) {
-                    return _buildListOfHearts();
-                  },
-                ),
-                // This one haven't the GetBuilder<HangManSubLevelController>
-                // because is no need to rebuild the image ever.
-                _buildImageCard(),
-                GetBuilder<HangManSubLevelController>(
-                  builder: (_) {
-                    return _buildWord();
-                  },
-                ),
-                GetBuilder<HangManSubLevelController>(
-                  builder: (_) {
-                    return _buildKeyBoard();
-                  },
-                ),
-              ],
-            ),
-            Align(
-              alignment: Alignment.topCenter,
-              child: StrawberryWidgets.confettiWidget(
-                  confettiController: _controller.confettiController),
-            ),
-          ],
+    ///el get builder se pone general para que actualize desde las estrellas en tiempo real hasta el estado del nivel
+    return GetBuilder<HangManSubLevelController>(builder: (context) {
+      return CommonsSubLevelBuilder.buildScaffold(
+        tema: _controller.subLevelTheme(),
+        nivel: _controller.subLevelNumber(),
+        stars: _controller.generateProgress(),
+        maxStar: HangManSubLevelController.MAX_STARS,
+        body: SafeArea(
+          child: Stack(
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  _buildListOfHearts(),
+                  _buildImageCard(),
+                  _buildWord(),
+                  _buildKeyBoard(),
+                ],
+              ),
+              Align(
+                alignment: Alignment.topCenter,
+                child: StrawberryWidgets.confettiWidget(
+                    confettiController: _controller.confettiController),
+              ),
+            ],
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
 
   // Build the keyBoard Widget and all of its animations.
