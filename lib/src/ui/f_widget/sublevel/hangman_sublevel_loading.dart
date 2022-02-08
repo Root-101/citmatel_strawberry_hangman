@@ -16,6 +16,7 @@ class HangManSubLevelLoading extends GetView<HangManLevelController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: PlainSubLevelLoading(
         firstColor: controller
             .themeLooksOfGivenLevel(subLevelProgressDomain)
