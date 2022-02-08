@@ -73,7 +73,9 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
 
   @override
   void dispose() {
-    tutorialCoachMark.finish();
+    if (_controller.showTutorial) {
+      tutorialCoachMark.finish();
+    }
     _controller.dispose();
     Get.delete<HangManSubLevelController>();
     super.dispose();
