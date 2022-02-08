@@ -32,9 +32,9 @@ abstract class HangManLevelController extends GetxController {
 
   String themeOfGivenLevel(HangManSubLevelProgressDomain progressDomain);
 
-  Pair<HangManSubLevelDomain, HangManSubLevelProgressDomain> nextLevel(
-      HangManSubLevelProgressDomain currentProgress);
-
   ToolsThemesBackgroundImage themeLooksOfGivenLevel(
       HangManSubLevelProgressDomain progressDomain);
+
+  Pair<HangManSubLevelDomain, HangManSubLevelProgressDomain> nextLevel(
+      HangManSubLevelProgressDomain currentProgress);
 }
