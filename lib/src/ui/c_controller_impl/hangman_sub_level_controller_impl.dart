@@ -256,4 +256,10 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   String subLevelTheme() => subLevelUseCase.subLevelTheme();
 
   int subLevelNumber() => subLevelUseCase.subLevelNumber();
+
+  @override
+  void dispose() {
+    tutorialCoach.finish();
+    super.dispose();
+  }
 }
