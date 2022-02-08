@@ -259,7 +259,9 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
 
   @override
   void dispose() {
-    tutorialCoach.finish();
+    if (showTutorial) {
+      tutorialCoach.finish();
+    }
     super.dispose();
   }
 }
