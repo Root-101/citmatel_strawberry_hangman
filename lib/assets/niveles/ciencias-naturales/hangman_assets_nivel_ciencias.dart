@@ -3,6 +3,6 @@ class HangManAssetsNivelCienciasNaturales {
   static const _niveles = "$_assets/niveles";
   static const _ciencias = "$_niveles/ciencias-naturales";
 
-  static const String CIENCIA_PALMA = "$_ciencias/conferencia.jpg";
+  static const String CIENCIA_PALMA = "$_ciencias/palma.jpg";
   static const String CIENCIA_VACUNA = "$_ciencias/vacuna.jpg";
 }

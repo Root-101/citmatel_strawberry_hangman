@@ -1,4 +1,5 @@
 import 'package:citmatel_strawberry_hangman/src/app/hangman_app_exporter.dart';
+import 'package:citmatel_strawberry_tools/assets/assets_exporter.dart';
 import 'package:clean_core/clean_core.dart';
 import 'package:flutter_animator/utils/pair.dart';
 import 'package:get/get.dart';
@@ -75,5 +76,13 @@ class HangManLevelUseCaseImpl extends DefaultReadUseCase<HangManLevelDomain>
     print("no se debe llegar aquí");
     return Pair(HangManLevelTutorial.tutorialSubLevel,
         HangManLevelTutorial.tutorialSubLevelProgress());
+  }
+
+  @override
+  ToolsThemesBackgroundImage themeLooksOfGivenLevel(
+      HangManSubLevelProgressDomain progressDomain) {
+    return Get.find<HangManLevelUseCase>()
+        .findBy(progressDomain.hangmanLevelDomainId)
+        .themeBackgroundImage;
   }
 }

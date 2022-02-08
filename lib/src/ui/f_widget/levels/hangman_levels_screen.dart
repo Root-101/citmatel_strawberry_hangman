@@ -104,9 +104,12 @@ class HangManLevelsScreen extends GetView<HangManLevelController> {
                     //tile generico
                     return GetBuilder<HangManLevelController>(builder: (_) {
                       return CommonsSingleSubLevelTile(
+                        level: subLevelDomain.id,
                         //el primario de aqui es el secundario del otro lado
                         colorPrimary:
                             levelDomain.themeBackgroundImage.colorLight,
+                        backgroundColor:
+                            levelDomain.themeBackgroundImage.colorStrong,
                         //estrellas ganadas en el subnivel
                         stars: progressDomain.stars,
                         maxStars: HangManSubLevelController.MAX_STARS,
