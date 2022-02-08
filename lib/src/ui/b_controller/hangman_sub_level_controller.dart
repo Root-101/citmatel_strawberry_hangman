@@ -51,4 +51,10 @@ abstract class HangManSubLevelController extends GetxController {
   String get firstAnswerLetter;
 
   int get firstCorrectLetter;
+
+  //devuelve el tema del nivel al que pertenece este subnivel
+  String subLevelTheme();
+
+  //devuelve el numero del subnivel en los niveles, basicamene el id del subnivel
+  int subLevelNumber();
 }
