@@ -58,6 +58,4 @@ abstract class HangManSubLevelController extends GetxController {
 
   //devuelve el numero del subnivel en los niveles, basicamene el id del subnivel
   int subLevelNumber();
-
-  TutorialCoachMark get tutorialCoach;
 }
