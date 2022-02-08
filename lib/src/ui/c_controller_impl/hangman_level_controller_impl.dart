@@ -29,14 +29,16 @@ class HangManLevelControllerImpl extends HangManLevelController {
     return levelDomain.sublevel.length * HangManSubLevelController.MAX_STARS;
   }
 
+  ///Las devuelve ya divididas por el multiplier
   @override
   int winedStars(HangManLevelDomain levelDomain) {
-    return Get.find<HangManSubLevelProgressUseCase>()
+    int wined = Get.find<HangManSubLevelProgressUseCase>()
         .findByLevelId(levelDomain.id)
         .fold(
           0,
           (previousValue, element) => previousValue + element.stars,
         );
+    return wined ~/ HangManSubLevelController.STARS_MULTIPLIER;
   }
 
   @override
