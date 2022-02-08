@@ -1,6 +1,7 @@
 import 'package:citmatel_strawberry_hangman/src/app/hangman_app_exporter.dart';
 import 'package:citmatel_strawberry_hangman/src/ui/hangman_ui_exporter.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animator/utils/pair.dart';
 import 'package:get/get.dart';
 import 'package:tuple/tuple.dart';
 
@@ -99,4 +100,9 @@ class HangManLevelControllerImpl extends HangManLevelController {
   @override
   String themeOfGivenLevel(HangManSubLevelProgressDomain progressDomain) =>
       levelUseCase.themeOfGivenLevel(progressDomain);
+
+  @override
+  Pair<HangManSubLevelDomain, HangManSubLevelProgressDomain> nextLevel(
+          HangManSubLevelProgressDomain currentProgress) =>
+      levelUseCase.nextLevel(currentProgress);
 }
