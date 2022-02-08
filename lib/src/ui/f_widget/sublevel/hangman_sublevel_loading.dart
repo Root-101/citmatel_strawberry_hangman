@@ -15,15 +15,19 @@ class HangManSubLevelLoading extends GetView<HangManLevelController> {
 
   @override
   Widget build(BuildContext context) {
-    return PlainSubLevelLoading(
-      backgroundURL: HangManAssets.WALLPAPER,
-      firstText: [
-        "Tema: ${controller.themeOfGivenLevel(subLevelProgressDomain)}"
-      ],
-      secondText: ["Nivel: ${subLevelProgressDomain.hangmanSubLevelDomainId}"],
-      subLevel: HangManSubLevelScreen(
-        subLevelDomain: subLevelDomain,
-        subLevelProgressDomain: subLevelProgressDomain,
+    return Scaffold(
+      body: PlainSubLevelLoading(
+        backgroundURL: HangManAssets.WALLPAPER,
+        firstText: [
+          "Tema: ${controller.themeOfGivenLevel(subLevelProgressDomain)}"
+        ],
+        secondText: [
+          "Nivel: ${subLevelProgressDomain.hangmanSubLevelDomainId}"
+        ],
+        subLevel: HangManSubLevelScreen(
+          subLevelDomain: subLevelDomain,
+          subLevelProgressDomain: subLevelProgressDomain,
+        ),
       ),
     );
   }
