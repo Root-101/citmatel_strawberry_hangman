@@ -42,6 +42,9 @@ class HangManLevelsScreen extends GetView<HangManLevelController> {
           onRandomTap: controller.randomSubLevel,
           //lista de los niveles
           levelsFindAll: controller.findAll(),
+          title: "Ahorcado",
+          appbarBackgroundColor: Colors.blueAccent,
+          backgroundColor: Colors.blueAccent.withOpacity(0.5),
           //background del sliver
           urlSliverBackground: HangManAssets.WALLPAPER,
           winedStars: winedStarsAll,
