@@ -14,6 +14,12 @@ class HangManLevelUseCaseImpl extends DefaultReadUseCase<HangManLevelDomain>
   }
 
   @override
+  ToolsThemesBackgroundImage themeLooksOfGivenLevel(
+      HangManSubLevelProgressDomain progressDomain) {
+    return levelOfProgress(progressDomain).a.themeBackgroundImage;
+  }
+
+  @override
   Pair<HangManLevelDomain, HangManSubLevelDomain> levelOfProgress(
       HangManSubLevelProgressDomain progressDomain) {
     HangManLevelDomain level = Get.find<HangManLevelUseCase>()
@@ -76,13 +82,5 @@ class HangManLevelUseCaseImpl extends DefaultReadUseCase<HangManLevelDomain>
     print("no se debe llegar aquí");
     return Pair(HangManLevelTutorial.tutorialSubLevel,
         HangManLevelTutorial.tutorialSubLevelProgress());
-  }
-
-  @override
-  ToolsThemesBackgroundImage themeLooksOfGivenLevel(
-      HangManSubLevelProgressDomain progressDomain) {
-    return Get.find<HangManLevelUseCase>()
-        .findBy(progressDomain.hangmanLevelDomainId)
-        .themeBackgroundImage;
   }
 }

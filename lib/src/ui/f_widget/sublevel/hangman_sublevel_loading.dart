@@ -15,18 +15,24 @@ class HangManSubLevelLoading extends GetView<HangManLevelController> {
 
   @override
   Widget build(BuildContext context) {
-    return PlainSubLevelLoading(
-      firstColor:
-          controller.themeLooksOfGivenLevel(subLevelProgressDomain).colorStrong,
-      secondColor:
-          controller.themeLooksOfGivenLevel(subLevelProgressDomain).colorLight,
-      firstText: [
-        "Tema: ${controller.themeOfGivenLevel(subLevelProgressDomain)}"
-      ],
-      secondText: ["Nivel: ${subLevelProgressDomain.hangmanSubLevelDomainId}"],
-      subLevel: HangManSubLevelScreen(
-        subLevelDomain: subLevelDomain,
-        subLevelProgressDomain: subLevelProgressDomain,
+    return Scaffold(
+      body: PlainSubLevelLoading(
+        firstColor: controller
+            .themeLooksOfGivenLevel(subLevelProgressDomain)
+            .colorStrong,
+        secondColor: controller
+            .themeLooksOfGivenLevel(subLevelProgressDomain)
+            .colorLight,
+        firstText: [
+          "Tema: ${controller.themeOfGivenLevel(subLevelProgressDomain)}"
+        ],
+        secondText: [
+          "Nivel: ${subLevelProgressDomain.hangmanSubLevelDomainId}"
+        ],
+        subLevel: HangManSubLevelScreen(
+          subLevelDomain: subLevelDomain,
+          subLevelProgressDomain: subLevelProgressDomain,
+        ),
       ),
     );
   }
