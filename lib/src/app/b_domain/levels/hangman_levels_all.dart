@@ -7,5 +7,12 @@ class HangManLevelsAll {
     HangManLevelConocimientoGeneral.levelConocimientoGeneral,
     HangManLevelCienciasNaturales.levelCienciasNaturales,
     HangManLevelTecnologias.levelTecnologias,
+    HangManLevelTecnologias.levelTecnologias..id = 4,
+    HangManLevelTecnologias.levelTecnologias..id = 5,
+    HangManLevelTecnologias.levelTecnologias..id = 6,
+    HangManLevelTecnologias.levelTecnologias..id = 7,
+    HangManLevelTecnologias.levelTecnologias..id = 8,
+    HangManLevelTecnologias.levelTecnologias..id = 9,
+    HangManLevelTecnologias.levelTecnologias..id = 10,
   ];
 }

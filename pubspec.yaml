@@ -52,8 +52,8 @@ dev_dependencies:
 
 flutter:
   assets:
-    - packages/citmatel_strawberry_hangman/assets/icons/brain_in_blue.jpg
-    - packages/citmatel_strawberry_hangman/assets/icons/hangman_wallpaper.jpg
+    #Images
+    - packages/citmatel_strawberry_hangman/assets/images/background.png
 
     - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/palma.jpg
     - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/vacuna.jpg
