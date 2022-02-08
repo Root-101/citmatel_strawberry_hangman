@@ -95,24 +95,10 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  GetBuilder<HangManSubLevelController>(
-                    builder: (_) {
-                      return _buildListOfHearts();
-                    },
-                  ),
-                  // This one haven't the GetBuilder<HangManSubLevelController>
-                  // because is no need to rebuild the image ever.
+                  _buildListOfHearts(),
                   _buildImageCard(),
-                  GetBuilder<HangManSubLevelController>(
-                    builder: (_) {
-                      return _buildWord();
-                    },
-                  ),
-                  GetBuilder<HangManSubLevelController>(
-                    builder: (_) {
-                      return _buildKeyBoard();
-                    },
-                  ),
+                  _buildWord(),
+                  _buildKeyBoard(),
                 ],
               ),
               Align(
