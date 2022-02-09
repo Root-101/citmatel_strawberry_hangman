@@ -16,7 +16,9 @@ class HangManLevelsScreen extends GetView<HangManLevelController> {
       int maxStarsAll = controller.maxStarsAll();
       return CommonsLevelsThemeScreen<HangManLevelDomain>(
         tutorialTile: CommonsLevelsThemeSingleTile<HangManLevelDomain>(
-          winedStars: HangManLevelTutorial.tutorialSubLevelProgress().stars,
+          winedStars: HangManLevelTutorial.tutorialSubLevelProgress(
+            starsMultiplier: HangManSubLevelController.STARS_MULTIPLIER,
+          ).stars,
           maxStars: HangManSubLevelController.MAX_STARS,
           wonedLevel: controller.wonedLevel(HangManLevelTutorial.tutorial),
 
@@ -34,7 +36,9 @@ class HangManLevelsScreen extends GetView<HangManLevelController> {
           openWidget: HangManSubLevelLoading(
             subLevelDomain: HangManLevelTutorial.tutorialSubLevel,
             subLevelProgressDomain:
-                HangManLevelTutorial.tutorialSubLevelProgress(),
+                HangManLevelTutorial.tutorialSubLevelProgress(
+              starsMultiplier: HangManSubLevelController.STARS_MULTIPLIER,
+            ),
           ),
         ),
         //widget que se genera cada vez que se selecciona el aleatorio

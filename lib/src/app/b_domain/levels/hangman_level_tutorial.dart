@@ -18,9 +18,15 @@ class HangManLevelTutorial {
 
   static HangManSubLevelDomain tutorialSubLevel = tutorial.sublevel[0];
 
-  static HangManSubLevelProgressDomain tutorialSubLevelProgress() =>
-      Get.find<HangManSubLevelProgressUseCase>().findByAll(
-        HangManLevelTutorial.tutorial,
-        HangManLevelTutorial.tutorialSubLevel,
-      );
+  static HangManSubLevelProgressDomain tutorialSubLevelProgress({
+    int starsMultiplier = 2,
+  }) {
+    HangManSubLevelProgressDomain progress =
+        Get.find<HangManSubLevelProgressUseCase>().findByAll(
+      HangManLevelTutorial.tutorial,
+      HangManLevelTutorial.tutorialSubLevel,
+    );
+    progress..stars = progress.stars ~/ starsMultiplier;
+    return progress;
+  }
 }
