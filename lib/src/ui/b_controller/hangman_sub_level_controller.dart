@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
 abstract class HangManSubLevelController extends GetxController {
-  static const String TAG = "sub-level-controller";
+  static const String TAG = "hangman-sub-level-controller";
 
   ///la cantidad de estrellas(visualmente) va a estar entre [0,3] inclusive
   static const int MAX_STARS = 3;
@@ -43,10 +43,12 @@ abstract class HangManSubLevelController extends GetxController {
   ///y en cualquier caso actualiza la visual
   void checkLetter(
       String letter, BuildContext context, GlobalKey key6, GlobalKey key7);
+
   // The amount of columns in the keyboard widget.
   int get keyboardColumns;
 
   List<String> get keyboard;
+
   // Show the tutorial if is the first sublevel of the first level.
   bool get showTutorial;
 
@@ -57,6 +59,7 @@ abstract class HangManSubLevelController extends GetxController {
   bool answerContainLetter(String letter);
 
   int generateProgress();
+
   // The controller for the confetti animation.
   ConfettiController get confettiController;
 
@@ -70,4 +73,9 @@ abstract class HangManSubLevelController extends GetxController {
 
   //devuelve el numero del subnivel en los niveles, basicamene el id del subnivel
   int subLevelNumber();
+
+  void initTutorialCoachMark({
+    required BuildContext context,
+    required List<TargetFocus> targets,
+  });
 }

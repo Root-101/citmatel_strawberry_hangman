@@ -34,7 +34,6 @@ class HangManSubLevelScreen extends StatefulWidget {
 
 class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
   late final HangManSubLevelController _controller;
-  late TutorialCoachMark tutorialCoachMark;
   List<TargetFocus> targets = [];
 
   // Steps in the tutorial.
@@ -52,20 +51,19 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
 
     if (_controller.showTutorial) {
       //Start showcase view after current widget frames are drawn.
-      WidgetsBinding.instance!.addPostFrameCallback((duration) async {
-        // Is necessary to wait a few seconds because the widgets haven't been created.
-        await Future.delayed(Duration(milliseconds: 500));
-        // Initialice the steps of the tutorial.
-        initTargets();
-        // Start the tutorial.
-        tutorialCoachMark = StrawberryTutorial.showTutorial(
-          context: context,
-          targets: targets,
-          onSkip: () {
-            _controller.stopTutorial();
-          },
-        );
-      });
+      WidgetsBinding.instance!.addPostFrameCallback(
+        (duration) async {
+          // Is necessary to wait a few seconds because the widgets haven't been created.
+          await Future.delayed(Duration(milliseconds: 500));
+          // Initialice the steps of the tutorial.
+          initTargets();
+          // Start the tutorial.
+          _controller.initTutorialCoachMark(
+            context: context,
+            targets: targets,
+          );
+        },
+      );
     }
 
     super.initState();
@@ -73,9 +71,6 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
 
   @override
   void dispose() {
-    if (_controller.showTutorial) {
-      tutorialCoachMark.finish();
-    }
     _controller.dispose();
     Get.delete<HangManSubLevelController>();
     super.dispose();

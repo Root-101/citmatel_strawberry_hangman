@@ -32,7 +32,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
 
   late bool _showTutorial;
 
-  late TutorialCoachMark tutorialCoach;
+  TutorialCoachMark? _tutorialCoachMark;
 
   HangManSubLevelControllerImpl({
     required HangManSubLevelDomain subLevelDomain,
@@ -97,7 +97,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
         firstCorrectLetter = possiblesIndex[0];
         isFirstTime = false;
         // Continue the tutorial.
-        tutorialCoach = StrawberryTutorial.showTutorial(
+        _tutorialCoachMark = StrawberryTutorial.showTutorial(
           context: context,
           targets: [
             StrawberryTutorial.addMultipleTarget(
@@ -134,7 +134,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
     remainingLives--;
     if (lives - remainingLives == 1 && showTutorial) {
       // Continue the tutorial.
-      tutorialCoach = StrawberryTutorial.showTutorial(
+      _tutorialCoachMark = StrawberryTutorial.showTutorial(
         context: context,
         targets: [
           StrawberryTutorial.addTarget(
@@ -263,11 +263,22 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
 
   int subLevelNumber() => subLevelUseCase.subLevelNumber();
 
+  void initTutorialCoachMark({
+    required BuildContext context,
+    required List<TargetFocus> targets,
+  }) {
+    _tutorialCoachMark = StrawberryTutorial.showTutorial(
+      context: context,
+      targets: targets,
+      onSkip: () {
+        stopTutorial();
+      },
+    );
+  }
+
   @override
   void dispose() {
-    if (showTutorial) {
-      tutorialCoach.finish();
-    }
+    _tutorialCoachMark?.finish();
     super.dispose();
   }
 }
