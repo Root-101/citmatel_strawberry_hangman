@@ -87,7 +87,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
         nivel: _controller.subLevelNumber(),
         stars: _controller.generateProgress(),
         maxStar: HangManSubLevelController.MAX_STARS,
-        size: size,
+        deviceSize: size,
         body: SafeArea(
           child: Stack(
             children: [
