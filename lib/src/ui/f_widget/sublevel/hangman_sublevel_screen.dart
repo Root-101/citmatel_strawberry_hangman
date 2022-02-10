@@ -95,7 +95,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   _buildListOfHearts(size),
-                  _buildImageCard(),
+                  _buildImageCard(size),
                   _buildWord(size),
                   _buildKeyBoard(size),
                 ],
@@ -268,7 +268,9 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
       key: key,
       child: GridView.count(
         childAspectRatio: 1.0,
-        padding: EdgeInsets.all(size.width / 23),
+        padding: EdgeInsets.all(size.width / 21),
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
         // Amount of columns in the grid
         crossAxisCount: cantOfColumns,
         //With this GridView only occupies the space it needs
@@ -288,7 +290,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
     required Size size,
   }) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
+      padding: EdgeInsets.zero,
       decoration: BoxDecoration(
         color: decorationColor,
         borderRadius: BorderRadius.all(Radius.circular(4.0)),
@@ -301,18 +303,19 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
         ],
       ),
       child: Center(
-          child: Text(
-        text,
-        style: TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
+        child: Text(
+          text,
+          style: TextStyle(
+            fontSize: size.width / 17,
+            fontWeight: FontWeight.bold,
+          ),
         ),
-      )),
+      ),
     );
   }
 
   //This method is used to build the image widget.
-  _buildImageCard() {
+  _buildImageCard(Size size) {
     return OpenContainer(
       key: _key3,
       // The transition to display when you move from the closed widget to the open one.
@@ -324,12 +327,12 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
       closedElevation: 20,
       closedColor: Colors.transparent,
       // The content that will be displayed when the widget is closed.
-      closedBuilder: (context, _) => _buildSmallImage(),
+      closedBuilder: (context, _) => _buildSmallImage(size),
     );
   }
 
   //This method builds the image when is small.
-  _buildSmallImage() {
+  _buildSmallImage(Size size) {
     return Container(
       margin: const EdgeInsets.symmetric(
         vertical: 20.0,
