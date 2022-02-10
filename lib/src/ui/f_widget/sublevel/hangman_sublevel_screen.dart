@@ -92,7 +92,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
           child: Stack(
             children: [
               Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   _buildListOfHearts(size),
                   _buildImageCard(size),
@@ -210,6 +210,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
     return _animatedGridView(
       key: _key1,
       size: size,
+      verticalPading: 0,
       // Amount of Columns = Hearts.
       cantOfColumns: countOfColumns,
       children: List.generate(
@@ -263,12 +264,16 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
     required int cantOfColumns,
     required List<Widget> children,
     required Size size,
+    double? verticalPading,
   }) {
     return AnimationLimiter(
       key: key,
       child: GridView.count(
         childAspectRatio: 1.0,
-        padding: EdgeInsets.all(size.width / 21),
+        padding: EdgeInsets.symmetric(
+          horizontal: size.width / 21,
+          vertical: verticalPading ?? size.width / 31,
+        ),
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
         // Amount of columns in the grid
@@ -334,11 +339,8 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
   //This method builds the image when is small.
   _buildSmallImage(Size size) {
     return Container(
-      margin: const EdgeInsets.symmetric(
-        vertical: 20.0,
-        horizontal: 20.0,
-      ),
-      height: 240.0,
+      margin: EdgeInsets.symmetric(horizontal: size.width / 21),
+      height: size.height / 3,
       child: ClipRRect(
         // For the rounded corners
         borderRadius: BorderRadius.all(Radius.circular(15)),
@@ -362,7 +364,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
             Positioned(
               child: StrawberryWidgets.circularButtonWithIcon(
                 onPressed: () => Get.back(closeOverlays: true),
-                backgroundColor: Colors.transparent,
+                backgroundColor: Colors.black26,
                 child: StrawberryWidgets.pulseIconAnimation(
                   icon: Icons.arrow_back,
                 ),
