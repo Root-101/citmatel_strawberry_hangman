@@ -26,7 +26,7 @@ class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
   late final List<String> keyboard;
 
   ///el multiplo de las letras del tecaldo, para una distribución uniforme de las letras en la visual
-  static const DEFAULT_KEYBOARD_COLUMNS = 6;
+  static const DEFAULT_KEYBOARD_COLUMNS = 7;
   static const MIN_CANT_LETTERS_KEYBOARD =
       2 * DEFAULT_KEYBOARD_COLUMNS; //min = 12
   static const MID_CANT_LETTERS_KEYBOARD =

@@ -78,23 +78,26 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     ///el get builder se pone general para que actualize desde las estrellas en tiempo real hasta el estado del nivel
-    return GetBuilder<HangManSubLevelController>(builder: (context) {
+    return GetBuilder<HangManSubLevelController>(builder: (_) {
       return CommonsSubLevelBuilder.buildScaffold(
         tema: _controller.subLevelTheme(),
         nivel: _controller.subLevelNumber(),
         stars: _controller.generateProgress(),
         maxStar: HangManSubLevelController.MAX_STARS,
+        size: size,
         body: SafeArea(
           child: Stack(
             children: [
               Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  _buildListOfHearts(),
-                  _buildImageCard(),
-                  _buildWord(),
-                  _buildKeyBoard(),
+                  _buildListOfHearts(size),
+                  _buildImageCard(size),
+                  _buildWord(size),
+                  _buildKeyBoard(size),
                 ],
               ),
               Align(
@@ -110,13 +113,14 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
   }
 
   // Build the keyBoard Widget and all of its animations.
-  _buildKeyBoard() {
+  _buildKeyBoard(Size size) {
     List<String> listOfLetters = _controller.keyboard;
     return _animatedGridView(
-      _key4,
+      key: _key4,
+      size: size,
       // GridView amount of columns = ListLetter/6.
-      _controller.keyboardColumns,
-      List.generate(
+      cantOfColumns: _controller.keyboardColumns,
+      children: List.generate(
         // List amount of items = ListLetters.
         listOfLetters.length,
         // Current item.
@@ -128,17 +132,19 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
                   // Make the Bounce effect when is true and paint the letter green.
                   ? Bounce(
                       child: _emptyCard(
-                        listOfLetters[index],
-                        Colors.lightGreen.shade300,
-                        Colors.transparent,
+                        size: size,
+                        text: listOfLetters[index],
+                        decorationColor: Colors.lightGreen.shade300,
+                        shadowColor: Colors.transparent,
                       ),
                     )
                   // Make the Shake effect when is false and paint the letter red.
                   : Shake(
                       child: _emptyCard(
-                        listOfLetters[index],
-                        Colors.redAccent.shade100,
-                        Colors.transparent,
+                        size: size,
+                        text: listOfLetters[index],
+                        decorationColor: Colors.redAccent.shade100,
+                        shadowColor: Colors.transparent,
                       ),
                     )
               // If the letter hasn't been used, paint it gray and call the method checkLetter() when is touched.
@@ -150,9 +156,9 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
                         ? _key5
                         : null,
                     child: _emptyCard(
-                      listOfLetters[index],
-                      Colors.white,
-                      Colors.grey.shade700,
+                      size: size,
+                      text: listOfLetters[index],
+                      shadowColor: Colors.grey.shade700,
                     ),
                     onTap: () => _controller.checkLetter(
                         listOfLetters[index], context, _key6, _key7),
@@ -164,14 +170,15 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
   }
 
   // Build the word Answer Widget and all of its animations.
-  _buildWord() {
+  _buildWord(Size size) {
     List<String> listOfLetters = _controller.answerToBe;
     int countOfColumns = listOfLetters.length;
     return _animatedGridView(
-      _key2,
+      key: _key2,
+      size: size,
       // Amount of Columns = Letters.
-      countOfColumns,
-      List.generate(
+      cantOfColumns: countOfColumns,
+      children: List.generate(
         // Amount of Items = Letters.
         countOfColumns,
         (int index) {
@@ -182,17 +189,15 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
                   index,
                   6,
                   _emptyCard(
-                    listOfLetters[index],
-                    Colors.white,
-                    Colors.grey,
+                    size: size,
+                    text: listOfLetters[index],
                   ))
               //If it's fill show the RubberBand effect and put the correct letter.
               : RubberBand(
                   key: index == _controller.firstCorrectLetter ? _key6 : null,
                   child: _emptyCard(
-                    listOfLetters[index],
-                    Colors.white,
-                    Colors.grey,
+                    size: size,
+                    text: listOfLetters[index],
                   ));
         },
       ),
@@ -200,13 +205,15 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
   }
 
   // Build the List of Hearts Widget and all of its animations.
-  _buildListOfHearts() {
+  _buildListOfHearts(Size size) {
     int countOfColumns = _controller.lives;
     return _animatedGridView(
-      _key1,
+      key: _key1,
+      size: size,
+      verticalPading: 0,
       // Amount of Columns = Hearts.
-      countOfColumns,
-      List.generate(
+      cantOfColumns: countOfColumns,
+      children: List.generate(
         // Amount of Items = Hearts.
         countOfColumns,
         // Current item.
@@ -219,7 +226,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
                   child: Icon(
                     FontAwesomeIcons.heartBroken,
                     color: Colors.red.shade900,
-                    size: 50,
+                    size: size.width / 7.5,
                   ),
                 )
               // If it's a remaining live make a pumping heart.
@@ -228,7 +235,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
                   countOfColumns,
                   SpinKitPumpingHeart(
                     color: Colors.red.shade900,
-                    size: 55,
+                    size: size.width / 7,
                   ),
                 );
         },
@@ -252,12 +259,23 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
   }
 
 // This method animates the GridView so the items simulate to be entering to the screen one by one.
-  _animatedGridView(Key key, int cantOfColumns, List<Widget> children) {
+  _animatedGridView({
+    required Key key,
+    required int cantOfColumns,
+    required List<Widget> children,
+    required Size size,
+    double? verticalPading,
+  }) {
     return AnimationLimiter(
       key: key,
       child: GridView.count(
         childAspectRatio: 1.0,
-        padding: const EdgeInsets.all(8.0),
+        padding: EdgeInsets.symmetric(
+          horizontal: size.width / 21,
+          vertical: verticalPading ?? size.width / 31,
+        ),
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
         // Amount of columns in the grid
         crossAxisCount: cantOfColumns,
         //With this GridView only occupies the space it needs
@@ -270,9 +288,14 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
   }
 
   // This method creates a decorated empty card, that is going to have a letter in the middle.
-  _emptyCard(String text, Color decorationColor, Color shadowColor) {
+  _emptyCard({
+    required String text,
+    Color decorationColor = Colors.white,
+    Color shadowColor = Colors.grey,
+    required Size size,
+  }) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 8.0),
+      padding: EdgeInsets.zero,
       decoration: BoxDecoration(
         color: decorationColor,
         borderRadius: BorderRadius.all(Radius.circular(4.0)),
@@ -285,18 +308,19 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
         ],
       ),
       child: Center(
-          child: Text(
-        text,
-        style: TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
+        child: Text(
+          text,
+          style: TextStyle(
+            fontSize: size.width / 17,
+            fontWeight: FontWeight.bold,
+          ),
         ),
-      )),
+      ),
     );
   }
 
   //This method is used to build the image widget.
-  _buildImageCard() {
+  _buildImageCard(Size size) {
     return OpenContainer(
       key: _key3,
       // The transition to display when you move from the closed widget to the open one.
@@ -308,18 +332,15 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
       closedElevation: 20,
       closedColor: Colors.transparent,
       // The content that will be displayed when the widget is closed.
-      closedBuilder: (context, _) => _buildSmallImage(),
+      closedBuilder: (context, _) => _buildSmallImage(size),
     );
   }
 
   //This method builds the image when is small.
-  _buildSmallImage() {
+  _buildSmallImage(Size size) {
     return Container(
-      margin: const EdgeInsets.symmetric(
-        vertical: 20.0,
-        horizontal: 20.0,
-      ),
-      height: 240.0,
+      margin: EdgeInsets.symmetric(horizontal: size.width / 21),
+      height: size.height / 3,
       child: ClipRRect(
         // For the rounded corners
         borderRadius: BorderRadius.all(Radius.circular(15)),
@@ -343,7 +364,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
             Positioned(
               child: StrawberryWidgets.circularButtonWithIcon(
                 onPressed: () => Get.back(closeOverlays: true),
-                backgroundColor: Colors.transparent,
+                backgroundColor: Colors.black26,
                 child: StrawberryWidgets.pulseIconAnimation(
                   icon: Icons.arrow_back,
                 ),
