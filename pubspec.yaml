@@ -66,6 +66,10 @@ flutter:
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/examen.jpg
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/libros.jpg
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/notas.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/ajedrés.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/almacén.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/granja.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/oficina.jpg
 
     - packages/citmatel_strawberry_hangman/assets/niveles/mitología/anubis.png
     - packages/citmatel_strawberry_hangman/assets/niveles/mitología/faraón.jpg
