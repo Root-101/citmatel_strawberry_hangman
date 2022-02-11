@@ -313,6 +313,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
           style: TextStyle(
             fontSize: size.width / 17,
             fontWeight: FontWeight.bold,
+            color: Colors.black,
           ),
         ),
       ),
