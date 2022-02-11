@@ -11,4 +11,8 @@ class HangManAssetsNivelConocimientoGeneral {
   static const String C_GENERAL_EXAMEN = "$_conoc_general/examen.jpg";
   static const String C_GENERAL_LIBROS = "$_conoc_general/libros.jpg";
   static const String C_GENERAL_NOTAS = "$_conoc_general/notas.jpg";
+  static const String C_GENERAL_AJEDRES = "$_conoc_general/ajedrés.jpg";
+  static const String C_GENERAL_ALMACEN = "$_conoc_general/almacén.jpg";
+  static const String C_GENERAL_GRANJA = "$_conoc_general/granja.jpg";
+  static const String C_GENERAL_OFICINA = "$_conoc_general/oficina.jpg";
 }

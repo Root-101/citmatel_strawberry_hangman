@@ -47,6 +47,26 @@ class HangManLevelConocimientoGeneral {
         answer: "diploma",
         urlImage: HangManAssetsNivelConocimientoGeneral.C_GENERAL_DIPLOMA,
       ),
+      HangManSubLevelDomain(
+        id: 9,
+        answer: "ajedrés",
+        urlImage: HangManAssetsNivelConocimientoGeneral.C_GENERAL_AJEDRES,
+      ),
+      HangManSubLevelDomain(
+        id: 10,
+        answer: "almacén",
+        urlImage: HangManAssetsNivelConocimientoGeneral.C_GENERAL_ALMACEN,
+      ),
+      HangManSubLevelDomain(
+        id: 11,
+        answer: "granja",
+        urlImage: HangManAssetsNivelConocimientoGeneral.C_GENERAL_GRANJA,
+      ),
+      HangManSubLevelDomain(
+        id: 12,
+        answer: "oficina",
+        urlImage: HangManAssetsNivelConocimientoGeneral.C_GENERAL_OFICINA,
+      ),
     ],
   );
 }

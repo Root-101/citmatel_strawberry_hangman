@@ -5,4 +5,6 @@ class HangManAssetsNivelCienciasNaturales {
 
   static const String CIENCIA_PALMA = "$_ciencias/palma.jpg";
   static const String CIENCIA_VACUNA = "$_ciencias/vacuna.jpg";
+  static const String CIENCIA_INVIERNO = "$_ciencias/invierno.jpg";
+  static const String CIENCIA_NUBES = "$_ciencias/nubes.jpg";
 }

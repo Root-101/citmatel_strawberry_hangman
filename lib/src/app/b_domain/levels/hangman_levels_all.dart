@@ -7,7 +7,7 @@ class HangManLevelsAll {
     HangManLevelConocimientoGeneral.levelConocimientoGeneral,
     HangManLevelCienciasNaturales.levelCienciasNaturales,
     HangManLevelTecnologias.levelTecnologias,
-    HangManLevelTecnologias.levelTecnologias.clone()..id = 4,
+    HangManLevelMitologia.levelMitologia,
     HangManLevelTecnologias.levelTecnologias.clone()..id = 5,
     HangManLevelTecnologias.levelTecnologias.clone()..id = 6,
     HangManLevelTecnologias.levelTecnologias.clone()..id = 7,

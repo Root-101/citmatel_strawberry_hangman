@@ -17,6 +17,16 @@ class HangManLevelCienciasNaturales {
         answer: "vacuna",
         urlImage: HangManAssetsNivelCienciasNaturales.CIENCIA_VACUNA,
       ),
+      HangManSubLevelDomain(
+        id: 3,
+        answer: "invierno",
+        urlImage: HangManAssetsNivelCienciasNaturales.CIENCIA_INVIERNO,
+      ),
+      HangManSubLevelDomain(
+        id: 4,
+        answer: "nubes",
+        urlImage: HangManAssetsNivelCienciasNaturales.CIENCIA_NUBES,
+      ),
     ],
   );
 }

@@ -57,6 +57,8 @@ flutter:
 
     - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/palma.jpg
     - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/vacuna.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/invierno.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/nubes.jpg
 
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/cheque.png
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/dinero.png
@@ -66,12 +68,32 @@ flutter:
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/examen.jpg
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/libros.jpg
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/notas.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/ajedrés.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/almacén.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/granja.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/oficina.jpg
 
     - packages/citmatel_strawberry_hangman/assets/niveles/mitología/anubis.png
     - packages/citmatel_strawberry_hangman/assets/niveles/mitología/faraón.jpg
     - packages/citmatel_strawberry_hangman/assets/niveles/mitología/fénix.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/ares.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/artemisa.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/deméter.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/fauno.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/hades.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/hefesto.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/poseidón.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/zeus.jpg
 
     - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/cohete.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/chat.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/clave.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/codigo.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/correo.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/juego.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/laptop.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/video.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/virus.jpg
 
     - packages/citmatel_strawberry_hangman/assets/niveles/tutorial/tutorial.jpg
 
