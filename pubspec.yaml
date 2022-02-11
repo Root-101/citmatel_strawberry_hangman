@@ -74,12 +74,12 @@ flutter:
     - packages/citmatel_strawberry_hangman/assets/niveles/mitología/anubis.png
     - packages/citmatel_strawberry_hangman/assets/niveles/mitología/faraón.jpg
     - packages/citmatel_strawberry_hangman/assets/niveles/mitología/fénix.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/ares.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/artemisa.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/deméter.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/ares.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/artemisa.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/deméter.png 
     - packages/citmatel_strawberry_hangman/assets/niveles/mitología/fauno.jpg
     - packages/citmatel_strawberry_hangman/assets/niveles/mitología/hades.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/hefesto.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/hefesto.png
     - packages/citmatel_strawberry_hangman/assets/niveles/mitología/poseidón.jpg
     - packages/citmatel_strawberry_hangman/assets/niveles/mitología/zeus.jpg
 
