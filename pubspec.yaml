@@ -57,6 +57,8 @@ flutter:
 
     - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/palma.jpg
     - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/vacuna.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/invierno.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/nubes.jpg
 
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/cheque.png
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/dinero.png
@@ -76,7 +78,7 @@ flutter:
     - packages/citmatel_strawberry_hangman/assets/niveles/mitología/fénix.jpg
     - packages/citmatel_strawberry_hangman/assets/niveles/mitología/ares.png
     - packages/citmatel_strawberry_hangman/assets/niveles/mitología/artemisa.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/deméter.png 
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/deméter.png
     - packages/citmatel_strawberry_hangman/assets/niveles/mitología/fauno.jpg
     - packages/citmatel_strawberry_hangman/assets/niveles/mitología/hades.jpg
     - packages/citmatel_strawberry_hangman/assets/niveles/mitología/hefesto.png
