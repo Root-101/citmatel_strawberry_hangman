@@ -4,8 +4,8 @@ import 'package:citmatel_strawberry_tools/assets/assets_exporter.dart';
 class HangManLevelMitologia {
   static final HangManLevelDomain levelMitologia = HangManLevelDomain(
     id: 4,
-    theme: "Mitología",
-    themeBackgroundImage: ToolsThemesAssets.THEME_MITOLOGY_BACKGROUND,
+    theme: ToolsThemesAssets.THEME_MITOLOGIA_NAME,
+    themeBackgroundImage: ToolsThemesAssets.THEME_MITOLOGIA_BACKGROUND,
     sublevel: [
       HangManSubLevelDomain(
         id: 1,
