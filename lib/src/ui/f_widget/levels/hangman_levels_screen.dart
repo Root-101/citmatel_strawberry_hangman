@@ -47,7 +47,7 @@ class HangManLevelsScreen extends GetView<HangManLevelController> {
         levelsFindAll: controller.findAll(),
         title: HangManUIModule.MODULE_NAME,
         appbarBackgroundColor: HangManUIModule.PRIMARY_COLOR,
-        backgroundColor: HangManUIModule.SECONDARY_COLOR,
+        backgroundColor: HangManUIModule.SECONDARY_COLOR.withOpacity(0.5),
         //background del sliver
         urlSliverBackground: HangManUIModule.URL_MODULE_BACKGROUND,
         winedStars: winedStarsAll,
