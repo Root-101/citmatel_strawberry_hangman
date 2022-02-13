@@ -310,10 +310,9 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
       child: Center(
         child: Text(
           text,
-          style: TextStyle(
-            fontSize: size.width / 17,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
+          style: Get.textTheme.subtitle2?.copyWith(
+            fontSize: size.width / 17, //autosize
+            color: Colors.black, //black xq el fondo siempre es blanco
           ),
         ),
       ),
