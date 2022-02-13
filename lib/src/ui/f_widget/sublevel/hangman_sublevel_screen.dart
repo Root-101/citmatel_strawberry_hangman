@@ -1,6 +1,7 @@
 import 'package:animations/animations.dart';
 import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
 import 'package:citmatel_strawberry_tools/tools_exporter.dart';
+import 'package:decorated_icon/decorated_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animator/flutter_animator.dart'
     hide FadeInAnimation, FadeIn;
@@ -207,38 +208,71 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
   // Build the List of Hearts Widget and all of its animations.
   _buildListOfHearts(Size size) {
     int countOfColumns = _controller.lives;
-    return _animatedGridView(
-      key: _key1,
-      size: size,
-      verticalPading: 0,
-      // Amount of Columns = Hearts.
-      cantOfColumns: countOfColumns,
-      children: List.generate(
-        // Amount of Items = Hearts.
-        countOfColumns,
-        // Current item.
-        (int index) {
-          // If the current item/heart is less that the losed lives ...
-          return index < _controller.lives - _controller.remainingLives
-              // Broke a heart and make the Swing animation.
-              ? Swing(
-                  key: index == 0 ? _key7 : null,
-                  child: Icon(
-                    FontAwesomeIcons.heartBroken,
-                    color: Colors.red.shade900,
-                    size: size.width / 7.5,
-                  ),
-                )
-              // If it's a remaining live make a pumping heart.
-              : _buildAnimations(
-                  index,
-                  countOfColumns,
-                  SpinKitPumpingHeart(
-                    color: Colors.red.shade900,
-                    size: size.width / 7,
-                  ),
-                );
-        },
+    return Padding(
+      padding: EdgeInsets.only(left: size.width / 21),
+      child: _animatedGridView(
+        key: _key1,
+        size: size,
+        //    verticalPading: 0,
+        // Amount of Columns = Hearts.
+        cantOfColumns: countOfColumns,
+        children: List.generate(
+          // Amount of Items = Hearts.
+          countOfColumns,
+          // Current item.
+          (int index) {
+            // If the current item/heart is less that the losed lives ...
+            return index < _controller.lives - _controller.remainingLives
+                // Broke a heart and make the Swing animation.
+                ? Swing(
+                    key: index == 0 ? _key7 : null,
+                    child: DecoratedIcon(
+                      FontAwesomeIcons.heartBroken,
+                      color: Colors.red.shade900,
+                      size: size.width / 7.5,
+                      shadows: [
+                        BoxShadow(
+                          blurRadius: 12.0,
+                          color: Colors.grey.shade200,
+                        ),
+                        BoxShadow(
+                          blurRadius: 12.0,
+                          color: Colors.grey.shade200,
+                          offset: Offset(0, 3.0),
+                        ),
+                      ],
+                    ),
+                  )
+                // If it's a remaining live make a pumping heart.
+                : _buildAnimations(
+                    index,
+                    countOfColumns,
+                    HeartBeat(
+                      child: DecoratedIcon(
+                        FontAwesomeIcons.solidHeart,
+                        color: Colors.red.shade900,
+                        size: size.width / 7.5,
+                        shadows: [
+                          BoxShadow(
+                            blurRadius: 12.0,
+                            color: Colors.grey.shade200,
+                          ),
+                          BoxShadow(
+                            blurRadius: 12.0,
+                            color: Colors.grey.shade200,
+                            offset: Offset(0, 3.0),
+                          ),
+                        ],
+                      ),
+                      preferences: AnimationPreferences(
+                        autoPlay: AnimationPlayStates.Loop,
+                        duration: Duration(seconds: 2),
+                        magnitude: 0.5,
+                      ),
+                    ),
+                  );
+          },
+        ),
       ),
     );
   }
@@ -264,7 +298,6 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
     required int cantOfColumns,
     required List<Widget> children,
     required Size size,
-    double? verticalPading,
   }) {
     return AnimationLimiter(
       key: key,
@@ -272,7 +305,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
         childAspectRatio: 1.0,
         padding: EdgeInsets.symmetric(
           horizontal: size.width / 21,
-          vertical: verticalPading ?? size.width / 31,
+          vertical: size.width / 31,
         ),
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
