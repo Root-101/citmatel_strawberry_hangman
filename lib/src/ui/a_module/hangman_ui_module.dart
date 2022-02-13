@@ -4,8 +4,8 @@ import 'package:get/get.dart';
 
 class HangManUIModule {
   static const String MODULE_NAME = "Ahorcado";
-  static const Color PRIMARY_COLOR = Colors.blue;
-  static const Color SECONDARY_COLOR = Colors.lightBlueAccent;
+  static Color PRIMARY_COLOR = Colors.blue[800]!;
+  static const Color SECONDARY_COLOR = Colors.blue;
   static const String URL_MODULE_BACKGROUND = HangManAssets.WALLPAPER;
   static const IconData ICON = Icons.sentiment_very_dissatisfied_outlined;
 
