@@ -45,6 +45,10 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
   GlobalKey _key5 = GlobalKey();
   GlobalKey _key6 = GlobalKey();
   GlobalKey _key7 = GlobalKey();
+  GlobalKey _keyAppBarBack = GlobalKey();
+  GlobalKey _keyAppBarStars = GlobalKey();
+  GlobalKey _keyAppBarLevel = GlobalKey();
+  GlobalKey _keyAppBarTheme = GlobalKey();
 
   @override
   void initState() {
@@ -84,6 +88,10 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
     ///el get builder se pone general para que actualize desde las estrellas en tiempo real hasta el estado del nivel
     return GetBuilder<HangManSubLevelController>(builder: (_) {
       return CommonsSubLevelBuilder.buildScaffold(
+        backKey: _controller.showTutorial ? _keyAppBarBack : null,
+        levelKey: _controller.showTutorial ? _keyAppBarLevel : null,
+        themeKey: _controller.showTutorial ? _keyAppBarTheme : null,
+        starsKey: _controller.showTutorial ? _keyAppBarStars : null,
         tema: _controller.subLevelTheme(),
         nivel: _controller.subLevelNumber(),
         stars: _controller.generateProgress(),
@@ -439,12 +447,63 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
   void initTargets() {
     targets.add(
       StrawberryTutorial.addTarget(
+        identify: "Target Back Button",
+        keyTarget: _keyAppBarBack,
+        shadowColor: Colors.blue.shade800,
+        title: 'Atrás',
+        description:
+            'Pulse este botón si desea volver a la pantalla de niveles.',
+        showImageOnTop: false,
+        imagePadding: 50,
+      ),
+    );
+
+    targets.add(
+      StrawberryTutorial.addTarget(
+        identify: "Target Level",
+        keyTarget: _keyAppBarLevel,
+        shadowColor: Colors.red,
+        title: 'Nivel',
+        description: 'Este número indica el nivel en el que se encuentra.',
+        showImageOnTop: false,
+        imagePadding: 50,
+      ),
+    );
+
+    targets.add(
+      StrawberryTutorial.addTarget(
+        identify: "Target Theme",
+        keyTarget: _keyAppBarTheme,
+        shadowColor: Colors.cyan.shade900,
+        title: 'Tema',
+        description:
+            'Este texto indica el tema del nivel en el que se encuentra.',
+        showImageOnTop: false,
+        imagePadding: 50,
+      ),
+    );
+
+    targets.add(
+      StrawberryTutorial.addTarget(
+        identify: "Target Stars",
+        keyTarget: _keyAppBarStars,
+        shadowColor: Colors.teal,
+        title: 'Estrellas',
+        description:
+            'Las estrellas indican cuan bien has realizado el nivel.\nPara obtenerlas todas debes completar el nivel sin equivocarte ni una sola vez.',
+        showImageOnTop: false,
+        imagePadding: 50,
+      ),
+    );
+
+    targets.add(
+      StrawberryTutorial.addTarget(
         identify: "Target Hearts",
         keyTarget: _key1,
         shadowColor: Colors.pink,
         title: 'Cantidad de vidas.',
         description:
-            'Las vidas son la cantidad de intentos que tienes para equivocarte.\n Si las pierdes todas deberás empezar el nivel de nuevo.',
+            'Las vidas son la cantidad de intentos que tienes para equivocarte.\nSi las pierdes todas deberás empezar el nivel de nuevo.',
         showImageOnTop: false,
         imagePadding: 50,
       ),
@@ -480,7 +539,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
       StrawberryTutorial.addTarget(
         identify: "Target Keyboard",
         keyTarget: _key4,
-        shadowColor: Colors.red,
+        shadowColor: Colors.indigo,
         contentAlign: ContentAlign.top,
         title: 'Teclado.',
         description:
@@ -497,7 +556,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
         title: 'Letra.',
         description:
             'Debes pulsar cada una de las letras correctas para completar la palabra.'
-            '\n Por ejemplo toca la letra ${_controller.firstAnswerLetter} para completar exitosamente la primera letra de la palabra.',
+            '\nPor ejemplo toca la letra ${_controller.firstAnswerLetter} para completar exitosamente la primera letra de la palabra.',
         shape: ShapeLightFocus.Circle,
         imagePadding: 50,
       ),
