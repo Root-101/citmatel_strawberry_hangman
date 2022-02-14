@@ -455,6 +455,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
             'Pulse este botón si desea volver a la pantalla de niveles.',
         showImageOnTop: false,
         imagePadding: 50,
+        descriptionMaxLines: 2,
       ),
     );
 
@@ -467,6 +468,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
         description: 'Este número indica el nivel en el que se encuentra.',
         showImageOnTop: false,
         imagePadding: 50,
+        descriptionMaxLines: 2,
       ),
     );
 
@@ -480,6 +482,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
             'Este texto indica el tema del nivel en el que se encuentra.',
         showImageOnTop: false,
         imagePadding: 50,
+        descriptionMaxLines: 2,
       ),
     );
 
@@ -493,6 +496,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
             'Las estrellas indican cuan bien has realizado el nivel.\nPara obtenerlas todas debes completar el nivel sin equivocarte ni una sola vez.',
         showImageOnTop: false,
         imagePadding: 50,
+        descriptionMaxLines: 5,
       ),
     );
 
@@ -506,6 +510,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
             'Las vidas son la cantidad de intentos que tienes para equivocarte.\nSi las pierdes todas deberás empezar el nivel de nuevo.',
         showImageOnTop: false,
         imagePadding: 50,
+        descriptionMaxLines: 4,
       ),
     );
 
@@ -516,9 +521,11 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
         shadowColor: Colors.deepPurple,
         contentTextAlign: ContentAlign.bottom,
         contentImageAlign: ContentAlign.top,
+        imagePadding: 50,
         title: 'Palabra a completar.',
         description:
             'Debes completar correctamente la palabra para poder ganar.',
+        descriptionMaxLines: 2,
       ),
     );
 
@@ -532,6 +539,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
         description:
             'Esta imagen tiene relación con la palabra a completar, por lo que te puede servir de ayuda para ganar el nivel.',
         showImage: false,
+        descriptionMaxLines: 3,
       ),
     );
 
@@ -545,6 +553,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
         description:
             'Todas las letras necesarias para completar la palabra se encuentran en este teclado.',
         imagePadding: 50,
+        descriptionMaxLines: 3,
       ),
     );
     targets.add(
@@ -559,6 +568,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
             '\nPor ejemplo toca la letra ${_controller.firstAnswerLetter} para completar exitosamente la primera letra de la palabra.',
         shape: ShapeLightFocus.Circle,
         imagePadding: 50,
+        descriptionMaxLines: 5,
       ),
     );
   }
