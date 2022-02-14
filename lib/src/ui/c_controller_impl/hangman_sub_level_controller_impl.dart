@@ -110,6 +110,8 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
               shape: ShapeLightFocus.Circle,
               contentImageAlign: ContentAlign.top,
               contentTextAlign: ContentAlign.bottom,
+              imagePadding: 50,
+              descriptionMaxLines: 2,
             ),
           ],
           onSkip: () {
@@ -148,6 +150,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
             shape: ShapeLightFocus.Circle,
             showImageOnTop: false,
             imagePadding: 50,
+            descriptionMaxLines: 6,
           ),
         ],
         onSkip: () {
