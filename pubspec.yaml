@@ -166,6 +166,56 @@ flutter:
     - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/55-psp.png
     - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/56-enrutador.png
 
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/1-américa.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/2-china.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/3-rusia.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/4-isla.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/5-hungría.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/6-brújula.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/7-cuba.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/8-lago.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/9-croacia.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/10-chile.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/11-canadá.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/12-áfrica.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/13-egipto.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/14-suecia.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/15-rosa.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/16-polonia.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/17-perú.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/18-portugal.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/19-moscú.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/20-islandia.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/21-turquía.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/22-irán.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/23-india.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/24-gales.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/25-paraguay.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/26-rumanía.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/27-argentina.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/28-siria.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/29-alemania.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/30-japón.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/31-albania.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/32-tailandia.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/33-australia.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/34-londres.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/35-argelia.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/36-italia.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/37-brasil.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/38-cascada.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/39-checa.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/40-austria.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/41-eeuu.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/42-europa.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/43-bélgica.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/44-españa.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/45-sudáfrica.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/46-suiza.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/47-málaga.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/48-francia.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/49-toscana.png
+
     - packages/citmatel_strawberry_hangman/assets/niveles/tutorial/tutorial.jpg
 
   uses-material-design: true
