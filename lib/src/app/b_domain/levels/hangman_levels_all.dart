@@ -1,4 +1,9 @@
 import 'package:citmatel_strawberry_hangman/src/app/b_domain/hangman_domain_exporter.dart';
+import 'package:citmatel_strawberry_hangman/src/app/b_domain/levels/hangman_level_5_deporte.dart';
+import 'package:citmatel_strawberry_hangman/src/app/b_domain/levels/hangman_level_6_geografia.dart';
+import 'package:citmatel_strawberry_hangman/src/app/b_domain/levels/hangman_level_7_historia.dart';
+import 'package:citmatel_strawberry_hangman/src/app/b_domain/levels/hangman_level_8_arte.dart';
+import 'package:citmatel_strawberry_hangman/src/app/b_domain/levels/hangman_level_9_animales.dart';
 import 'package:citmatel_strawberry_hangman/src/app/hangman_app_exporter.dart';
 
 class HangManLevelsAll {
@@ -8,11 +13,10 @@ class HangManLevelsAll {
     HangManLevelCiencias.levelCiencias,
     HangManLevelTecnologias.levelTecnologias,
     HangManLevelMitologia.levelMitologia,
-    HangManLevelTecnologias.levelTecnologias.clone()..id = 5,
-    HangManLevelTecnologias.levelTecnologias.clone()..id = 6,
-    HangManLevelTecnologias.levelTecnologias.clone()..id = 7,
-    HangManLevelTecnologias.levelTecnologias.clone()..id = 8,
-    HangManLevelTecnologias.levelTecnologias.clone()..id = 9,
-    HangManLevelTecnologias.levelTecnologias.clone()..id = 10,
+    HangManLevelDeporte.levelDeporte,
+    HangManLevelGeografia.levelGeografia,
+    HangManLevelHistoria.levelHistoria,
+    HangManLevelArte.levelArte,
+    HangManLevelAnimales.levelAnimales,
   ];
 }
