@@ -74,17 +74,40 @@ flutter:
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/granja.jpg
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/oficina.jpg
 
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/anubis.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/faraón.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/fénix.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/ares.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/artemisa.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/deméter.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/fauno.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/hades.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/hefesto.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/poseidón.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/zeus.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/1-cupido.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/2-grifo.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/3-hades.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/4-afrodita.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/5-anubis.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/6-pegaso.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/7-poseidón.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/8-fénix.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/9-ares.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/10-medusa.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/11-artemisa.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/12-fauno.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/13-apolo.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/14-centauro.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/15-hermes.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/16-sirena.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/17-dionisio.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/18-faraón.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/19-cerbero.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/20-deméter.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/21-hipogrifo.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/22-atena.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/23-cíclope.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/24-papiro.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/25-zeus.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/26-unicornio.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/27-hefesto.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/28-hidra.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/29-hera.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/30-sátiro.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/31-mantícora.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/32-basilisco.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/33-dragón.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/34-equidna.png
 
     - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/1-laptop.png
     - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/2-robot.png
