@@ -86,7 +86,7 @@ class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
   List<String> _generateKeyboard() {
     //cojo todas las letras
     List<String> allLetters =
-        "abcdefghijklmnñopqrstuvwxyz".toUpperCase().split("");
+        "abcdefghijklmnñopqrstuvwxyzáéíóú-".toUpperCase().split("");
 
     //quito las que ya están en la respuesta
     allLetters
