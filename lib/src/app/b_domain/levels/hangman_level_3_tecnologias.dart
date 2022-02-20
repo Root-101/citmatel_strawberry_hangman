@@ -58,7 +58,7 @@ class HangManLevelTecnologias {
       ),
       HangManSubLevelDomain(
         id: 11,
-        answer: "códigp",
+        answer: "código",
         urlImage: HangManAssetsNivelTecnologias.TECNOLOGIA_11_CODIGO,
       ),
       HangManSubLevelDomain(
