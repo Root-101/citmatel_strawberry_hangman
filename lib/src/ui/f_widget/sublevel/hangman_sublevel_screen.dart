@@ -537,7 +537,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
         title: 'Imagen de ayuda.',
         shape: ShapeLightFocus.Circle,
         description:
-            'Esta imagen tiene relación con la palabra a completar, por lo que te puede servir de ayuda para ganar el nivel.',
+            'Esta imagen tiene relación con la palabra a completar, apóyate en ella para ganar. Puedes acercarla al tocarla o usando gestos sobre la imagen.',
         showImage: false,
         descriptionMaxLines: 3,
       ),
