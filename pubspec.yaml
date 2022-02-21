@@ -248,6 +248,45 @@ flutter:
     - packages/citmatel_strawberry_hangman/assets/niveles/historia/29-luther.jpg
     - packages/citmatel_strawberry_hangman/assets/niveles/historia/30-marx.jpg
 
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/1-fútbol.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/2-jabalina.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/3-maratón.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/4-billar.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/5-base.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/6-martillo.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/7-portero.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/8-gimnasia.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/9-pitcher.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/10-campeón.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/11-clavado.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/12-baloncesto.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/13-bolos.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/14-polo.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/15-relevo.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/16-remo.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/17-swing.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/18-estadio.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/19-hockey.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/20-golf.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/21-escalar.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/22-voleibol.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/23-natación.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/24-hoyo.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/25-medalla.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/26-disco.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/27-olimpiada.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/28-pelotero.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/29-pesa.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/30-béisbol.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/31-bádminton.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/32-patinaje.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/33-salto.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/34-penalti.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/35-bateador.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/36-rugby.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/37-tenis.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/38-críquet.png
+
     - packages/citmatel_strawberry_hangman/assets/niveles/tutorial/tutorial.jpg
 
   uses-material-design: true
