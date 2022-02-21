@@ -411,6 +411,6 @@ flutter:
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/39-asiático.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/40-marsupio.png
 
-    - packages/citmatel_strawberry_hangman/assets/niveles/tutorial/tutorial.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/tutorial/tutorial.png
 
   uses-material-design: true
