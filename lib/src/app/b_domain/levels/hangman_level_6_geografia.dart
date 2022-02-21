@@ -251,6 +251,11 @@ class HangManLevelGeografia {
         answer: "toscana",
         urlImage: HangManAssetsNivelGeografia.GEOGRAFIA_49_TOSCANA,
       ),
+      HangManSubLevelDomain(
+        id: 50,
+        answer: "finlandia",
+        urlImage: HangManAssetsNivelGeografia.GEOGRAFIA_50_FINLANDIA,
+      ),
     ],
   );
 }
