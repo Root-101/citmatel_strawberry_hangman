@@ -1,0 +1,44 @@
+class HangManAssetsNivelDeporte {
+  static const _assets = "packages/citmatel_strawberry_hangman/assets";
+  static const _niveles = "$_assets/niveles";
+  static const _deportes = "$_niveles/deportes";
+
+  static const String DEPORTE_1_FUTBOL = "$_deportes/1-fútbol.png";
+  static const String DEPORTE_2_JABALINA = "$_deportes/2-jabalina.png";
+  static const String DEPORTE_3_MARATON = "$_deportes/3-maratón.png";
+  static const String DEPORTE_4_BILLAR = "$_deportes/4-billar.png";
+  static const String DEPORTE_5_BASE = "$_deportes/5-base.png";
+  static const String DEPORTE_6_MARTILLO = "$_deportes/6-martillo.png";
+  static const String DEPORTE_7_PORTERO = "$_deportes/7-portero.jpg";
+  static const String DEPORTE_8_GIMNASIA = "$_deportes/8-gimnasia.png";
+  static const String DEPORTE_9_PITCHER = "$_deportes/9-pitcher.png";
+  static const String DEPORTE_10_CAMPEON = "$_deportes/10-campeón.jpg";
+  static const String DEPORTE_11_CLAVADO = "$_deportes/11-clavado.png";
+  static const String DEPORTE_12_BALONCESTO = "$_deportes/12-baloncesto.png";
+  static const String DEPORTE_13_BOLOS = "$_deportes/13-bolos.png";
+  static const String DEPORTE_14_POLO = "$_deportes/14-polo.png";
+  static const String DEPORTE_15_RELEVO = "$_deportes/15-relevo.png";
+  static const String DEPORTE_16_REMO = "$_deportes/16-remo.png";
+  static const String DEPORTE_17_SWING = "$_deportes/17-swing.png";
+  static const String DEPORTE_18_ESTADIO = "$_deportes/18-estadio.jpg";
+  static const String DEPORTE_19_HOCKEY = "$_deportes/19-hockey.png";
+  static const String DEPORTE_20_GOLF = "$_deportes/20-golf.png";
+  static const String DEPORTE_21_ESCALAR = "$_deportes/21-escalar.png";
+  static const String DEPORTE_22_VOLEIBOL = "$_deportes/22-voleibol.png";
+  static const String DEPORTE_23_NATACION = "$_deportes/23-natación.png";
+  static const String DEPORTE_24_HOYO = "$_deportes/24-hoyo.png";
+  static const String DEPORTE_25_MEDALLA = "$_deportes/25-medalla.png";
+  static const String DEPORTE_26_DISCO = "$_deportes/26-disco.png";
+  static const String DEPORTE_27_OLIMPIADA = "$_deportes/27-olimpiada.png";
+  static const String DEPORTE_28_PELOTERO = "$_deportes/28-pelotero.png";
+  static const String DEPORTE_29_PESA = "$_deportes/29-pesa.png";
+  static const String DEPORTE_30_BEISBOL = "$_deportes/30-béisbol.png";
+  static const String DEPORTE_31_BADMINTON = "$_deportes/31-bádminton.png";
+  static const String DEPORTE_32_PATINAJE = "$_deportes/32-patinaje.png";
+  static const String DEPORTE_33_SALTO = "$_deportes/33-salto.png";
+  static const String DEPORTE_34_PENALTI = "$_deportes/34-penalti.png";
+  static const String DEPORTE_35_BATEADOR = "$_deportes/35-bateador.png";
+  static const String DEPORTE_36_RUGBY = "$_deportes/36-rugby.jpg";
+  static const String DEPORTE_37_TENIS = "$_deportes/37-tenis.png";
+  static const String DEPORTE_38_CRIQUET = "$_deportes/38-críquet.png";
+}
