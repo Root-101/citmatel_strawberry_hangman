@@ -52,4 +52,5 @@ class HangManAssetsNivelGeografia {
   static const String GEOGRAFIA_47_MALAGA = "$_geografia/47-málaga.png";
   static const String GEOGRAFIA_48_FRANCIA = "$_geografia/48-francia.png";
   static const String GEOGRAFIA_49_TOSCANA = "$_geografia/49-toscana.png";
+  static const String GEOGRAFIA_50_FINLANDIA = "$_geografia/50-finlandia.png";
 }
