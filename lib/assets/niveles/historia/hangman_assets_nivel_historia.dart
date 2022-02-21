@@ -3,7 +3,7 @@ class HangManAssetsNivelHistoria {
   static const _niveles = "$_assets/niveles";
   static const _historia = "$_niveles/historia";
 
-  static const String HISTORIA_1_HISTORIA = "$_historia/1-guevara.jpg";
+  static const String HISTORIA_1_GUEVARA = "$_historia/1-guevara.jpg";
   static const String HISTORIA_2_MACEO = "$_historia/2-maceo.jpg";
   static const String HISTORIA_3_MARTI = "$_historia/3-martí.jpg";
   static const String HISTORIA_4_BONAPARTE = "$_historia/4-bonaparte.jpg";
