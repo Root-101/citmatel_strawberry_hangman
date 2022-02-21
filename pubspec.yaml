@@ -217,6 +217,37 @@ flutter:
     - packages/citmatel_strawberry_hangman/assets/niveles/geografía/49-toscana.png
     - packages/citmatel_strawberry_hangman/assets/niveles/geografía/50-finlandia.png
 
+    - packages/citmatel_strawberry_hangman/assets/niveles/historia/1-guevara.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/historia/2-maceo.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/historia/3-martí.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/historia/4-bonaparte.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/historia/5-camilo.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/historia/6-estrada.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/historia/7-gómez.jpeg
+    - packages/citmatel_strawberry_hangman/assets/niveles/historia/8-hitler.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/historia/9-castro.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/historia/10-figueredo.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/historia/11-grajales.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/historia/12-lenin.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/historia/13-agramonte.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/historia/14-benítez.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/historia/15-mendive.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/historia/16-varela.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/historia/17-sanguily.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/historia/18-stalin.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/historia/19-moncada.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/historia/20-villena.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/historia/21-almeida.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/historia/22-bolívar.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/historia/23-espín.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/historia/24-colón.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/historia/25-baliño.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/historia/26-manduley.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/historia/27-mella.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/historia/28-céspedes.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/historia/29-luther.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/historia/30-marx.jpg
+
     - packages/citmatel_strawberry_hangman/assets/niveles/tutorial/tutorial.jpg
 
   uses-material-design: true
