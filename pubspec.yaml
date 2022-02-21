@@ -339,6 +339,37 @@ flutter:
     - packages/citmatel_strawberry_hangman/assets/niveles/deportes/37-tenis.png
     - packages/citmatel_strawberry_hangman/assets/niveles/deportes/38-críquet.png
 
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/1-paleta.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/2-cantante.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/3-fotos.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/4-domador.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/5-payaso.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/6-flauta.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/7-escultor.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/8-violín.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/9-banda.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/10-costura.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/11-diseño.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/12-guitarra.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/13-modelar.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/14-saxofón.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/15-restaurar.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/16-trombón.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/17-concurso.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/18-contrabajo.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/19-concierto.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/20-coro.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/21-viola.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/22-rafael.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/23-orquesta.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/24-platillo.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/25-basilio.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/26-arpa.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/27-vitrubio.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/28-piano.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/29-creación.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/30-batuta.png
+
     - packages/citmatel_strawberry_hangman/assets/niveles/tutorial/tutorial.jpg
 
   uses-material-design: true
