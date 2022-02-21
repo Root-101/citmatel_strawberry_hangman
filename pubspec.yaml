@@ -56,10 +56,42 @@ flutter:
     #Images
     - packages/citmatel_strawberry_hangman/assets/images/background.png
 
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/palma.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/vacuna.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/invierno.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/nubes.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/1-nubes.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/2-corazón.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/3-estómago.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/4-palma.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/5-esperma.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/6-óvulo.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/7-volcan.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/8-sangre.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/9-pulmón.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/10-nervio.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/11-cavidad.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/12-bacteria.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/13-riñones.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/14-clorofila.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/15-hígado.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/16-intestino.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/17-invierno.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/18-tórax.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/19-tormenta.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/20-pupila.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/21-imán.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/22-músculo.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/23-pesa.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/24-molécula.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/25-ondas.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/26-átomo.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/27-dentista.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/28-ameba.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/29-huesos.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/30-péndulo.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/31-vacuna.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/32-química.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/33-donante.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/34-probeta.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/35-prisma.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/36-barlow.png
 
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/1-notas.png
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/2-oficina.png
