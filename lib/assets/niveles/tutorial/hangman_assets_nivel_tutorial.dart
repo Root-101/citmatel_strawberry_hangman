@@ -3,5 +3,5 @@ class HangManAssetsNivelTutorial {
   static const _niveles = "$_assets/niveles";
   static const _tutorial = "$_niveles/tutorial";
 
-  static const String TUTORIAL= "$_tutorial/tutorial.jpg";
+  static const String TUTORIAL= "$_tutorial/tutorial.png";
 }
