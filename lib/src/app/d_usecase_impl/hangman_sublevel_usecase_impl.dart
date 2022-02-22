@@ -26,7 +26,7 @@ class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
   late final List<String> keyboard;
 
   ///el multiplo de las letras del tecaldo, para una distribución uniforme de las letras en la visual
-  static const DEFAULT_KEYBOARD_COLUMNS = 6;
+  static const DEFAULT_KEYBOARD_COLUMNS = 7;
   static const MIN_CANT_LETTERS_KEYBOARD =
       2 * DEFAULT_KEYBOARD_COLUMNS; //min = 12
   static const MID_CANT_LETTERS_KEYBOARD =
@@ -86,7 +86,7 @@ class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
   List<String> _generateKeyboard() {
     //cojo todas las letras
     List<String> allLetters =
-        "abcdefghijklmnñopqrstuvwxyz".toUpperCase().split("");
+        "abcdefghijklmnñopqrstuvwxyzáéíóú-".toUpperCase().split("");
 
     //quito las que ya están en la respuesta
     allLetters
@@ -151,5 +151,26 @@ class HangManSubLevelUseCaseImpl extends HangManSubLevelUseCase {
 
   void _executeProgressUpdate() {
     Get.find<HangManSubLevelProgressUseCase>().edit(subLevelProgressDomain);
+  }
+
+  @override
+  bool showTutorial() {
+    return subLevelProgressDomain.hangmanLevelDomainId ==
+            Get.find<HangManLevelUseCase>().findAll()[0].id &&
+        subLevelProgressDomain.hangmanSubLevelDomainId ==
+            Get.find<HangManLevelUseCase>().findAll()[0].sublevel[0].id;
+  }
+
+  @override
+  String get firstAnswerLetter => subLevelDomain.answer[0];
+
+  String subLevelTheme() {
+    return Get.find<HangManLevelUseCase>()
+        .findAll()[subLevelProgressDomain.hangmanLevelDomainId]
+        .theme;
+  }
+
+  int subLevelNumber() {
+    return subLevelDomain.id;
   }
 }

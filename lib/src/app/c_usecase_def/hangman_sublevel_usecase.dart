@@ -5,12 +5,18 @@ abstract class HangManSubLevelUseCase extends AbstractUseCase {
   ///domain almacenado para acceder a la info
   HangManSubLevelDomain get subLevelDomain;
 
+  ///domain con la info del progreso
+  HangManSubLevelProgressDomain get subLevelProgressDomain;
+
   ///cantidad de letras de la respuesta, para saber las columnas de la visual
   ///en teoría debería cambiar para una lista para soportar respuestas de varias palabras
   int get answerCantOfLetters;
 
   ///cantidad de letras del teclado
   int get keyboardCantLetters;
+
+  // Method that returns the first letter of the answer.
+  String get firstAnswerLetter;
 
   ///teclado como tal que se muestra, se debe asegurar que no tenga letras repetidas y siempre contenga las letras de la respuesta
   List<String> get keyboard;
@@ -30,4 +36,12 @@ abstract class HangManSubLevelUseCase extends AbstractUseCase {
   int lives();
 
   void saveProgress(int stars);
+
+  bool showTutorial();
+
+   //devuelve el tema del nivel al que pertenece este subnivel
+  String subLevelTheme();
+
+  //devuelve el numero del subnivel en los niveles, basicamene el id del subnivel
+  int subLevelNumber();
 }
