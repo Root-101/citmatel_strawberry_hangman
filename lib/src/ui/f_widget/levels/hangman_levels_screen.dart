@@ -5,8 +5,12 @@ import 'package:get/get.dart';
 
 class HangManLevelsScreen extends GetView<HangManLevelController> {
   static const ROUTE_NAME = "/hangman-levels-screen";
+  final bool mute;
 
-  HangManLevelsScreen({Key? key}) : super(key: key);
+  HangManLevelsScreen({
+    Key? key,
+    required this.mute,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +38,7 @@ class HangManLevelsScreen extends GetView<HangManLevelController> {
               levelDomain.themeBackgroundImage.urlImage,
           //nivel abierto, entrar directo al juego
           openWidget: HangManSubLevelLoading(
+            mute: mute,
             subLevelDomain: HangManLevelTutorial.tutorialSubLevel,
             subLevelProgressDomain:
                 HangManLevelTutorial.tutorialSubLevelProgress(
@@ -126,6 +131,7 @@ class HangManLevelsScreen extends GetView<HangManLevelController> {
                     contPlayedTimes: progressDomain.contPlayedTimes,
                     //nivel abierto, juego como tal
                     openWidget: HangManSubLevelLoading(
+                      mute: mute,
                       subLevelDomain: subLevelDomain,
                       subLevelProgressDomain: progressDomain,
                     ),
