@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animator/flutter_animator.dart'
     hide FadeInAnimation, FadeIn;
 import 'package:flutter_fadein/flutter_fadein.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -20,11 +19,13 @@ class HangManSubLevelScreen extends StatefulWidget {
   HangManSubLevelScreen({
     required HangManSubLevelDomain subLevelDomain,
     required HangManSubLevelProgressDomain subLevelProgressDomain,
+    required bool mute,
   }) : super() {
     Get.put<HangManSubLevelController>(
       HangManSubLevelControllerImpl(
         subLevelDomain: subLevelDomain,
         subLevelProgressDomain: subLevelProgressDomain,
+        mute: mute,
       ),
     );
   }
