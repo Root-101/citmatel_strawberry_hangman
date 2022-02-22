@@ -92,7 +92,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
     List<int> possiblesIndex = subLevelUseCase.checkLetter(letter);
     if (possiblesIndex.isEmpty) {
       //no existe esa letra en la palabra
-  //    StrawberryAudio.playAudioWrong(mute);
+      StrawberryAudio.playAudioWrong(mute);
       StrawberryVibration.vibrate();
       _breakHeart(context, key7);
     } else {
@@ -125,7 +125,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
         firstCorrectLetter = 10000;
       }
 
-//      StrawberryAudio.playAudioCorrect(mute);
+      StrawberryAudio.playAudioCorrect(mute);
       StrawberryVibration.vibrate();
       _makeConfetti();
       _fillAnswer(possiblesIndex, letter);
