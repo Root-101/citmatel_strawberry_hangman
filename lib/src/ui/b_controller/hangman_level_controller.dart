@@ -26,9 +26,9 @@ abstract class HangManLevelController extends GetxController {
   //check if all sublevels are completed with at most 1 stars
   bool wonedLevel(HangManLevelDomain levelDomain);
 
-  Widget randomSubLevel();
+  Widget randomSubLevel(bool mute);
 
-  Widget randomSubLevelOf(HangManLevelDomain level);
+  Widget randomSubLevelOf(HangManLevelDomain level, bool mute);
 
   String themeOfGivenLevel(HangManSubLevelProgressDomain progressDomain);
 
