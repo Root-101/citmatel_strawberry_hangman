@@ -80,21 +80,23 @@ class HangManLevelControllerImpl extends HangManLevelController {
   }
 
   @override
-  Widget randomSubLevel() {
+  Widget randomSubLevel(bool mute) {
     Tuple2<HangManSubLevelDomain, HangManSubLevelProgressDomain> tuple =
         Get.find<HangManRandomUseCase>().randomSubLevel();
     print(tuple);
     return HangManSubLevelLoading(
+      mute: mute,
       subLevelDomain: tuple.item1,
       subLevelProgressDomain: tuple.item2,
     );
   }
 
   @override
-  Widget randomSubLevelOf(HangManLevelDomain level) {
+  Widget randomSubLevelOf(HangManLevelDomain level, bool mute) {
     Tuple2<HangManSubLevelDomain, HangManSubLevelProgressDomain> tuple =
         Get.find<HangManRandomUseCase>().randomSubLevelOf(level);
     return HangManSubLevelLoading(
+      mute: mute,
       subLevelDomain: tuple.item1,
       subLevelProgressDomain: tuple.item2,
     );
