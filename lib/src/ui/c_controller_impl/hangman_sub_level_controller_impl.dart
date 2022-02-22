@@ -39,7 +39,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   HangManSubLevelControllerImpl({
     required HangManSubLevelDomain subLevelDomain,
     required HangManSubLevelProgressDomain subLevelProgressDomain,
-    required mute,
+    required this.mute,
   }) : subLevelUseCase = HangManSubLevelUseCaseImpl(
           subLevelDomain: subLevelDomain,
           subLevelProgressDomain: subLevelProgressDomain,
@@ -129,7 +129,6 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
       StrawberryVibration.vibrate();
       _makeConfetti();
       _fillAnswer(possiblesIndex, letter);
-
       _doWinLevel();
     }
     update();
