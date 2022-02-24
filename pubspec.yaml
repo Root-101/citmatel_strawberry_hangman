@@ -376,19 +376,19 @@ flutter:
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/1-oruga.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/2-foca.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/3-gallo.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/4-buho.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/animales/4-tocororo.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/5-ballena.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/6-león.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/7-perezoso.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/8-pelícano.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/9-koala.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/animales/9-zunzún.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/10-pato.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/11-guacamayo.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/12-cocodrilo.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/13-buitre.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/14-jabalí.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/15-rata.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/16-víbora.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/animales/16-manatí.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/17-oveja.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/18-pantera.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/19-camarón.png
@@ -400,7 +400,7 @@ flutter:
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/25-tiburón.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/26-calamar.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/27-felino.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/28-medusa.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/animales/28-pigmea.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/29-martillo.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/30-pavo.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/31-toro.png
@@ -413,6 +413,12 @@ flutter:
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/38-ermitaño.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/39-asiático.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/40-marsupio.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/animales/41-buho.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/animales/42-koala.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/animales/43-víbora.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/animales/44-medusa.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/animales/45-almiquí.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/animales/46-manjuarí.png
 
     - packages/citmatel_strawberry_hangman/assets/niveles/tutorial/tutorial.png
 
