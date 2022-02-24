@@ -23,9 +23,10 @@ class HangManLevelArte {
         urlImage: HangManAssetsNivelArte.ARTE_3_FOTOS,
       ),
       HangManSubLevelDomain(
-          id: 4,
-          answer: "domador",
-          urlImage: HangManAssetsNivelArte.ARTE_4_DOMADOR),
+        id: 4,
+        answer: "trovador",
+        urlImage: HangManAssetsNivelArte.ARTE_4_TROVADOR,
+      ),
       HangManSubLevelDomain(
         id: 5,
         answer: "payaso",
@@ -155,6 +156,16 @@ class HangManLevelArte {
         id: 30,
         answer: "batuta",
         urlImage: HangManAssetsNivelArte.ARTE_30_BATUTA,
+      ),
+      HangManSubLevelDomain(
+        id: 31,
+        answer: "domador",
+        urlImage: HangManAssetsNivelArte.ARTE_31_DOMADOR,
+      ),
+      HangManSubLevelDomain(
+        id: 32,
+        answer: "rumba",
+        urlImage: HangManAssetsNivelArte.ARTE_32_RUMBA,
       ),
     ],
   );

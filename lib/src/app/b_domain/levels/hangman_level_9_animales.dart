@@ -24,8 +24,8 @@ class HangManLevelAnimales {
       ),
       HangManSubLevelDomain(
           id: 4,
-          answer: "buho",
-          urlImage: HangManAssetsNivelAnimales.ANIMALES_4_BUHO),
+          answer: "tocororo",
+          urlImage: HangManAssetsNivelAnimales.ANIMALES_4_TOCORORO),
       HangManSubLevelDomain(
           id: 5,
           answer: "ballena",
@@ -47,8 +47,8 @@ class HangManLevelAnimales {
       ),
       HangManSubLevelDomain(
         id: 9,
-        answer: "koala",
-        urlImage: HangManAssetsNivelAnimales.ANIMALES_9_KOALA,
+        answer: "zunzún",
+        urlImage: HangManAssetsNivelAnimales.ANIMALES_9_ZUNZUN,
       ),
       HangManSubLevelDomain(
         id: 10,
@@ -82,8 +82,8 @@ class HangManLevelAnimales {
       ),
       HangManSubLevelDomain(
         id: 16,
-        answer: "víbora",
-        urlImage: HangManAssetsNivelAnimales.ANIMALES_16_VIBORA,
+        answer: "manatí",
+        urlImage: HangManAssetsNivelAnimales.ANIMALES_16_MANATI,
       ),
       HangManSubLevelDomain(
         id: 17,
@@ -142,8 +142,8 @@ class HangManLevelAnimales {
       ),
       HangManSubLevelDomain(
         id: 28,
-        answer: "medusa",
-        urlImage: HangManAssetsNivelAnimales.ANIMALES_28_MEDUSA,
+        answer: "pigmea",
+        urlImage: HangManAssetsNivelAnimales.ANIMALES_28_PIGMEA,
       ),
       HangManSubLevelDomain(
         id: 29,
@@ -204,6 +204,36 @@ class HangManLevelAnimales {
         id: 40,
         answer: "masurpio",
         urlImage: HangManAssetsNivelAnimales.ANIMALES_40_MASURPIO,
+      ),
+      HangManSubLevelDomain(
+        id: 41,
+        answer: "buho",
+        urlImage: HangManAssetsNivelAnimales.ANIMALES_41_BUHO,
+      ),
+      HangManSubLevelDomain(
+        id: 42,
+        answer: "koala",
+        urlImage: HangManAssetsNivelAnimales.ANIMALES_42_KOALA,
+      ),
+      HangManSubLevelDomain(
+        id: 43,
+        answer: "víbora",
+        urlImage: HangManAssetsNivelAnimales.ANIMALES_43_VIBORA,
+      ),
+      HangManSubLevelDomain(
+        id: 44,
+        answer: "medusa",
+        urlImage: HangManAssetsNivelAnimales.ANIMALES_44_MEDUSA,
+      ),
+      HangManSubLevelDomain(
+        id: 45,
+        answer: "almiquí",
+        urlImage: HangManAssetsNivelAnimales.ANIMALES_45_ALMIQUI,
+      ),
+      HangManSubLevelDomain(
+        id: 46,
+        answer: "manjuarí",
+        urlImage: HangManAssetsNivelAnimales.ANIMALES_46_MANJUARI,
       ),
     ],
   );

@@ -94,7 +94,7 @@ flutter:
     - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/35-prisma.png
     - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/36-barlow.png
 
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/1-notas.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/1-capitolio.png
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/2-oficina.png
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/3-café.png
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/4-yoga.png
@@ -103,7 +103,7 @@ flutter:
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/7-almendrón.png
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/8-gafas.png
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/9-escuela.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/10-audífono.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/10-tabaco.png
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/11-ajedrez.jpg
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/12-gabinete.png
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/13-correr.png
@@ -113,19 +113,25 @@ flutter:
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/17-pescar.png
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/18-almacén.png
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/19-patineta.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/20-navidad.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/20-cuba-libre.png
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/21-malabar.png
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/22-subasta.png
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/23-mate.png
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/24-radio.png
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/25-cheque.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/26-diploma.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/26-trinidad.png
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/27-escribir.jpg
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/28-galleta.png
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/29-mecero.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/30-manilla.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/30-escudo.png
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/31-granja.png
     - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/32-monumento.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/33-notas.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/34-audífono.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/35-navidad.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/36-diploma.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/37-manilla.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/38-oriundo.png
 
     - packages/citmatel_strawberry_hangman/assets/niveles/mitología/1-cupido.png
     - packages/citmatel_strawberry_hangman/assets/niveles/mitología/2-grifo.png
@@ -343,7 +349,7 @@ flutter:
     - packages/citmatel_strawberry_hangman/assets/niveles/arte/1-paleta.png
     - packages/citmatel_strawberry_hangman/assets/niveles/arte/2-cantante.png
     - packages/citmatel_strawberry_hangman/assets/niveles/arte/3-fotos.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/4-domador.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/4-trovador.png
     - packages/citmatel_strawberry_hangman/assets/niveles/arte/5-payaso.png
     - packages/citmatel_strawberry_hangman/assets/niveles/arte/6-flauta.png
     - packages/citmatel_strawberry_hangman/assets/niveles/arte/7-escultor.png
@@ -370,23 +376,25 @@ flutter:
     - packages/citmatel_strawberry_hangman/assets/niveles/arte/28-piano.png
     - packages/citmatel_strawberry_hangman/assets/niveles/arte/29-creación.png
     - packages/citmatel_strawberry_hangman/assets/niveles/arte/30-batuta.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/31-domador.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/32-rumba.png
 
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/1-oruga.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/2-foca.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/3-gallo.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/4-buho.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/animales/4-tocororo.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/5-ballena.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/6-león.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/7-perezoso.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/8-pelícano.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/9-koala.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/animales/9-zunzún.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/10-pato.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/11-guacamayo.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/12-cocodrilo.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/13-buitre.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/14-jabalí.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/15-rata.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/16-víbora.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/animales/16-manatí.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/17-oveja.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/18-pantera.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/19-camarón.png
@@ -398,7 +406,7 @@ flutter:
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/25-tiburón.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/26-calamar.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/27-felino.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/28-medusa.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/animales/28-pigmea.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/29-martillo.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/30-pavo.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/31-toro.png
@@ -411,6 +419,12 @@ flutter:
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/38-ermitaño.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/39-asiático.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/40-marsupio.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/animales/41-buho.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/animales/42-koala.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/animales/43-víbora.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/animales/44-medusa.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/animales/45-almiquí.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/animales/46-manjuarí.png
 
     - packages/citmatel_strawberry_hangman/assets/niveles/tutorial/tutorial.png
 

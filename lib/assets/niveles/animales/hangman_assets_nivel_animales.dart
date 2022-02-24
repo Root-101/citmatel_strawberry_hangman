@@ -6,19 +6,19 @@ class HangManAssetsNivelAnimales {
   static const String ANIMALES_1_ORUGA = "$_animales/1-oruga.png";
   static const String ANIMALES_2_FOCA = "$_animales/2-foca.png";
   static const String ANIMALES_3_GALLO = "$_animales/3-gallo.png";
-  static const String ANIMALES_4_BUHO = "$_animales/4-buho.png";
+  static const String ANIMALES_4_TOCORORO = "$_animales/4-tocororo.png";
   static const String ANIMALES_5_BALLENA = "$_animales/5-ballena.png";
   static const String ANIMALES_6_LEON = "$_animales/6-león.png";
   static const String ANIMALES_7_PEREZOSO = "$_animales/7-perezoso.png";
   static const String ANIMALES_8_PELICANO = "$_animales/8-pelícano.png";
-  static const String ANIMALES_9_KOALA = "$_animales/9-koala.png";
+  static const String ANIMALES_9_ZUNZUN = "$_animales/9-zunzún.png";
   static const String ANIMALES_10_PATO = "$_animales/10-pato.png";
   static const String ANIMALES_11_GUACAMAYO = "$_animales/11-guacamayo.png";
   static const String ANIMALES_12_COCODRILO = "$_animales/12-cocodrilo.png";
   static const String ANIMALES_13_BUITRE = "$_animales/13-buitre.png";
   static const String ANIMALES_14_JABALI = "$_animales/14-jabalí.png";
   static const String ANIMALES_15_RATA = "$_animales/15-rata.png";
-  static const String ANIMALES_16_VIBORA = "$_animales/16-víbora.png";
+  static const String ANIMALES_16_MANATI = "$_animales/16-manatí.png";
   static const String ANIMALES_17_OVEJA = "$_animales/17-oveja.png";
   static const String ANIMALES_18_PANTERA = "$_animales/18-pantera.png";
   static const String ANIMALES_19_CAMARON = "$_animales/19-camarón.png";
@@ -30,7 +30,7 @@ class HangManAssetsNivelAnimales {
   static const String ANIMALES_25_TIBURON = "$_animales/25-tiburón.png";
   static const String ANIMALES_26_CALAMAR = "$_animales/26-calamar.png";
   static const String ANIMALES_27_FELINO = "$_animales/27-felino.png";
-  static const String ANIMALES_28_MEDUSA = "$_animales/28-medusa.png";
+  static const String ANIMALES_28_PIGMEA = "$_animales/28-pigmea.png";
   static const String ANIMALES_29_MARTILLO = "$_animales/29-martillo.png";
   static const String ANIMALES_30_PAVO = "$_animales/30-pavo.png";
   static const String ANIMALES_31_TORO = "$_animales/31-toro.png";
@@ -43,4 +43,10 @@ class HangManAssetsNivelAnimales {
   static const String ANIMALES_38_ERMITANO = "$_animales/38-ermitaño.png";
   static const String ANIMALES_39_ASIATICO = "$_animales/39-asiático.png";
   static const String ANIMALES_40_MASURPIO = "$_animales/40-marsupio.png";
+  static const String ANIMALES_41_BUHO = "$_animales/41-buho.png";
+  static const String ANIMALES_42_KOALA = "$_animales/42-koala.png";
+  static const String ANIMALES_43_VIBORA = "$_animales/43-víbora.png";
+  static const String ANIMALES_44_MEDUSA = "$_animales/44-medusa.png";
+  static const String ANIMALES_45_ALMIQUI = "$_animales/45-almiquí.png";
+  static const String ANIMALES_46_MANJUARI = "$_animales/46-manjuarí.png";
 }
