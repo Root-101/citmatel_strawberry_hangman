@@ -40,7 +40,7 @@ class HangManLevelGeneral {
       HangManSubLevelDomain(
         id: 7,
         answer: "almendrón",
-        urlImage: HangManAssetsNivelConocimientoGeneral.GENERAL_7_ALEMNDRON,
+        urlImage: HangManAssetsNivelConocimientoGeneral.GENERAL_7_ALMENDRON,
       ),
       HangManSubLevelDomain(
         id: 8,
