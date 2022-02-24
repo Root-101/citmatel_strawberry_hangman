@@ -59,7 +59,7 @@ class HangManLevelGeneral {
       ),
       HangManSubLevelDomain(
         id: 11,
-        answer: "ajedréz",
+        answer: "ajedrez",
         urlImage: HangManAssetsNivelConocimientoGeneral.GENERAL_11_AJEDREZ,
       ),
       HangManSubLevelDomain(
