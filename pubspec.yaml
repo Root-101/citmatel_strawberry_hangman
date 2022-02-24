@@ -343,7 +343,7 @@ flutter:
     - packages/citmatel_strawberry_hangman/assets/niveles/arte/1-paleta.png
     - packages/citmatel_strawberry_hangman/assets/niveles/arte/2-cantante.png
     - packages/citmatel_strawberry_hangman/assets/niveles/arte/3-fotos.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/4-domador.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/4-trovador.png
     - packages/citmatel_strawberry_hangman/assets/niveles/arte/5-payaso.png
     - packages/citmatel_strawberry_hangman/assets/niveles/arte/6-flauta.png
     - packages/citmatel_strawberry_hangman/assets/niveles/arte/7-escultor.png
@@ -370,6 +370,8 @@ flutter:
     - packages/citmatel_strawberry_hangman/assets/niveles/arte/28-piano.png
     - packages/citmatel_strawberry_hangman/assets/niveles/arte/29-creación.png
     - packages/citmatel_strawberry_hangman/assets/niveles/arte/30-batuta.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/31-domador.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/arte/32-rumba.png
 
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/1-oruga.png
     - packages/citmatel_strawberry_hangman/assets/niveles/animales/2-foca.png
