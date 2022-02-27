@@ -21,6 +21,9 @@ class HangManSubLevelScreen extends StatefulWidget {
     required HangManSubLevelProgressDomain subLevelProgressDomain,
     required bool mute,
   }) : super() {
+    //clear the controller before start
+    Get.delete<HangManSubLevelController>();
+    //set up the new controller
     Get.put<HangManSubLevelController>(
       HangManSubLevelControllerImpl(
         subLevelDomain: subLevelDomain,
