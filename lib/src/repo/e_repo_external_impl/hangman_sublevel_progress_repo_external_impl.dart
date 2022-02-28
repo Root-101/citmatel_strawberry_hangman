@@ -38,12 +38,16 @@ class HangManSubLevelProgressRepoExternalImpl
     //busco todos los id's, quito el ultimo de la lista(el mas actualizado)
     //que es con el que me voy a quedar y elimino todos los demas
     //en teoria esto nunca deberia pasar
-    List<int> ids =
-        box.query(_buildFindQuery(levelId, subLevelId)).build().findIds();
-    print('HangMan: MUCHOS IDs para un solo progress. id\'s = ${ids.length}');
+    List<int> ids = [
+      //hago la copia para poder eliminar
+      ...box.query(_buildFindQuery(levelId, subLevelId)).build().findIds()
+    ];
+    print(
+        'Trivia: MUCHOS IDs para un solo progress. id\'s = ${ids.length} => ${ids.toString()}');
     if (ids.length > 1) {
       ids.removeAt(ids.length - 1);
     }
+    print('Eliminando los id\'s ${ids.toString()}');
     box.removeMany(ids);
   }
 
