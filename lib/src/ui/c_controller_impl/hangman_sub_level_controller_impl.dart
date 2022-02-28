@@ -291,6 +291,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
 
   @override
   void dispose() {
+    StrawberryFunction.dispose();
     _tutorialCoachMark?.finish();
     super.dispose();
   }
