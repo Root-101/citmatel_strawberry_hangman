@@ -149,8 +149,8 @@ class HangManLevelGeneral {
       ),
       HangManSubLevelDomain(
         id: 29,
-        answer: "mecero",
-        urlImage: HangManAssetsNivelConocimientoGeneral.GENERAL_29_MECERO,
+        answer: "mesero",
+        urlImage: HangManAssetsNivelConocimientoGeneral.GENERAL_29_MESERO,
       ),
       HangManSubLevelDomain(
         id: 30,
