@@ -200,18 +200,20 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
               // Make an empty letter card.
               ? _buildAnimations(
                   index,
-                  6,
+                  6, //TODO: debe ser la cantidad de letras, ni idea de xq el 6
                   _emptyCard(
                     size: size,
                     text: listOfLetters[index],
-                  ))
+                  ),
+                )
               //If it's fill show the RubberBand effect and put the correct letter.
               : RubberBand(
                   key: index == _controller.firstCorrectLetter ? _key6 : null,
                   child: _emptyCard(
                     size: size,
                     text: listOfLetters[index],
-                  ));
+                  ),
+                );
         },
       ),
     );
@@ -316,8 +318,8 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
       child: GridView.count(
         childAspectRatio: 1.0,
         padding: EdgeInsets.symmetric(
-          horizontal: size.width / 21,
-          vertical: size.width / 31,
+          horizontal: 20,
+          vertical: 20,
         ),
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
