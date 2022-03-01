@@ -196,11 +196,12 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
         countOfColumns,
         (int index) {
           // If the current item of the list of letters is blank...
-          return listOfLetters[index].contains("_")
+          return listOfLetters[index]
+                  .contains("_") //TODO: poner el '_' por el controller
               // Make an empty letter card.
               ? _buildAnimations(
                   index,
-                  6, //TODO: debe ser la cantidad de letras, ni idea de xq el 6
+                  listOfLetters.length,
                   _emptyCard(
                     size: size,
                     text: listOfLetters[index],
