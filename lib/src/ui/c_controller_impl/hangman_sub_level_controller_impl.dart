@@ -32,11 +32,14 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
 
   late bool _showTutorial;
 
+  late bool mute;
+
   TutorialCoachMark? _tutorialCoachMark;
 
   HangManSubLevelControllerImpl({
     required HangManSubLevelDomain subLevelDomain,
     required HangManSubLevelProgressDomain subLevelProgressDomain,
+    required this.mute,
   }) : subLevelUseCase = HangManSubLevelUseCaseImpl(
           subLevelDomain: subLevelDomain,
           subLevelProgressDomain: subLevelProgressDomain,
@@ -89,7 +92,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
     List<int> possiblesIndex = subLevelUseCase.checkLetter(letter);
     if (possiblesIndex.isEmpty) {
       //no existe esa letra en la palabra
-      StrawberryAudio.playAudioWrong();
+      StrawberryAudio.playAudioWrong(mute);
       StrawberryVibration.vibrate();
       _breakHeart(context, key7);
     } else {
@@ -122,11 +125,10 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
         firstCorrectLetter = 10000;
       }
 
-      StrawberryAudio.playAudioCorrect();
+      StrawberryAudio.playAudioCorrect(mute);
       StrawberryVibration.vibrate();
       _makeConfetti();
       _fillAnswer(possiblesIndex, letter);
-
       _doWinLevel();
     }
     update();
@@ -167,8 +169,10 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   void _doLooseLevel() {
     if (remainingLives <= 0) {
       StrawberryFunction.looseLevel(
+        mute: mute,
         leftButtonFunction: () => Get.off(
           HangManSubLevelLoading(
+            mute: mute,
             subLevelDomain: subLevelUseCase.subLevelDomain,
             subLevelProgressDomain: subLevelUseCase.subLevelProgressDomain,
           ),
@@ -192,12 +196,14 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   void _doWinLevel() {
     if (!answerToBe.contains(_emptyCharacter)) {
       StrawberryFunction.winLevel(
+        mute: mute,
         leftButtonFunction: () {
           Pair<HangManSubLevelDomain, HangManSubLevelProgressDomain> nextLevel =
               Get.find<HangManLevelController>()
                   .nextLevel(subLevelUseCase.subLevelProgressDomain);
           Get.off(
             HangManSubLevelLoading(
+              mute: mute,
               subLevelDomain: nextLevel.a,
               subLevelProgressDomain: nextLevel.b,
             ),
@@ -285,6 +291,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
 
   @override
   void dispose() {
+    StrawberryFunction.dispose();
     _tutorialCoachMark?.finish();
     super.dispose();
   }

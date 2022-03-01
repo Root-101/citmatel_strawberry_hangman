@@ -9,8 +9,8 @@ class HangManLevelGeneral {
     sublevel: [
       HangManSubLevelDomain(
         id: 1,
-        answer: "notas",
-        urlImage: HangManAssetsNivelConocimientoGeneral.GENERAL_1_NOTAS,
+        answer: "capitolio",
+        urlImage: HangManAssetsNivelConocimientoGeneral.GENERAL_1_CAPITOLIO,
       ),
       HangManSubLevelDomain(
         id: 2,
@@ -40,7 +40,7 @@ class HangManLevelGeneral {
       HangManSubLevelDomain(
         id: 7,
         answer: "almendrón",
-        urlImage: HangManAssetsNivelConocimientoGeneral.GENERAL_7_ALEMNDRON,
+        urlImage: HangManAssetsNivelConocimientoGeneral.GENERAL_7_ALMENDRON,
       ),
       HangManSubLevelDomain(
         id: 8,
@@ -54,12 +54,12 @@ class HangManLevelGeneral {
       ),
       HangManSubLevelDomain(
         id: 10,
-        answer: "audífono",
-        urlImage: HangManAssetsNivelConocimientoGeneral.GENERAL_10_AUDIFONO,
+        answer: "tabaco",
+        urlImage: HangManAssetsNivelConocimientoGeneral.GENERAL_10_TABACO,
       ),
       HangManSubLevelDomain(
         id: 11,
-        answer: "ajedréz",
+        answer: "ajedrez",
         urlImage: HangManAssetsNivelConocimientoGeneral.GENERAL_11_AJEDREZ,
       ),
       HangManSubLevelDomain(
@@ -104,8 +104,8 @@ class HangManLevelGeneral {
       ),
       HangManSubLevelDomain(
         id: 20,
-        answer: "navidad",
-        urlImage: HangManAssetsNivelConocimientoGeneral.GENERAL_20_NAVIDAD,
+        answer: "cuba-libre",
+        urlImage: HangManAssetsNivelConocimientoGeneral.GENERAL_20_CUBA_LIBRE,
       ),
       HangManSubLevelDomain(
         id: 21,
@@ -134,8 +134,8 @@ class HangManLevelGeneral {
       ),
       HangManSubLevelDomain(
         id: 26,
-        answer: "diploma",
-        urlImage: HangManAssetsNivelConocimientoGeneral.GENERAL_26_DIPLOMA,
+        answer: "trinidad",
+        urlImage: HangManAssetsNivelConocimientoGeneral.GENERAL_26_TRINIDAD,
       ),
       HangManSubLevelDomain(
         id: 27,
@@ -149,13 +149,13 @@ class HangManLevelGeneral {
       ),
       HangManSubLevelDomain(
         id: 29,
-        answer: "mecero",
-        urlImage: HangManAssetsNivelConocimientoGeneral.GENERAL_29_MECERO,
+        answer: "mesero",
+        urlImage: HangManAssetsNivelConocimientoGeneral.GENERAL_29_MESERO,
       ),
       HangManSubLevelDomain(
         id: 30,
-        answer: "manilla",
-        urlImage: HangManAssetsNivelConocimientoGeneral.GENERAL_30_MANILLA,
+        answer: "escudo",
+        urlImage: HangManAssetsNivelConocimientoGeneral.GENERAL_30_ESCUDO,
       ),
       HangManSubLevelDomain(
         id: 31,
@@ -166,6 +166,36 @@ class HangManLevelGeneral {
         id: 32,
         answer: "monumento",
         urlImage: HangManAssetsNivelConocimientoGeneral.GENERAL_32_MONUMENTO,
+      ),
+      HangManSubLevelDomain(
+        id: 33,
+        answer: "notas",
+        urlImage: HangManAssetsNivelConocimientoGeneral.GENERAL_33_NOTAS,
+      ),
+      HangManSubLevelDomain(
+        id: 34,
+        answer: "audífono",
+        urlImage: HangManAssetsNivelConocimientoGeneral.GENERAL_34_AUDIFONO,
+      ),
+      HangManSubLevelDomain(
+        id: 35,
+        answer: "navidad",
+        urlImage: HangManAssetsNivelConocimientoGeneral.GENERAL_35_NAVIDAD,
+      ),
+      HangManSubLevelDomain(
+        id: 36,
+        answer: "diploma",
+        urlImage: HangManAssetsNivelConocimientoGeneral.GENERAL_36_DIPLOMA,
+      ),
+      HangManSubLevelDomain(
+        id: 37,
+        answer: "manilla",
+        urlImage: HangManAssetsNivelConocimientoGeneral.GENERAL_37_MANILLA,
+      ),
+      HangManSubLevelDomain(
+        id: 38,
+        answer: "oriundo",
+        urlImage: HangManAssetsNivelConocimientoGeneral.GENERAL_38_ORIUNDO,
       ),
     ],
   );

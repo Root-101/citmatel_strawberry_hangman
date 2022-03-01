@@ -6,10 +6,12 @@ import 'package:get/get.dart';
 class HangManSubLevelLoading extends GetView<HangManLevelController> {
   final HangManSubLevelDomain subLevelDomain;
   final HangManSubLevelProgressDomain subLevelProgressDomain;
+  final bool mute;
 
   HangManSubLevelLoading({
     required this.subLevelDomain,
     required this.subLevelProgressDomain,
+    required this.mute,
     Key? key,
   }) : super(key: key);
 
@@ -31,6 +33,7 @@ class HangManSubLevelLoading extends GetView<HangManLevelController> {
           "Nivel: ${subLevelProgressDomain.hangmanSubLevelDomainId}"
         ],
         subLevel: HangManSubLevelScreen(
+          mute: mute,
           subLevelDomain: subLevelDomain,
           subLevelProgressDomain: subLevelProgressDomain,
         ),

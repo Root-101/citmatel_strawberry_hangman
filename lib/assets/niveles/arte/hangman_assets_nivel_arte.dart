@@ -6,7 +6,7 @@ class HangManAssetsNivelArte {
   static const String ARTE_1_PALETA = "$_arte/1-paleta.png";
   static const String ARTE_2_CANTANTE = "$_arte/2-cantante.png";
   static const String ARTE_3_FOTOS = "$_arte/3-fotos.jpg";
-  static const String ARTE_4_DOMADOR = "$_arte/4-domador.png";
+  static const String ARTE_4_TROVADOR = "$_arte/4-trovador.png";
   static const String ARTE_5_PAYASO = "$_arte/5-payaso.png";
   static const String ARTE_6_FLAUTA = "$_arte/6-flauta.png";
   static const String ARTE_7_ESCULTOR = "$_arte/7-escultor.png";
@@ -33,4 +33,6 @@ class HangManAssetsNivelArte {
   static const String ARTE_28_PIANO = "$_arte/28-piano.png";
   static const String ARTE_29_CREACION = "$_arte/29-creación.png";
   static const String ARTE_30_BATUTA = "$_arte/30-batuta.png";
+  static const String ARTE_31_DOMADOR = "$_arte/30-domador.png";
+  static const String ARTE_32_RUMBA = "$_arte/30-rumba.png";
 }

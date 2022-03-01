@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animator/flutter_animator.dart'
     hide FadeInAnimation, FadeIn;
 import 'package:flutter_fadein/flutter_fadein.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -20,11 +19,16 @@ class HangManSubLevelScreen extends StatefulWidget {
   HangManSubLevelScreen({
     required HangManSubLevelDomain subLevelDomain,
     required HangManSubLevelProgressDomain subLevelProgressDomain,
+    required bool mute,
   }) : super() {
+    //clear the controller before start
+    Get.delete<HangManSubLevelController>();
+    //set up the new controller
     Get.put<HangManSubLevelController>(
       HangManSubLevelControllerImpl(
         subLevelDomain: subLevelDomain,
         subLevelProgressDomain: subLevelProgressDomain,
+        mute: mute,
       ),
     );
   }
@@ -192,22 +196,25 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
         countOfColumns,
         (int index) {
           // If the current item of the list of letters is blank...
-          return listOfLetters[index].contains("_")
+          return listOfLetters[index]
+                  .contains("_") //TODO: poner el '_' por el controller
               // Make an empty letter card.
               ? _buildAnimations(
                   index,
-                  6,
+                  listOfLetters.length,
                   _emptyCard(
                     size: size,
                     text: listOfLetters[index],
-                  ))
+                  ),
+                )
               //If it's fill show the RubberBand effect and put the correct letter.
               : RubberBand(
                   key: index == _controller.firstCorrectLetter ? _key6 : null,
                   child: _emptyCard(
                     size: size,
                     text: listOfLetters[index],
-                  ));
+                  ),
+                );
         },
       ),
     );
@@ -312,8 +319,8 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
       child: GridView.count(
         childAspectRatio: 1.0,
         padding: EdgeInsets.symmetric(
-          horizontal: size.width / 21,
-          vertical: size.width / 31,
+          horizontal: 20,
+          vertical: 20,
         ),
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,

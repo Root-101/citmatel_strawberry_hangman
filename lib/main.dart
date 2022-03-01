@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
               /*DnDSubLevelScreen(
                   subLevelDomain: DnDLevel1.level1.sublevel[0]),*/
               //entrada a el grid de seleccion de niveles
-              HangManLevelsScreen(),
+              HangManLevelsScreen(mute: false),
           transition: Transition.rightToLeft,
         ),
       ],
