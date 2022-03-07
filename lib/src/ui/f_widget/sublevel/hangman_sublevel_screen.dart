@@ -572,7 +572,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
         title: 'Letra.',
         description:
             'Debes pulsar cada una de las letras correctas para completar la palabra.'
-            '\nPor ejemplo toca la letra ${_controller.firstAnswerLetter} para completar exitosamente la primera letra de la palabra.',
+            '\nPor ejemplo, toca la letra ${_controller.firstAnswerLetter} para completar exitosamente la primera letra de la palabra.',
         shape: ShapeLightFocus.Circle,
         imagePadding: 50,
         descriptionMaxLines: 5,
