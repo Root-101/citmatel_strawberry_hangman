@@ -109,7 +109,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
               shadowColor: Colors.green,
               title: 'Respuesta correcta.',
               description:
-                  'Felicidades lo has conseguido. Continúa así para ganar el nivel.',
+                  '¡Felicidades! Lo has conseguido. Continúa así para ganar el nivel.',
               shape: ShapeLightFocus.Circle,
               contentImageAlign: ContentAlign.top,
               contentTextAlign: ContentAlign.bottom,
