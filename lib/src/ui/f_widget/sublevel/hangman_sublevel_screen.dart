@@ -459,10 +459,11 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
         shadowColor: Colors.blue.shade800,
         title: 'Atrás',
         description:
-            'Pulse este botón si desea volver a la pantalla de niveles.',
+            'Pulse este botón si desea volver a la pantalla de niveles.\n'
+            '\nPara avanzar en el tutorial pulse en la zona señalada o en los espacios vacíos.',
         showImageOnTop: false,
         imagePadding: 50,
-        descriptionMaxLines: 2,
+        descriptionMaxLines: 8,
       ),
     );
 
