@@ -74,8 +74,8 @@ class HangManLevelCiencias {
       ),
       HangManSubLevelDomain(
         id: 14,
-        answer: "clorofilia",
-        urlImage: HangManAssetsNivelCienciasNaturales.CIENCIA_14_CLOROFILIA,
+        answer: "clorofila",
+        urlImage: HangManAssetsNivelCienciasNaturales.CIENCIA_14_CLOROFILA,
       ),
       HangManSubLevelDomain(
         id: 15,
