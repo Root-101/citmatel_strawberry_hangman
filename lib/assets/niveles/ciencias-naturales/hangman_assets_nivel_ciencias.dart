@@ -16,7 +16,7 @@ class HangManAssetsNivelCienciasNaturales {
   static const String CIENCIA_11_CAVIDAD = "$_ciencias/11-cavidad.png";
   static const String CIENCIA_12_BACTERIA = "$_ciencias/12-bacteria.png";
   static const String CIENCIA_13_RINONES = "$_ciencias/13-riñones.png";
-  static const String CIENCIA_14_CLOROFILIA = "$_ciencias/14-clorofila.jpg";
+  static const String CIENCIA_14_CLOROFILA = "$_ciencias/14-clorofila.jpg";
   static const String CIENCIA_15_HIGADO = "$_ciencias/15-hígado.png";
   static const String CIENCIA_16_INTESTINO = "$_ciencias/16-intestino.png";
   static const String CIENCIA_17_INVIERNO = "$_ciencias/17-invierno.png";
