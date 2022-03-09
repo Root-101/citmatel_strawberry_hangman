@@ -312,7 +312,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
     required Key key,
     required int cantOfColumns,
     required List<Widget> children,
-    required Size size,
+    required Size size, //TODO: remove, no se usa
   }) {
     return AnimationLimiter(
       key: key,
