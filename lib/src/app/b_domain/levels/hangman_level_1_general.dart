@@ -34,8 +34,8 @@ class HangManLevelGeneral {
       ),
       HangManSubLevelDomain(
         id: 6,
-        answer: "web",
-        urlImage: HangManAssetsNivelConocimientoGeneral.GENERAL_6_WEB,
+        answer: "cámara",
+        urlImage: HangManAssetsNivelConocimientoGeneral.GENERAL_6_CAMARA,
       ),
       HangManSubLevelDomain(
         id: 7,

@@ -183,8 +183,8 @@ class HangManLevelTecnologias {
       ),
       HangManSubLevelDomain(
         id: 36,
-        answer: "ram",
-        urlImage: HangManAssetsNivelTecnologias.TECNOLOGIA_36_RAM,
+        answer: "memoria",
+        urlImage: HangManAssetsNivelTecnologias.TECNOLOGIA_36_MEMORIA,
       ),
       HangManSubLevelDomain(
         id: 37,
@@ -228,8 +228,8 @@ class HangManLevelTecnologias {
       ),
       HangManSubLevelDomain(
         id: 45,
-        answer: "fan",
-        urlImage: HangManAssetsNivelTecnologias.TECNOLOGIA_45_FAN,
+        answer: "ventilar",
+        urlImage: HangManAssetsNivelTecnologias.TECNOLOGIA_45_VENTILAR,
       ),
       HangManSubLevelDomain(
         id: 46,
@@ -273,13 +273,13 @@ class HangManLevelTecnologias {
       ),
       HangManSubLevelDomain(
         id: 54,
-        answer: "vga",
-        urlImage: HangManAssetsNivelTecnologias.TECNOLOGIA_54_VGA,
+        answer: "cable-vga",
+        urlImage: HangManAssetsNivelTecnologias.TECNOLOGIA_54_CABLE_VGA,
       ),
       HangManSubLevelDomain(
         id: 55,
-        answer: "psp",
-        urlImage: HangManAssetsNivelTecnologias.TECNOLOGIA_55_PSP,
+        answer: "portable",
+        urlImage: HangManAssetsNivelTecnologias.TECNOLOGIA_55_PORTABLE,
       ),
       HangManSubLevelDomain(
         id: 56,

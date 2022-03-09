@@ -44,7 +44,7 @@ class HangManAssetsNivelTecnologias {
   static const String TECNOLOGIA_34_REPRODUCTOR =
       "$_tecnologias/34-reproductor.png";
   static const String TECNOLOGIA_35_RELOJ = "$_tecnologias/35-reloj.png";
-  static const String TECNOLOGIA_36_RAM = "$_tecnologias/36-ram.png";
+  static const String TECNOLOGIA_36_MEMORIA = "$_tecnologias/36-memoria.png";
   static const String TECNOLOGIA_37_ALTAVOZ = "$_tecnologias/37-altavoz.png";
   static const String TECNOLOGIA_38_CONECTOR = "$_tecnologias/38-conector.png";
   static const String TECNOLOGIA_39_PLACA = "$_tecnologias/39-placa.png";
@@ -55,7 +55,7 @@ class HangManAssetsNivelTecnologias {
   static const String TECNOLOGIA_43_LATIGUILLO =
       "$_tecnologias/43-latiguillo.png";
   static const String TECNOLOGIA_44_MICRO_SD = "$_tecnologias/44-micro-sd.png";
-  static const String TECNOLOGIA_45_FAN = "$_tecnologias/45-fan.png";
+  static const String TECNOLOGIA_45_VENTILAR = "$_tecnologias/45-ventilar.png";
   static const String TECNOLOGIA_46_ANTENA = "$_tecnologias/46-antena.png";
   static const String TECNOLOGIA_47_CASSETE = "$_tecnologias/47-cassete.png";
   static const String TECNOLOGIA_48_WIFI = "$_tecnologias/48-wifi.png";
@@ -66,8 +66,8 @@ class HangManAssetsNivelTecnologias {
   static const String TECNOLOGIA_52_TABLETA = "$_tecnologias/52-tableta.png";
   static const String TECNOLOGIA_53_HOLOGRAMA =
       "$_tecnologias/53-holograma.png";
-  static const String TECNOLOGIA_54_VGA = "$_tecnologias/54-vga.png";
-  static const String TECNOLOGIA_55_PSP = "$_tecnologias/55-psp.png";
+  static const String TECNOLOGIA_54_CABLE_VGA = "$_tecnologias/54-cable-vga.png";
+  static const String TECNOLOGIA_55_PORTABLE = "$_tecnologias/55-portable.png";
   static const String TECNOLOGIA_56_ENRUTADOR =
       "$_tecnologias/56-enrutador.png";
 }
