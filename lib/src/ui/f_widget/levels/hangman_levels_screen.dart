@@ -48,6 +48,7 @@ class HangManLevelsScreen extends GetView<HangManLevelController> {
         ),
         //widget que se genera cada vez que se selecciona el aleatorio
         onRandomTap: controller.randomSubLevel,
+        mute: mute, //el mute del subnivel
         //lista de los niveles
         levelsFindAll: controller.findAll(),
         title: HangManUIModule.MODULE_NAME,
@@ -93,6 +94,7 @@ class HangManLevelsScreen extends GetView<HangManLevelController> {
                 levelDomain: levelDomain,
                 //funcion para generar un nivel random cada vez, recive por defecto el levelDomain
                 onRandomOfTap: controller.randomSubLevelOf,
+                mute: mute, //el mute del subnivel
                 //titulo del tema
                 themeTitle: levelDomain.theme,
                 //foto del tema, para mostrar en el sliver
