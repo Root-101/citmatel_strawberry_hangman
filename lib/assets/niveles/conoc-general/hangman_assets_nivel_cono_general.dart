@@ -8,7 +8,7 @@ class HangManAssetsNivelConocimientoGeneral {
   static const String GENERAL_3_CAFE = "$_conoc_general/3-café.png";
   static const String GENERAL_4_YOGA = "$_conoc_general/4-yoga.png";
   static const String GENERAL_5_EXAMEN = "$_conoc_general/5-examen.jpg";
-  static const String GENERAL_6_WEB = "$_conoc_general/6-web.png";
+  static const String GENERAL_6_CAMARA = "$_conoc_general/6-cámara.png";
   static const String GENERAL_7_ALMENDRON = "$_conoc_general/7-almendrón.png";
   static const String GENERAL_8_GAFAS = "$_conoc_general/8-gafas.png";
   static const String GENERAL_9_ESCUELA = "$_conoc_general/9-escuela.png";
