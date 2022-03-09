@@ -203,7 +203,7 @@ flutter:
     - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/33-aplicación.png
     - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/34-reproductor.png
     - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/35-reloj.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/36-ram.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/36-memoria.png
     - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/37-altavoz.png
     - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/38-conector.png
     - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/39-placa.png
@@ -212,7 +212,7 @@ flutter:
     - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/42-procesador.png
     - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/43-latiguillo.png
     - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/44-micro-sd.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/45-fan.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/45-ventilar.png
     - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/46-antena.png
     - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/47-cassete.png
     - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/48-wifi.png
@@ -221,8 +221,8 @@ flutter:
     - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/51-mouse.png
     - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/52-tableta.png
     - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/53-holograma.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/54-vga.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/55-psp.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/54-cable-vga.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/55-portable.png
     - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/56-enrutador.png
 
     - packages/citmatel_strawberry_hangman/assets/niveles/geografía/1-américa.png
