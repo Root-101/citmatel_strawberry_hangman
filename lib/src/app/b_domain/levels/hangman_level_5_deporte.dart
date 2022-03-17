@@ -39,7 +39,7 @@ class HangManLevelDeporte {
       ),
       HangManSubLevelDomain(
         id: 7,
-        answer: "porterp",
+        answer: "portero",
         urlImage: HangManAssetsNivelDeporte.DEPORTE_7_PORTERO,
       ),
       HangManSubLevelDomain(
