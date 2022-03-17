@@ -202,7 +202,7 @@ class HangManLevelAnimales {
       ),
       HangManSubLevelDomain(
         id: 40,
-        answer: "masurpio",
+        answer: "marsupio",
         urlImage: HangManAssetsNivelAnimales.ANIMALES_40_MASURPIO,
       ),
       HangManSubLevelDomain(
