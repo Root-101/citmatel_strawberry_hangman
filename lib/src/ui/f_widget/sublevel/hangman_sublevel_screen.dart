@@ -439,8 +439,9 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
   _animateImage(String imageUrl) {
     return PhotoView(
       imageProvider: AssetImage(imageUrl),
+      disableGestures: true,
       //So the image only can be increased to a fit size.
-      maxScale: PhotoViewComputedScale.covered * 2.0,
+      maxScale: PhotoViewComputedScale.covered,
       // So the image only can be reduced to a fit size.
       minScale: PhotoViewComputedScale.covered,
       // The initial scale takes all the available space.
