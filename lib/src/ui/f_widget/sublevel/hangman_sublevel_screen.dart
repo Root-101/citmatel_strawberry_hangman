@@ -524,12 +524,12 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
     );
 
     targets.add(
-      StrawberryTutorial.addMultipleTarget(
+      StrawberryTutorial.addTarget(
         identify: "Target Word",
         keyTarget: _key2,
         shadowColor: Colors.deepPurple,
-        contentTextAlign: ContentAlign.bottom,
-        contentImageAlign: ContentAlign.top,
+        showImage: false,
+        contentAlign: ContentAlign.top,
         imagePadding: 50,
         title: 'Palabra a completar.',
         description:
@@ -546,9 +546,9 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
         title: 'Imagen de ayuda.',
         shape: ShapeLightFocus.Circle,
         description:
-            'Esta imagen tiene relación con la palabra a completar, apóyate en ella para ganar. Puedes acercarla al tocarla o usando gestos sobre la imagen.',
+            'Imagen relacionada con la palabra a completar.',
         showImage: false,
-        descriptionMaxLines: 3,
+        descriptionMaxLines: 1,
       ),
     );
 
