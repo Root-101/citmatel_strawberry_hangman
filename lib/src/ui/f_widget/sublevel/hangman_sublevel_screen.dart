@@ -405,23 +405,21 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
       height: double.maxFinite,
       alignment: Alignment.center,
       // Call the _animateImage so the image can use diferents tipes of gestures.
-      child: SafeArea(
-        child: Stack(
-          children: [
-            _animateImage(_controller.imageUrl),
-            Positioned(
-              child: StrawberryWidgets.circularButtonWithIcon(
-                onPressed: () => Get.back(closeOverlays: true),
-                backgroundColor: Colors.black26,
-                child: StrawberryWidgets.pulseIconAnimation(
-                  icon: Icons.arrow_back,
-                ),
+      child: Stack(
+        children: [
+          _animateImage(_controller.imageUrl),
+          Positioned(
+            child: StrawberryWidgets.circularButtonWithIcon(
+              onPressed: () => Get.back(closeOverlays: true),
+              backgroundColor: Colors.black26,
+              child: StrawberryWidgets.pulseIconAnimation(
+                icon: Icons.arrow_back,
               ),
-              top: 10,
-              left: 10,
             ),
-          ],
-        ),
+            top: 35,
+            left: 10,
+          ),
+        ],
       ),
     );
   }
@@ -439,11 +437,10 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
   _animateImage(String imageUrl) {
     return PhotoView(
       imageProvider: AssetImage(imageUrl),
-      disableGestures: true,
       //So the image only can be increased to a fit size.
       maxScale: PhotoViewComputedScale.covered,
       // So the image only can be reduced to a fit size.
-      minScale: PhotoViewComputedScale.covered,
+      minScale: PhotoViewComputedScale.contained,
       // The initial scale takes all the available space.
       initialScale: PhotoViewComputedScale.covered,
       // Color of the background space when the image is reduce
@@ -545,8 +542,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
         shadowColor: Colors.deepOrange,
         title: 'Imagen de ayuda.',
         shape: ShapeLightFocus.Circle,
-        description:
-            'Imagen relacionada con la palabra a completar.',
+        description: 'Imagen relacionada con la palabra a completar.',
         showImage: false,
         descriptionMaxLines: 1,
       ),
