@@ -1,11 +1,16 @@
 import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
 import 'package:citmatel_strawberry_tools/tools_exporter.dart';
+import 'package:flutter/material.dart';
 
 class HangManLevelGeneral {
   static final HangManLevelDomain levelConocimientoGeneral = HangManLevelDomain(
     id: 1,
-    theme: ToolsThemesAssets.THEME_GENERAL_NAME,
-    themeBackgroundImage: ToolsThemesAssets.THEME_GENERAL_BACKGROUND,
+    theme: "Variado",
+    themeBackgroundImage: ToolsThemesBackgroundImage(
+      urlImage: "",
+      colorStrong: const Color(0xff3b4c96),
+      colorLight: const Color(0xff3fd4fc).withOpacity(0.5),
+    ),
     sublevel: [
       HangManSubLevelDomain(
         id: 1,
