@@ -6,7 +6,7 @@ class HangManAssetsNivelConocimientoGeneral {
   static const String GENERAL_1_LLUVIA = "$_conoc_general/1-lluvia.jpg";
   static const String GENERAL_2_SUELO = "$_conoc_general/2-suelo.jpg";
   static const String GENERAL_3_CONTAMINAR = "$_conoc_general/3-contaminar.jpg";
-  static const String GENERAL_4_SEQUIA = "$_conoc_general/4-sequia.jpg";
+  static const String GENERAL_4_SEQUIA = "$_conoc_general/4-sequía.jpg";
   static const String GENERAL_5_DERRUMBE = "$_conoc_general/5-derrumbe.jpg";
   static const String GENERAL_6_DESHECHO = "$_conoc_general/6-deshecho.jpg";
   static const String GENERAL_7_EROSION = "$_conoc_general/7-erosión.jpg";
