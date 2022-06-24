@@ -499,7 +499,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
         shadowColor: Colors.teal,
         title: 'Estrellas',
         description:
-            'Las estrellas indican cuan bien has realizado el nivel.\nPara obtenerlas todas debes completar el nivel sin equivocarte ni una sola vez.',
+            'Las estrellas indican cuan bien ha realizado el nivel.\nPara obtenerlas todas debe completar el nivel sin equivocarse ni una sola vez.',
         showImageOnTop: false,
         imagePadding: 50,
         descriptionMaxLines: 5,
@@ -513,7 +513,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
         shadowColor: Colors.pink,
         title: 'Cantidad de vidas.',
         description:
-            'Las vidas son la cantidad de intentos que tienes para equivocarte.\nSi las pierdes todas deberás empezar el nivel de nuevo.',
+            'Las vidas son la cantidad de intentos que tiene para equivocarse.\nSi se pierden todas debe empezar el nivel de nuevo.',
         showImageOnTop: false,
         imagePadding: 50,
         descriptionMaxLines: 4,
@@ -530,7 +530,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
         imagePadding: 50,
         title: 'Palabra a completar.',
         description:
-            'Debes completar correctamente la palabra para poder ganar.',
+            'Debe completar correctamente la palabra para poder ganar.',
         descriptionMaxLines: 2,
       ),
     );
@@ -569,8 +569,8 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
         contentAlign: ContentAlign.top,
         title: 'Letra.',
         description:
-            'Debes pulsar cada una de las letras correctas para completar la palabra.'
-            '\nPor ejemplo, toca la letra ${_controller.firstAnswerLetter} para completar exitosamente la primera letra de la palabra.',
+            'Debe pulsar cada una de las letras correctas para completar la palabra.'
+            '\nPor ejemplo, pulse la letra ${_controller.firstAnswerLetter} para completar exitosamente la primera letra de la palabra.',
         shape: ShapeLightFocus.Circle,
         imagePadding: 50,
         descriptionMaxLines: 5,
