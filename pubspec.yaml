@@ -57,26 +57,26 @@ flutter:
     #Images
     - packages/citmatel_strawberry_hangman/assets/images/background.png
 
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/1-lluvia.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/2-suelo.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/3-contaminar.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/4-sequía.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/5-derrumbe.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/6-deshecho.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/7-erosión.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/8-huracán.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/9-ahorrar.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/10-surcos.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/11-frutas.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/12-vaca.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/13-pozo.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/14-campesino.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/15-riego.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/16-postura.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/17-fumigar.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/18-terrazas.JPG
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/19-fértil.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/20-raices.jpg
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/1-lluvia.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/2-suelo.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/3-contaminar.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/4-sequía.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/5-derrumbe.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/6-deshecho.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/7-erosión.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/8-huracán.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/9-ahorrar.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/10-surcos.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/11-frutas.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/12-vaca.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/13-pozo.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/14-campesino.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/15-riego.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/16-postura.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/17-fumigar.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/18-terrazas.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/19-fértil.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/20-raices.png
 
     - packages/citmatel_strawberry_hangman/assets/niveles/tutorial/tutorial.png
 
