@@ -1,9 +1,9 @@
 import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
 import 'package:clean_core/clean_core.dart';
 
-class HangManSubLevelProgressUseCaseImpl
-    extends DefaultCRUDUseCase<HangManSubLevelProgressDomain>
-    implements HangManSubLevelProgressUseCase {
+class HangManSubLevelProgressUseCaseImpl extends DefaultCRUDUseCase<
+    HangManSubLevelProgressDomain,
+    HangManSubLevelProgressRepo> implements HangManSubLevelProgressUseCase {
   late HangManSubLevelProgressRepo _repo;
 
   HangManSubLevelProgressUseCaseImpl(HangManSubLevelProgressRepo repo)
