@@ -2,8 +2,10 @@ import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
 import 'package:clean_core/clean_core.dart';
 
 class HangManSubLevelProgressRepoImpl extends DefaultCRUDRepo<
-    HangManSubLevelProgressDomain,
-    HangManSubLevelProgressEntity> implements HangManSubLevelProgressRepo {
+        HangManSubLevelProgressDomain,
+        HangManSubLevelProgressEntity,
+        HangManSubLevelProgressRepoExternal>
+    implements HangManSubLevelProgressRepo {
   HangManSubLevelProgressRepoExternal _externalRepo;
 
   HangManSubLevelProgressRepoImpl(
@@ -34,7 +36,7 @@ class HangManSubLevelProgressRepoImpl extends DefaultCRUDRepo<
   }
 }
 
-class HangManSubLevelProgressConverter extends DefaultGeneralConverter<
+class HangManSubLevelProgressConverter extends GeneralConverter<
     HangManSubLevelProgressDomain, HangManSubLevelProgressEntity> {
   static final HangManSubLevelProgressConverter converter =
       HangManSubLevelProgressConverter._();

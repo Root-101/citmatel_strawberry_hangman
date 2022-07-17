@@ -312,7 +312,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
     required Key key,
     required int cantOfColumns,
     required List<Widget> children,
-    required Size size,
+    required Size size, //TODO: remove, no se usa
   }) {
     return AnimationLimiter(
       key: key,
@@ -405,23 +405,21 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
       height: double.maxFinite,
       alignment: Alignment.center,
       // Call the _animateImage so the image can use diferents tipes of gestures.
-      child: SafeArea(
-        child: Stack(
-          children: [
-            _animateImage(_controller.imageUrl),
-            Positioned(
-              child: StrawberryWidgets.circularButtonWithIcon(
-                onPressed: () => Get.back(closeOverlays: true),
-                backgroundColor: Colors.black26,
-                child: StrawberryWidgets.pulseIconAnimation(
-                  icon: Icons.arrow_back,
-                ),
+      child: Stack(
+        children: [
+          _animateImage(_controller.imageUrl),
+          Positioned(
+            child: StrawberryWidgets.circularButtonWithIcon(
+              onPressed: () => Get.back(closeOverlays: true),
+              backgroundColor: Colors.black26,
+              child: StrawberryWidgets.pulseIconAnimation(
+                icon: Icons.arrow_back,
               ),
-              top: 10,
-              left: 10,
             ),
-          ],
-        ),
+            top: 35,
+            left: 10,
+          ),
+        ],
       ),
     );
   }
@@ -440,9 +438,9 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
     return PhotoView(
       imageProvider: AssetImage(imageUrl),
       //So the image only can be increased to a fit size.
-      maxScale: PhotoViewComputedScale.covered * 2.0,
+      maxScale: PhotoViewComputedScale.covered,
       // So the image only can be reduced to a fit size.
-      minScale: PhotoViewComputedScale.covered,
+      minScale: PhotoViewComputedScale.contained,
       // The initial scale takes all the available space.
       initialScale: PhotoViewComputedScale.covered,
       // Color of the background space when the image is reduce
@@ -459,10 +457,11 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
         shadowColor: Colors.blue.shade800,
         title: 'Atrás',
         description:
-            'Pulse este botón si desea volver a la pantalla de niveles.',
+            'Pulse este botón si desea volver a la pantalla de niveles.\n'
+            '\nPara avanzar en el tutorial pulse en la zona señalada o en los espacios vacíos.',
         showImageOnTop: false,
         imagePadding: 50,
-        descriptionMaxLines: 2,
+        descriptionMaxLines: 8,
       ),
     );
 
@@ -500,7 +499,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
         shadowColor: Colors.teal,
         title: 'Estrellas',
         description:
-            'Las estrellas indican cuan bien has realizado el nivel.\nPara obtenerlas todas debes completar el nivel sin equivocarte ni una sola vez.',
+            'Las estrellas indican cuan bien ha realizado el nivel.\nPara obtenerlas todas debe completar el nivel sin equivocarse ni una sola vez.',
         showImageOnTop: false,
         imagePadding: 50,
         descriptionMaxLines: 5,
@@ -514,7 +513,7 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
         shadowColor: Colors.pink,
         title: 'Cantidad de vidas.',
         description:
-            'Las vidas son la cantidad de intentos que tienes para equivocarte.\nSi las pierdes todas deberás empezar el nivel de nuevo.',
+            'Las vidas son la cantidad de intentos que tiene para equivocarse.\nSi se pierden todas debe empezar el nivel de nuevo.',
         showImageOnTop: false,
         imagePadding: 50,
         descriptionMaxLines: 4,
@@ -522,16 +521,16 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
     );
 
     targets.add(
-      StrawberryTutorial.addMultipleTarget(
+      StrawberryTutorial.addTarget(
         identify: "Target Word",
         keyTarget: _key2,
         shadowColor: Colors.deepPurple,
-        contentTextAlign: ContentAlign.bottom,
-        contentImageAlign: ContentAlign.top,
+        showImage: false,
+        contentAlign: ContentAlign.top,
         imagePadding: 50,
         title: 'Palabra a completar.',
         description:
-            'Debes completar correctamente la palabra para poder ganar.',
+            'Debe completar correctamente la palabra para poder ganar.',
         descriptionMaxLines: 2,
       ),
     );
@@ -543,10 +542,9 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
         shadowColor: Colors.deepOrange,
         title: 'Imagen de ayuda.',
         shape: ShapeLightFocus.Circle,
-        description:
-            'Esta imagen tiene relación con la palabra a completar, apóyate en ella para ganar. Puedes acercarla al tocarla o usando gestos sobre la imagen.',
+        description: 'Imagen relacionada con la palabra a completar.',
         showImage: false,
-        descriptionMaxLines: 3,
+        descriptionMaxLines: 1,
       ),
     );
 
@@ -571,8 +569,8 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
         contentAlign: ContentAlign.top,
         title: 'Letra.',
         description:
-            'Debes pulsar cada una de las letras correctas para completar la palabra.'
-            '\nPor ejemplo toca la letra ${_controller.firstAnswerLetter} para completar exitosamente la primera letra de la palabra.',
+            'Debe pulsar cada una de las letras correctas para completar la palabra.'
+            '\nPor ejemplo, pulse la letra ${_controller.firstAnswerLetter} para completar exitosamente la primera letra de la palabra.',
         shape: ShapeLightFocus.Circle,
         imagePadding: 50,
         descriptionMaxLines: 5,

@@ -1,7 +1,12 @@
+import 'dart:math';
+
 import 'package:citmatel_strawberry_hangman/hangman_exporter.dart';
 import 'package:citmatel_strawberry_tools/tools_exporter.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animator/flutter_animator.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+import 'package:sliver_fab/sliver_fab.dart';
 
 class HangManLevelsScreen extends GetView<HangManLevelController> {
   static const ROUTE_NAME = "/hangman-levels-screen";
@@ -14,133 +19,138 @@ class HangManLevelsScreen extends GetView<HangManLevelController> {
 
   @override
   Widget build(BuildContext context) {
+    Size deviceSize = MediaQuery.of(context).size;
+    double expandedHeight = Get.size.height * 0.3;
+    //si es menos de 56 que es el por defecto lanza excepcion
+    double collapsedHeight = max(Get.size.width / 10, 60);
+
+    double randomWidth = deviceSize.width / 17;
+
     return GetBuilder<HangManLevelController>(builder: (_) {
+      HangManLevelDomain conocGeneral =
+          HangManLevelGeneral.levelConocimientoGeneral;
       //update la pantalla general de los temas,
       int winedStarsAll = controller.winedStarsAll();
       int maxStarsAll = controller.maxStarsAll();
-      return CommonsLevelsThemeScreen<HangManLevelDomain>(
-        tutorialTile: CommonsLevelsThemeSingleTile<HangManLevelDomain>(
-          winedStars: HangManLevelTutorial.tutorialSubLevelProgress(
-            starsMultiplier: HangManSubLevelController.STARS_MULTIPLIER,
-          ).stars,
-          maxStars: HangManSubLevelController.MAX_STARS,
-          wonedLevel: controller.wonedLevel(HangManLevelTutorial.tutorial),
 
-          //levelDomain para generar las cosas de aqui
-          singleLevelDomain: HangManLevelTutorial.tutorial,
-          //color primario, principalmente para animaciones
-          colorPrimary:
-              HangManLevelTutorial.tutorial.themeBackgroundImage.colorStrong,
-          //tema del tile, generado a partir del `levelDomain`
-          buildThemeName: (levelDomain) => levelDomain.theme,
-          //foto del tema del tile, generado a partir del `levelDomain`
-          buildThemeUrlImage: (levelDomain) =>
-              levelDomain.themeBackgroundImage.urlImage,
-          //nivel abierto, entrar directo al juego
-          openWidget: HangManSubLevelLoading(
-            mute: mute,
-            subLevelDomain: HangManLevelTutorial.tutorialSubLevel,
-            subLevelProgressDomain:
-                HangManLevelTutorial.tutorialSubLevelProgress(
-              starsMultiplier: HangManSubLevelController.STARS_MULTIPLIER,
+      //scaffold para el fondo blanco
+      return Scaffold(
+        backgroundColor: Colors.white,
+        body: Container(
+          color: HangManUIModule.SECONDARY_COLOR.withOpacity(0.5),
+          child: SliverFab(
+            floatingWidget: StrawberryWidgets.circularButtonWithIcon(
+              size: deviceSize.width / 9,
+              backgroundColor: const Color(0xff00a4db),
+              splashColor: const Color(0xff002edb).withOpacity(0.5),
+              onPressed: () {
+                Get.to(
+                  Scaffold(
+                    body: Function.apply(controller.randomSubLevel, [mute])
+                        as Widget,
+                  ),
+                );
+              },
+              child: Pulse(
+                child: Tooltip(
+                  child: FaIcon(
+                    FontAwesomeIcons.random,
+                    size: randomWidth,
+                    color: Colors.white,
+                  ),
+                  message: "Nivel Aleatorio.",
+                ),
+              ),
             ),
-          ),
-        ),
-        //widget que se genera cada vez que se selecciona el aleatorio
-        onRandomTap: controller.randomSubLevel,
-        //lista de los niveles
-        levelsFindAll: controller.findAll(),
-        title: HangManUIModule.MODULE_NAME,
-        appbarBackgroundColor: HangManUIModule.PRIMARY_COLOR,
-        backgroundColor: HangManUIModule.SECONDARY_COLOR.withOpacity(0.5),
-        //background del sliver
-        urlSliverBackground: HangManUIModule.URL_MODULE_BACKGROUND,
-        winedStars: winedStarsAll,
-        maxStars: maxStarsAll,
-        //builder de cada tile, uno por tema/uno por nivel
-        singleThemeTileBuilder: (levelDomain) {
-          //single level/tema tile por defecto
-
-          int winedStars = controller.winedStars(levelDomain);
-          int maxStars = controller.maxStars(levelDomain);
-          return CommonsLevelsThemeSingleTile<HangManLevelDomain>(
-            //estrellas chiquitas de cada tile
-            maxStars: maxStars,
-            winedStars: winedStars,
-
-            //marca el nivel como ganado o no
-            wonedLevel: controller.wonedLevel(levelDomain),
-
-            //levelDomain para generar las cosas de aqui
-            singleLevelDomain: levelDomain,
-            //color primario, principalmente para animaciones
-            colorPrimary: levelDomain.themeBackgroundImage.colorStrong,
-            //tema del tile, generado a partir del `levelDomain`
-            buildThemeName: (levelDomain) => levelDomain.theme,
-            //foto del tema del tile, generado a partir del `levelDomain`
-            buildThemeUrlImage: (levelDomain) =>
-                levelDomain.themeBackgroundImage.urlImage,
-            //nivel abierto, lista de subniveles
-
-            //este actualiza el tile de adentro(las 3 estrellas) y la cantidad de estrellas arriba
-            openWidget: GetBuilder<HangManLevelController>(builder: (_) {
-              //esto aqui duplicado para que se entere el GetBuilder
-              int winedStars = controller.winedStars(levelDomain);
-              int maxStars = controller.maxStars(levelDomain);
-
-              return CommonsSingleLevel<HangManSubLevelDomain>(
-                //level domain para random
-                levelDomain: levelDomain,
-                //funcion para generar un nivel random cada vez, recive por defecto el levelDomain
-                onRandomOfTap: controller.randomSubLevelOf,
-                //titulo del tema
-                themeTitle: levelDomain.theme,
-                //foto del tema, para mostrar en el sliver
-                urlThemePicture: levelDomain.themeBackgroundImage.urlImage,
-                //color fuerte relacionado con la imagen
-                colorPrimary: levelDomain.themeBackgroundImage.colorStrong,
-                //color debil relacionado con la imagen
-                colorSecondary: levelDomain.themeBackgroundImage.colorLight,
-                //estrellas ganadas
-                winedStars: winedStars,
-                //estrellas maximas a ganar
-                maxStars: maxStars,
-                //lista de los subniveles del tema
-                subLevelsAll: levelDomain.sublevel,
-                //builder de cada tile
-                singleSubLevelTileBuilder: (subLevelDomain) {
-                  //cargo el progreso de cada subnivel
-                  HangManSubLevelProgressDomain progressDomain =
-                      Get.find<HangManSubLevelProgressUseCase>().findByAll(
-                    levelDomain,
-                    subLevelDomain,
-                  );
-                  //tile generico
-                  //TODO: UPDATE necesita actualizar las estrellas del sublevel tile
-                  return CommonsSingleSubLevelTile(
-                    level: subLevelDomain.id,
-                    //el primario de aqui es el secundario del otro lado
-                    colorPrimary: levelDomain.themeBackgroundImage.colorLight,
-                    backgroundColor:
-                        levelDomain.themeBackgroundImage.colorStrong,
-                    //estrellas ganadas en el subnivel
-                    stars: progressDomain.stars,
+            floatingPosition: FloatingPosition(
+              right: 16,
+              //formula para que el boton no caiga encima de la puntuacion
+              top: -(2 * randomWidth - 48),
+            ),
+            expandedHeight: expandedHeight,
+            slivers: <Widget>[
+              CommonsSliverAppBar.buildAppBar(
+                expandedHeight: expandedHeight,
+                collapsedHeight: collapsedHeight,
+                backgroundColor: HangManUIModule.PRIMARY_COLOR,
+                title: HangManUIModule.MODULE_NAME,
+                urlBackgroundImage: HangManUIModule.URL_MODULE_BACKGROUND,
+                maxStars: maxStarsAll,
+                winedStars: winedStarsAll,
+              ),
+              SliverGrid.count(
+                crossAxisCount: 2,
+                crossAxisSpacing: 5,
+                mainAxisSpacing: 5,
+                children: [
+                  CommonsLevelsThemeSingleTile<HangManLevelDomain>(
+                    winedStars: HangManLevelTutorial.tutorialSubLevelProgress(
+                      starsMultiplier:
+                          HangManSubLevelController.STARS_MULTIPLIER,
+                    ).stars,
                     maxStars: HangManSubLevelController.MAX_STARS,
-                    startMultiplier: HangManSubLevelController.STARS_MULTIPLIER,
-                    //cantidad de veces jugado el subnivel
-                    contPlayedTimes: progressDomain.contPlayedTimes,
-                    //nivel abierto, juego como tal
+                    wonedLevel:
+                        controller.wonedLevel(HangManLevelTutorial.tutorial),
+
+                    //levelDomain para generar las cosas de aqui
+                    singleLevelDomain: HangManLevelTutorial.tutorial,
+                    //color primario, principalmente para animaciones
+                    colorPrimary: HangManLevelTutorial
+                        .tutorial.themeBackgroundImage.colorStrong,
+                    //tema del tile, generado a partir del `levelDomain`
+                    buildThemeName: (levelDomain) => levelDomain.theme,
+                    //foto del tema del tile, generado a partir del `levelDomain`
+                    buildThemeUrlImage: (levelDomain) =>
+                        levelDomain.themeBackgroundImage.urlImage,
+                    //nivel abierto, entrar directo al juego
                     openWidget: HangManSubLevelLoading(
                       mute: mute,
-                      subLevelDomain: subLevelDomain,
-                      subLevelProgressDomain: progressDomain,
+                      subLevelDomain: HangManLevelTutorial.tutorialSubLevel,
+                      subLevelProgressDomain:
+                          HangManLevelTutorial.tutorialSubLevelProgress(
+                        starsMultiplier:
+                            HangManSubLevelController.STARS_MULTIPLIER,
+                      ),
                     ),
-                  );
-                },
-              );
-            }),
-          );
-        },
+                  ),
+                  ...conocGeneral.sublevel
+                      .map((subLevelDomain) =>
+                          GetBuilder<HangManLevelController>(builder: (_) {
+                            //cargo el progreso de cada subnivel
+                            HangManSubLevelProgressDomain progressDomain =
+                                Get.find<HangManSubLevelProgressUseCase>()
+                                    .findByAll(
+                              conocGeneral,
+                              subLevelDomain,
+                            );
+                            return CommonsSingleSubLevelTile(
+                              level: subLevelDomain.id,
+                              //el primario de aqui es el secundario del otro lado
+                              colorPrimary:
+                                  conocGeneral.themeBackgroundImage.colorLight,
+                              backgroundColor:
+                                  conocGeneral.themeBackgroundImage.colorStrong,
+                              //estrellas ganadas en el subnivel
+                              stars: progressDomain.stars,
+                              maxStars: HangManSubLevelController.MAX_STARS,
+                              startMultiplier:
+                                  HangManSubLevelController.STARS_MULTIPLIER,
+                              //cantidad de veces jugado el subnivel
+                              contPlayedTimes: progressDomain.contPlayedTimes,
+                              //nivel abierto, juego como tal
+                              openWidget: HangManSubLevelLoading(
+                                mute: mute,
+                                subLevelDomain: subLevelDomain,
+                                subLevelProgressDomain: progressDomain,
+                              ),
+                            );
+                          }))
+                      .toList(),
+                ],
+              )
+            ],
+          ),
+        ),
       );
     });
   }

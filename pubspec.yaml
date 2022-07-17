@@ -3,7 +3,7 @@ description: Hangman module for CITMATEL's 'strawberry' project
 
 publish_to: "none"
 
-version: 1.1.0-RELEASE.20220301
+version: 1.1.0-RELEASE.20220717
 
 environment:
   sdk: ">=2.15.0 <3.0.0"
@@ -14,21 +14,21 @@ dependencies:
     sdk: flutter
 
   # Architecture & Management
-  get: ^4.5.1
+  get: ^4.6.1
   clean_core: ^1.2.3-RELEASE.20220206
   tuple: ^2.0.0
 
   # Visual & Animations
   animations: ^2.0.2
   page_view_indicators: ^2.0.0
-  flutter_svg: ^1.0.0
+  flutter_svg: ^1.0.3
   flutter_staggered_animations: ^1.0.0
   photo_view: ^0.13.0
   flutter_fadein: ^2.0.0
-  font_awesome_flutter: ^9.2.0
+  font_awesome_flutter: ^10.1.0
   flutter_spinkit: ^5.1.0
-  flutter_animator: ^3.2.0
-  cupertino_icons: ^1.0.2
+  flutter_animator: ^3.2.1
+  cupertino_icons: ^1.0.4
   tutorial_coach_mark: ^1.2.1
   confetti: ^0.6.0
   decorated_icon: ^1.2.1
@@ -42,7 +42,9 @@ dependencies:
   objectbox_flutter_libs: ^1.4.0
   path_provider: ^2.0.3
   flat_buffers: ^2.0.5
-  clean_repo_objectbox: ^0.2.1-SNAPSHOT.20220223
+  clean_repo_objectbox:
+    git:
+      url: https://github.com/JesusHdezWaterloo/clean_repo_objectbox
 
 dev_dependencies:
   flutter_test:
@@ -57,374 +59,26 @@ flutter:
     #Images
     - packages/citmatel_strawberry_hangman/assets/images/background.png
 
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/1-nubes.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/2-corazón.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/3-estómago.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/4-palma.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/5-esperma.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/6-óvulo.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/7-volcan.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/8-sangre.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/9-pulmón.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/10-nervio.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/11-cavidad.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/12-bacteria.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/13-riñones.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/14-clorofila.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/15-hígado.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/16-intestino.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/17-invierno.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/18-tórax.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/19-tormenta.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/20-pupila.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/21-imán.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/22-músculo.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/23-pesa.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/24-molécula.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/25-ondas.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/26-átomo.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/27-dentista.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/28-ameba.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/29-huesos.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/30-péndulo.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/31-vacuna.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/32-química.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/33-donante.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/34-probeta.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/35-prisma.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/ciencias-naturales/36-barlow.png
-
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/1-capitolio.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/2-oficina.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/3-café.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/4-yoga.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/5-examen.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/6-web.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/7-almendrón.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/8-gafas.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/9-escuela.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/10-tabaco.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/11-ajedrez.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/12-gabinete.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/13-correr.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/14-dinero.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/15-iphone.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/16-libros.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/17-pescar.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/18-almacén.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/19-patineta.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/20-cuba-libre.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/21-malabar.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/22-subasta.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/23-mate.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/24-radio.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/25-cheque.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/26-trinidad.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/27-escribir.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/28-galleta.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/29-mesero.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/30-escudo.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/31-granja.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/32-monumento.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/33-notas.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/34-audífono.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/35-navidad.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/36-diploma.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/37-manilla.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/38-oriundo.png
-
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/1-cupido.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/2-grifo.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/3-hades.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/4-afrodita.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/5-anubis.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/6-pegaso.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/7-poseidón.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/8-fénix.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/9-ares.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/10-medusa.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/11-artemisa.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/12-fauno.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/13-apolo.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/14-centauro.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/15-hermes.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/16-sirena.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/17-dionisio.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/18-faraón.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/19-cerbero.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/20-deméter.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/21-hipogrifo.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/22-atena.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/23-cíclope.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/24-papiro.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/25-zeus.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/26-unicornio.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/27-hefesto.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/28-hidra.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/29-hera.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/30-sátiro.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/31-mantícora.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/32-basilisco.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/33-dragón.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/mitología/34-equidna.png
-
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/1-laptop.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/2-robot.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/3-móvil.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/4-correo.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/5-impresora.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/6-cohete.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/7-clave.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/8-memoria.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/9-virus.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/10-video.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/11-código.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/12-huella.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/13-chat.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/14-aguja.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/15-gráficos.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/16-latidos.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/17-control.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/18-drone.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/19-disco.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/20-juego.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/21-adaptador.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/22-monitor.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/23-minar.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/24-lector.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/25-transferir.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/26-cámara.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/27-pago.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/28-metaverso.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/29-almacenar.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/30-bocina.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/31-teclado.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/32-consola.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/33-aplicación.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/34-reproductor.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/35-reloj.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/36-ram.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/37-altavoz.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/38-conector.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/39-placa.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/40-filtrar.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/41-satélite.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/42-procesador.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/43-latiguillo.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/44-micro-sd.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/45-fan.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/46-antena.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/47-cassete.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/48-wifi.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/49-corriente.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/50-hdmi.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/51-mouse.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/52-tableta.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/53-holograma.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/54-vga.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/55-psp.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/tecnologías/56-enrutador.png
-
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/1-américa.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/2-china.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/3-rusia.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/4-isla.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/5-hungría.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/6-brújula.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/7-cuba.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/8-lago.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/9-croacia.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/10-chile.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/11-canadá.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/12-áfrica.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/13-egipto.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/14-suecia.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/15-rosa.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/16-polonia.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/17-perú.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/18-portugal.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/19-moscú.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/20-islandia.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/21-turquía.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/22-irán.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/23-india.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/24-gales.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/25-paraguay.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/26-rumanía.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/27-argentina.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/28-siria.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/29-alemania.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/30-japón.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/31-albania.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/32-tailandia.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/33-australia.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/34-londres.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/35-argelia.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/36-italia.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/37-brasil.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/38-cascada.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/39-checa.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/40-austria.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/41-eeuu.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/42-europa.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/43-bélgica.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/44-españa.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/45-sudáfrica.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/46-suiza.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/47-málaga.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/48-francia.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/49-toscana.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/geografía/50-finlandia.png
-
-    - packages/citmatel_strawberry_hangman/assets/niveles/historia/1-guevara.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/historia/2-maceo.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/historia/3-martí.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/historia/4-bonaparte.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/historia/5-camilo.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/historia/6-estrada.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/historia/7-gómez.jpeg
-    - packages/citmatel_strawberry_hangman/assets/niveles/historia/8-hitler.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/historia/9-castro.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/historia/10-figueredo.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/historia/11-grajales.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/historia/12-lenin.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/historia/13-agramonte.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/historia/14-benítez.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/historia/15-mendive.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/historia/16-varela.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/historia/17-sanguily.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/historia/18-stalin.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/historia/19-moncada.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/historia/20-villena.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/historia/21-almeida.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/historia/22-bolívar.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/historia/23-espín.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/historia/24-colón.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/historia/25-baliño.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/historia/26-manduley.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/historia/27-mella.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/historia/28-céspedes.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/historia/29-luther.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/historia/30-marx.jpg
-
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/1-fútbol.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/2-jabalina.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/3-maratón.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/4-billar.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/5-base.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/6-martillo.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/7-portero.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/8-gimnasia.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/9-pitcher.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/10-campeón.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/11-clavado.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/12-baloncesto.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/13-bolos.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/14-polo.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/15-relevo.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/16-remo.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/17-swing.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/18-estadio.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/19-hockey.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/20-golf.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/21-escalar.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/22-voleibol.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/23-natación.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/24-hoyo.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/25-medalla.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/26-disco.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/27-olimpiada.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/28-pelotero.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/29-pesa.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/30-béisbol.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/31-bádminton.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/32-patinaje.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/33-salto.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/34-penalti.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/35-bateador.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/36-rugby.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/37-tenis.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/deportes/38-críquet.png
-
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/1-paleta.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/2-cantante.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/3-fotos.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/4-trovador.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/5-payaso.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/6-flauta.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/7-escultor.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/8-violín.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/9-banda.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/10-costura.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/11-diseño.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/12-guitarra.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/13-modelar.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/14-saxofón.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/15-restaurar.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/16-trombón.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/17-concurso.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/18-contrabajo.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/19-concierto.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/20-coro.jpg
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/21-viola.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/22-rafael.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/23-orquesta.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/24-platillo.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/25-basilio.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/26-arpa.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/27-vitrubio.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/28-piano.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/29-creación.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/30-batuta.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/31-domador.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/arte/32-rumba.png
-
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/1-oruga.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/2-foca.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/3-gallo.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/4-tocororo.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/5-ballena.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/6-león.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/7-perezoso.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/8-pelícano.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/9-zunzún.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/10-pato.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/11-guacamayo.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/12-cocodrilo.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/13-buitre.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/14-jabalí.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/15-rata.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/16-manatí.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/17-oveja.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/18-pantera.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/19-camarón.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/20-globo.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/21-culebra.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/22-canguro.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/23-caimán.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/24-pulpo.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/25-tiburón.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/26-calamar.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/27-felino.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/28-pigmea.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/29-martillo.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/30-pavo.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/31-toro.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/32-bravía.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/33-cuerno.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/34-morsa.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/35-crustáceo.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/36-pardo.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/37-pigmeo.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/38-ermitaño.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/39-asiático.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/40-marsupio.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/41-buho.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/42-koala.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/43-víbora.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/44-medusa.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/45-almiquí.png
-    - packages/citmatel_strawberry_hangman/assets/niveles/animales/46-manjuarí.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/1-lluvia.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/2-suelo.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/3-contaminar.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/4-sequía.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/5-derrumbe.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/6-deshecho.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/7-erosión.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/8-huracán.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/9-ahorrar.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/10-surcos.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/11-frutas.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/12-vaca.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/13-pozo.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/14-campesino.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/15-riego.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/16-postura.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/17-fumigar.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/18-terrazas.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/19-fértil.png
+    - packages/citmatel_strawberry_hangman/assets/niveles/conoc-general/20-raices.png
 
     - packages/citmatel_strawberry_hangman/assets/niveles/tutorial/tutorial.png
 
