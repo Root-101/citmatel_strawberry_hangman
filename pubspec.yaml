@@ -3,7 +3,7 @@ description: Hangman module for CITMATEL's 'strawberry' project
 
 publish_to: "none"
 
-version: 1.1.0-RELEASE.20220301
+version: 1.1.0-RELEASE.20220717
 
 environment:
   sdk: ">=2.15.0 <3.0.0"
