@@ -369,19 +369,23 @@ class _HangManSubLevelScreenState extends State<HangManSubLevelScreen> {
 
   //This method is used to build the image widget.
   _buildImageCard(Size size) {
-    return OpenContainer(
-      key: _key3,
-      // The transition to display when you move from the closed widget to the open one.
-      transitionType: ContainerTransitionType.fade,
-      transitionDuration: Duration(seconds: 1),
-      openColor: Colors.transparent,
-      // The content that will be displayed when the widget opens.
-      openBuilder: (context, _) => _buildBigImage(),
-      closedElevation: 20,
-      closedColor: Colors.transparent,
-      // The content that will be displayed when the widget is closed.
-      closedBuilder: (context, _) => _buildSmallImage(size),
-    );
+    if (_controller.endedLevel) {
+      return OpenContainer(
+        key: _key3,
+        // The transition to display when you move from the closed widget to the open one.
+        transitionType: ContainerTransitionType.fade,
+        transitionDuration: Duration(seconds: 1),
+        openColor: Colors.transparent,
+        // The content that will be displayed when the widget opens.
+        openBuilder: (context, _) => _buildBigImage(),
+        closedElevation: 20,
+        closedColor: Colors.transparent,
+        // The content that will be displayed when the widget is closed.
+        closedBuilder: (context, _) => _buildSmallImage(size),
+      );
+    } else {
+      return _buildSmallImage(size);
+    }
   }
 
   //This method builds the image when is small.

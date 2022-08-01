@@ -27,6 +27,9 @@ abstract class HangManSubLevelController extends GetxController {
   // The amount of lives.
   int get lives;
 
+  // Flag para si se termino el nivel no abrir la foto
+  bool get endedLevel;
+
   // The remaining lives after the user lose it.
   // Is initialized with the amount of lives if gets to zero the user lose.
   int get remainingLives;

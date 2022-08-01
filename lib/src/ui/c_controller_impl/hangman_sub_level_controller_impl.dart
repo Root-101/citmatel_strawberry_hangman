@@ -22,6 +22,8 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   // It is true as long as the tutorial on the correct letter has not been shown for the first time. Then is false.
   bool isFirstTime = true;
 
+  bool endedLevel = false;
+
   // The controller for the confetti animation.
   late final ConfettiController confettiController;
 
@@ -168,6 +170,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   ///se pierde el nivel cuando las vidas llegan a 0
   void _doLooseLevel() {
     if (remainingLives <= 0) {
+      endedLevel = true;
       StrawberryFunction.looseLevel(
         mute: mute,
         leftButtonFunction: () => Get.off(
@@ -195,6 +198,7 @@ class HangManSubLevelControllerImpl extends HangManSubLevelController {
   ///TODO: modificar cuando se agregue soporte para varias palabras, no puede quedar caracter vacio en ninguna palabra
   void _doWinLevel() {
     if (!answerToBe.contains(_emptyCharacter)) {
+      endedLevel = true;
       StrawberryFunction.winLevel(
         mute: mute,
         leftButtonFunction: () {
